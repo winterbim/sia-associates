@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ink: #0A0E12;
+    --bone: #F4EFE6;
+    --gold: #C8A24B;
+    --gold-hover: #B8923B;
+    --oxblood: #6B1F2A;
+    --graphite: #2A2F38;
+    --ash: #6E6A62;
+    --ash-light: #A8A29A;
+    --hairline: #E5DED0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bone text-graphite antialiased;
+  }
+
+  ::selection {
+    @apply bg-gold/20 text-ink;
+  }
+
+  /* Focus visible */
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  /* Skip link */
+  .skip-link {
+    @apply absolute left-4 z-[100] -translate-y-full rounded bg-gold px-4 py-2 font-mono text-sm text-ink transition-transform duration-200;
+  }
+  .skip-link:focus {
+    @apply translate-y-4;
+  }
+}
+
+@layer components {
+  /* Kicker text */
+  .kicker {
+    @apply font-mono text-xs uppercase tracking-kicker text-gold;
+  }
+
+  /* Display heading */
+  .display-heading {
+    @apply font-display font-medium tracking-display text-ink;
+  }
+
+  /* Emphatic italic in headings */
+  .display-heading em {
+    @apply not-italic text-oxblood;
+    font-style: italic;
+    font-variation-settings: 'SOFT' 100;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply mx-auto max-w-container px-6 md:px-10;
+  }
+
+  /* Gold underline accent */
+  .gold-underline {
+    @apply relative inline-block;
+  }
+  .gold-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-[2px] w-full bg-gold;
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    @apply opacity-0 translate-y-4;
+  }
+  .reveal.revealed {
+    @apply animate-fade-in;
+  }
+
+  /* Sankey flow node */
+  .sankey-node {
+    @apply relative rounded-lg border border-hairline bg-bone p-4 transition-all duration-300;
+  }
+  .sankey-node:hover {
+    @apply border-gold/50 shadow-lg shadow-gold/5;
+  }
+}
+
+@layer utilities {
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee,
+    .animate-marquee-reverse,
+    .animate-fade-in,
+    .animate-slide-up,
+    .animate-scale-in,
+    .animate-flow-path,
+    .animate-pulse-gold {
+      animation: none !important;
+    }
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
