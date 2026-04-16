@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const INTENTS = [
   {
@@ -41,35 +42,38 @@ export function IntentGrid() {
       aria-labelledby="intent-heading"
     >
       <div className="section-container">
-        <p className="kicker mb-4">Vos besoins</p>
-        <h2
-          id="intent-heading"
-          className="display-heading mb-12 text-2xl md:text-4xl"
-        >
-          Vous cherchez&hellip;
-        </h2>
+        <ScrollReveal animation="fade-up">
+          <p className="kicker mb-4">Vos besoins</p>
+          <h2
+            id="intent-heading"
+            className="display-heading mb-12 text-2xl md:text-4xl"
+          >
+            Vous cherchez&hellip;
+          </h2>
+        </ScrollReveal>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {INTENTS.map((intent) => (
-            <Link
-              key={intent.num}
-              href={intent.href}
-              className="group flex items-start gap-4 rounded-lg border border-hairline bg-bone p-5 transition-all duration-300 hover:border-transparent hover:bg-ink hover:shadow-lg hover:shadow-ink/10"
-            >
-              <span className="shrink-0 font-mono text-xs text-gold">
-                {intent.num}
-              </span>
-              <div className="flex-1">
-                <p className="text-sm font-medium leading-snug text-ink transition-colors duration-300 group-hover:text-bone">
-                  {intent.text}
-                </p>
-              </div>
-              <ArrowRight
-                size={16}
-                strokeWidth={1.5}
-                className="mt-0.5 shrink-0 text-ash transition-all duration-300 group-hover:rotate-[-12deg] group-hover:text-gold"
-              />
-            </Link>
+          {INTENTS.map((intent, i) => (
+            <ScrollReveal key={intent.num} animation="fade-up" delay={i * 80}>
+              <Link
+                href={intent.href}
+                className="group flex h-full items-start gap-4 rounded-lg border border-hairline bg-bone p-5 transition-all duration-300 hover:border-transparent hover:bg-ink hover:shadow-xl hover:shadow-ink/10"
+              >
+                <span className="shrink-0 font-mono text-xs text-gold transition-transform duration-300 group-hover:scale-110">
+                  {intent.num}
+                </span>
+                <div className="flex-1">
+                  <p className="text-sm font-medium leading-snug text-ink transition-colors duration-300 group-hover:text-bone">
+                    {intent.text}
+                  </p>
+                </div>
+                <ArrowRight
+                  size={16}
+                  strokeWidth={1.5}
+                  className="mt-0.5 shrink-0 text-ash transition-all duration-300 group-hover:-rotate-[45deg] group-hover:text-gold"
+                />
+              </Link>
+            </ScrollReveal>
           ))}
         </div>
       </div>

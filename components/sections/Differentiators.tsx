@@ -1,4 +1,5 @@
 import { Layers, Globe, Shield } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const DIFFS = [
   {
@@ -31,42 +32,49 @@ export function Differentiators() {
       aria-labelledby="diff-heading"
     >
       <div className="section-container">
-        <p className="kicker mb-4">Differenciation</p>
-        <h2
-          id="diff-heading"
-          className="display-heading mb-12 text-2xl md:text-4xl"
-        >
-          Ce que j&apos;apporte <em>de plus</em>
-        </h2>
+        <ScrollReveal animation="fade-up">
+          <p className="kicker mb-4">Differenciation</p>
+          <h2
+            id="diff-heading"
+            className="display-heading mb-12 text-2xl md:text-4xl"
+          >
+            Ce que j&apos;apporte <em>de plus</em>
+          </h2>
+        </ScrollReveal>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {DIFFS.map((diff) => {
+          {DIFFS.map((diff, i) => {
             const Icon = diff.icon;
             return (
-              <div
-                key={diff.num}
-                className="group relative rounded-lg border border-hairline bg-bone p-6 transition-all duration-300 hover:border-gold/30 hover:shadow-lg hover:shadow-gold/5 md:p-8"
-              >
-                {/* Decorative corner accent */}
-                <div className="absolute right-4 top-4 h-8 w-8 rounded-full border border-gold/10 transition-all duration-500 group-hover:scale-150 group-hover:border-gold/20 group-hover:opacity-0" />
+              <ScrollReveal key={diff.num} animation="fade-up" delay={i * 150}>
+                <div className="group relative h-full overflow-hidden rounded-lg border border-hairline bg-bone p-6 transition-all duration-300 hover:border-gold/30 hover:shadow-lg hover:shadow-gold/5 md:p-8">
+                  {/* Animated corner accent */}
+                  <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gold/5 transition-all duration-700 group-hover:scale-[3] group-hover:bg-gold/10" />
+                  {/* Bottom glow on hover */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-gold/50 to-gold/0 transition-transform duration-500 group-hover:scale-x-100" />
 
-                <div className="mb-4 flex items-center gap-3">
-                  <Icon
-                    size={28}
-                    strokeWidth={1.5}
-                    className="text-gold"
-                  />
-                  <span className="font-mono text-xs text-ash">
-                    {diff.num}
-                  </span>
+                  <div className="relative">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10 transition-all duration-300 group-hover:bg-gold/20 group-hover:shadow-md group-hover:shadow-gold/10">
+                        <Icon
+                          size={22}
+                          strokeWidth={1.5}
+                          className="text-gold"
+                        />
+                      </div>
+                      <span className="font-mono text-xs text-ash">
+                        {diff.num}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-xl font-medium text-ink">
+                      {diff.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-ash">
+                      {diff.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-display text-xl font-medium text-ink">
-                  {diff.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ash">
-                  {diff.description}
-                </p>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>
