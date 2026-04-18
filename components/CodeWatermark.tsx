@@ -181,7 +181,7 @@ export function CodeWatermark({ className = "" }: { className?: string }) {
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute bottom-12 right-8 z-0 hidden w-[min(38rem,44%)] select-none xl:block ${className}`}
+      className={`pointer-events-none relative mx-auto hidden w-full max-w-[52rem] select-none lg:block ${className}`}
     >
       {/* HUD frame */}
       <div className="relative border border-gold/35 bg-gradient-to-br from-ink/60 to-graphite/30 backdrop-blur-[1px]">

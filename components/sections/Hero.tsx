@@ -17,10 +17,6 @@ export function Hero() {
       className="relative overflow-hidden bg-ink"
       aria-labelledby="hero-heading"
     >
-      {/* Live-typing ABAP / CDS / BTP code panel on the right — the
-          signifying backdrop. 55% opacity, masked on both edges. */}
-      <CodeWatermark />
-
       {/* Editorial hairline above the fold */}
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-24 h-px bg-white/10" />
 
@@ -133,6 +129,12 @@ export function Hero() {
             </figure>
           </ScrollReveal>
         </div>
+      </div>
+
+      {/* Live-typing ABAP / CDS / BTP HUD panel — dedicated band between
+          the hero and the KPI proof strip. Desktop-only (≥1024px). */}
+      <div className="section-container relative mb-16 hidden lg:block">
+        <CodeWatermark />
       </div>
 
       {/* Proof strip */}
