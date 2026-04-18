@@ -37,7 +37,7 @@ export function ContactCTA() {
             className="display-heading mx-auto mb-6 max-w-2xl text-2xl text-bone md:text-4xl lg:text-5xl"
           >
             Un projet SAP qui mérite{" "}
-            <em className="text-gold">un regard senior</em> ?
+            <em className="text-oxblood">un regard senior</em> ?
           </h2>
         </ScrollReveal>
 

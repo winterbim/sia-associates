@@ -47,7 +47,7 @@ export function Keywords() {
             id="keywords-heading"
             className="display-heading mb-12 text-2xl text-bone md:text-4xl"
           >
-            L&apos;ecosysteme SAP, <em className="text-gold">maitrise</em>
+            L&apos;ecosysteme SAP, <em className="text-oxblood">maitrise</em>
           </h2>
         </ScrollReveal>
 

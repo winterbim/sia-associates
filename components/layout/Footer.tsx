@@ -23,7 +23,7 @@ export function Footer() {
               <br />
               Architecture, pilotage, exploitation, cloud.
             </p>
-            <p className="mt-2 text-xs italic text-gold">Human First Build Success</p>
+            <p className="mt-2 text-xs italic text-oxblood">Human First Build Success</p>
           </div>
 
           {/* Navigation */}

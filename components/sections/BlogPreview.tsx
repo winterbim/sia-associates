@@ -57,7 +57,7 @@ export async function BlogPreview() {
                         </span>
                       ))}
                     </div>
-                    <h3 className="font-display text-lg font-medium leading-snug text-ink transition-colors group-hover:text-gold">
+                    <h3 className="font-display text-lg font-medium leading-snug text-ink transition-colors duration-200 group-hover:text-oxblood">
                       {article.title}
                     </h3>
                     <p className="mt-2 flex-1 text-sm text-ash">{article.excerpt}</p>

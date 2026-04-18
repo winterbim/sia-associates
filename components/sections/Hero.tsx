@@ -29,7 +29,7 @@ export function Hero() {
                 Conseil SAP &middot; depuis 2007
               </p>
             </div>
-            <p className="mb-8 font-display text-lg font-medium tracking-wide text-gold md:text-xl">
+            <p className="mb-8 font-display text-lg font-medium tracking-wide text-oxblood md:text-xl">
               Human First Build Success
             </p>
           </ScrollReveal>
@@ -43,7 +43,7 @@ export function Hero() {
               <em className="not-italic font-bold text-oxblood">
                 chef d&apos;orchestre
               </em>{" "}
-              et gardien de vos projets <span className="text-gold">SAP</span>.
+              et gardien de vos projets <span className="text-oxblood">SAP</span>.
             </h1>
           </ScrollReveal>
 

@@ -49,7 +49,7 @@ export function Cases() {
             id="cases-heading"
             className="display-heading mb-12 text-2xl text-bone md:text-4xl"
           >
-            Des missions, <em className="text-gold">des resultats</em>
+            Des missions, <em className="text-oxblood">des resultats</em>
           </h2>
         </ScrollReveal>
 
