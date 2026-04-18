@@ -1,11 +1,11 @@
 import Image from "next/image";
 
 const CLIENTS = [
-  { name: "VINCI Construction", src: "/clients/vinci-construction.svg" },
+  { name: "Safran", src: "/clients/safran.png" },
+  { name: "VINCI", src: "/clients/vinci.png" },
+  { name: "ENGIE", src: "/clients/engie.png" },
   { name: "GRDF", src: "/clients/grdf.svg" },
   { name: "RTE", src: "/clients/rte.svg" },
-  { name: "Safran", src: "/clients/safran.svg" },
-  { name: "ENGIE", src: "/clients/engie.svg" },
   { name: "Applium", src: "/clients/applium.svg" },
 ] as const;
 

@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 };
 
 const CLIENTS = [
-  { name: "VINCI Construction", src: "/clients/vinci-construction.svg", period: "2022 – aujourd'hui" },
+  { name: "VINCI Construction", src: "/clients/vinci.png", period: "2022 – aujourd'hui" },
   { name: "GRDF", src: "/clients/grdf.svg", period: "2016 – 2018, 2021 – 2022" },
   { name: "RTE", src: "/clients/rte.svg", period: "2020 – 2021" },
-  { name: "Safran", src: "/clients/safran.svg", period: "2018 – 2019" },
-  { name: "ENGIE", src: "/clients/engie.svg", period: "2015 – 2016" },
+  { name: "Safran", src: "/clients/safran.png", period: "2018 – 2019" },
+  { name: "ENGIE", src: "/clients/engie.png", period: "2015 – 2016" },
   { name: "Applium", src: "/clients/applium.svg", period: "2012 – 2015" },
 ] as const;
 

@@ -60,7 +60,10 @@ export function AnimatedCounter({
       const progress = Math.min(elapsed / duration, 1);
       // Ease out expo
       const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.round(eased * target));
+      const raw = eased * target;
+      // Preserve decimal precision from target
+      const decimals = (target.toString().split('.')[1] || '').length;
+      setCount(Number(raw.toFixed(decimals)));
 
       if (progress < 1) {
         requestAnimationFrame(update);

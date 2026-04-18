@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Mail, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -8,14 +9,21 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <p className="font-display text-xl font-medium text-bone">
-              SIA<span className="text-gold">.</span>
-            </p>
+            <Link href="/">
+              <Image
+                src="/logo-sia-white.svg"
+                alt="SIA Associates"
+                width={160}
+                height={57}
+                className="h-12 w-auto"
+              />
+            </Link>
             <p className="mt-3 text-sm leading-relaxed text-ash-light">
-              Cabinet de conseil SAP independant.
+              Cabinet de conseil SAP indépendant.
               <br />
               Architecture, pilotage, exploitation, cloud.
             </p>
+            <p className="mt-2 text-xs italic text-gold">Human First Build Success</p>
           </div>
 
           {/* Navigation */}
@@ -57,10 +65,21 @@ export function Footer() {
               <li className="flex items-start gap-2 text-sm text-ash-light">
                 <MapPin size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
                 <span>
-                  11 avenue Maryse Bastie
+                  11 avenue Maryse Bastié
                   <br />
-                  91220 Bretigny-sur-Orge
+                  91220 Brétigny-sur-Orge
                 </span>
+              </li>
+              <li className="flex items-start gap-2 text-sm text-ash-light">
+                <Linkedin size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
+                <a
+                  href="https://linkedin.com/in/consultant75"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-bone"
+                >
+                  LinkedIn
+                </a>
               </li>
             </ul>
           </div>
@@ -68,12 +87,12 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-ash-light md:flex-row">
-          <p>&copy; {new Date().getFullYear()} SIA Associates. Tous droits reserves.</p>
+          <p>&copy; {new Date().getFullYear()} SIA Associates. Tous droits réservés.</p>
           <Link
             href="/mentions-legales"
             className="transition-colors hover:text-bone"
           >
-            Mentions legales
+            Mentions légales
           </Link>
         </div>
       </div>

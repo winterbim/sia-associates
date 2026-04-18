@@ -54,7 +54,7 @@ export async function generateArticle(topic: string): Promise<{
   tags: string[];
   readingTime: number;
 }> {
-  const systemPrompt = `Tu es un expert SAP senior avec 20+ ans d'experience. Tu rediges des articles techniques approfondis pour le blog de SIA Associates, cabinet de conseil SAP independant fonde par Amine Silemane.
+  const systemPrompt = `Tu es un expert SAP senior avec 19+ ans d'experience. Tu rediges des articles techniques approfondis pour le blog de SIA Associates, cabinet de conseil SAP independant fonde par Amine Silemane.
 
 Regles de redaction :
 - Ton professionnel mais accessible, pas de jargon inutile

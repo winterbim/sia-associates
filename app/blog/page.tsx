@@ -28,7 +28,7 @@ export default async function BlogPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-base text-ash-light md:text-lg">
             Articles techniques SAP : architecture, migration, cloud,
-            methodologie. Des insights concrets, issus de 20+ ans de terrain.
+            methodologie. Des insights concrets, issus de 19+ ans de terrain.
           </p>
         </div>
       </section>

@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
-  <rect width="200" height="80" rx="4" fill="#F4EFE6" stroke="#E5DED0" stroke-width="1"/>
-  <text x="100" y="44" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="500" fill="#2A2F38">GRDF</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100" fill="none">
+  <!-- GRDF logo - blue with green accent -->
+  <circle cx="40" cy="50" r="28" fill="#00A3E0"/>
+  <path d="M28 50 L40 38 L52 50 L40 62 Z" fill="#FFFFFF"/>
+  <text x="78" y="60" font-family="'Arial Black', Arial, sans-serif" font-size="40" font-weight="900" fill="#003B5C">GRDF</text>
+  <rect x="78" y="68" width="120" height="4" rx="2" fill="#78BE20"/>
 </svg>

@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { ClientMarquee } from "@/components/sections/ClientMarquee";
 import { Pillars } from "@/components/sections/Pillars";
+import { About } from "@/components/sections/About";
 import { Keywords } from "@/components/sections/Keywords";
 import { Differentiators } from "@/components/sections/Differentiators";
 import { IntentGrid } from "@/components/sections/IntentGrid";
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <ClientMarquee />
       <Pillars />
+      <About />
       <Keywords />
       <Differentiators />
       <IntentGrid />

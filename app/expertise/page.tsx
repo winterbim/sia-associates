@@ -4,7 +4,7 @@ import { Compass, Route, Wrench, Cloud } from "lucide-react";
 export const metadata: Metadata = {
   title: "Expertise",
   description:
-    "Architecture SAP, pilotage de projet, exploitation applicative et cloud. 20+ ans d'experience SAP au service des grands comptes.",
+    "Architecture SAP, pilotage de projet, exploitation applicative et cloud. 19+ ans d'experience SAP au service des grands comptes.",
 };
 
 const PILLARS = [

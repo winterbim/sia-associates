@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Layers, Globe, Shield } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
@@ -47,7 +48,7 @@ export function Differentiators() {
             const Icon = diff.icon;
             return (
               <ScrollReveal key={diff.num} animation="fade-up" delay={i * 150}>
-                <div className="group relative h-full overflow-hidden rounded-lg border border-hairline bg-bone p-6 transition-all duration-300 hover:border-gold/30 hover:shadow-lg hover:shadow-gold/5 md:p-8">
+                <div className="bento-card group relative h-full overflow-hidden rounded-xl border border-hairline bg-bone p-6 transition-all duration-300 hover:border-gold/30 hover:shadow-xl hover:shadow-gold/5 md:p-8">
                   {/* Animated corner accent */}
                   <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gold/5 transition-all duration-700 group-hover:scale-[3] group-hover:bg-gold/10" />
                   {/* Bottom glow on hover */}
@@ -55,7 +56,7 @@ export function Differentiators() {
 
                   <div className="relative">
                     <div className="mb-4 flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10 transition-all duration-300 group-hover:bg-gold/20 group-hover:shadow-md group-hover:shadow-gold/10">
+                      <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 transition-all duration-300 group-hover:bg-gold/20 group-hover:shadow-md group-hover:shadow-gold/10">
                         <Icon
                           size={22}
                           strokeWidth={1.5}
@@ -65,6 +66,16 @@ export function Differentiators() {
                       <span className="font-mono text-xs text-ash">
                         {diff.num}
                       </span>
+                      {/* Small avatar */}
+                      <div className="ml-auto h-8 w-8 overflow-hidden rounded-full border border-hairline">
+                        <Image
+                          src="/amine-portrait.png"
+                          alt=""
+                          width={32}
+                          height={32}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
                     </div>
                     <h3 className="font-display text-xl font-medium text-ink">
                       {diff.title}

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -42,11 +43,15 @@ export function Header() {
         className="section-container flex h-16 items-center justify-between md:h-20"
         aria-label="Navigation principale"
       >
-        <Link
-          href="/"
-          className="font-display text-lg font-medium tracking-display text-ink md:text-xl"
-        >
-          SIA<span className="text-gold">.</span>
+        <Link href="/" className="shrink-0">
+          <Image
+            src="/logo-sia.svg"
+            alt="SIA Associates"
+            width={160}
+            height={57}
+            className="h-10 w-auto md:h-12"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
