@@ -63,7 +63,7 @@ export function Header() {
                 className={cn(
                   "font-mono text-xs uppercase tracking-kicker transition-colors duration-200",
                   pathname === item.href
-                    ? "text-gold"
+                    ? "text-ink underline decoration-oxblood decoration-2 underline-offset-[6px]"
                     : "text-ash hover:text-ink"
                 )}
               >

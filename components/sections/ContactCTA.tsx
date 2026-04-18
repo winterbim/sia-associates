@@ -9,11 +9,9 @@ export function ContactCTA() {
       className="relative overflow-hidden bg-ink py-20 md:py-28"
       aria-labelledby="cta-heading"
     >
-      {/* Warm gradient background */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-ink via-ink to-[#141A22]" />
-        <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.06] blur-[120px]" />
-      </div>
+      {/* Editorial backdrop — single hairline, no glow halo. */}
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-8 h-px bg-gold/25" />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-8 h-px bg-gold/25" />
 
       <div className="section-container relative text-center">
         {/* Portrait */}

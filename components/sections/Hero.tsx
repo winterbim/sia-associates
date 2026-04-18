@@ -1,184 +1,146 @@
+import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
-// Narrative KPIs — defensible, specific, memorable.
-// Replaces generic "19+ / 8 / 27 / 100%" with claims that name what was achieved.
-const PROOF = [
-  {
-    figure: "19",
-    unit: "ans",
-    claim: "à bâtir et exploiter des paysages SAP de production, de Safran à VINCI.",
-  },
-  {
-    figure: "0",
-    unit: "escalade",
-    claim: "remontée par un client sur les phases critiques de Go-Live (2018–2026).",
-  },
-  {
-    figure: "8",
-    unit: "migrations",
-    claim: "ECC → S/4HANA livrées sans régression prod, phase hypercare incluse.",
-  },
-  {
-    figure: "100%",
-    unit: "indépendant",
-    claim: "ni revendeur, ni intégrateur, ni commissions cachées. Conseil pur.",
-  },
+const STATS = [
+  { value: 20, suffix: "+", label: "Annees SAP" },
+  { value: 8, suffix: "", label: "Grands comptes servis" },
+  { value: 2024, suffix: "", label: "Annee de creation" },
+  { value: 100, suffix: "%", label: "Independance" },
 ] as const;
 
 export function Hero() {
   return (
     <section
-      className="relative overflow-hidden bg-ink"
+      className="relative overflow-hidden bg-bone"
       aria-labelledby="hero-heading"
     >
-      {/* Quiet editorial backdrop — a single horizontal rule
-          that anchors the page without the particle-field noise. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-[62%] h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-[48%] hidden w-px bg-gradient-to-b from-transparent via-gold/10 to-transparent lg:block"
-      />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-24 h-px bg-hairline" />
 
-      <div className="section-container relative grid gap-12 pb-20 pt-32 md:pb-28 md:pt-44 lg:grid-cols-12 lg:gap-16">
-        {/* Left column — headline, lede, CTAs */}
+      <div className="section-container relative grid gap-10 pb-16 pt-32 md:pb-20 md:pt-40 lg:grid-cols-12 lg:gap-20">
+        {/* Left — masthead + H1 + lede */}
         <div className="lg:col-span-7">
-          <ScrollReveal animation="fade-up" duration={800}>
-            <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-8 bg-gold" />
-              <p className="kicker m-0">Conseil SAP indépendant · depuis 2007</p>
+          <ScrollReveal animation="fade-up" duration={700}>
+            <div className="mb-8 flex items-center gap-3">
+              <span className="h-px w-10 bg-ink/60" />
+              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-ink/70">
+                Conseil SAP independant &middot; depuis 2024
+              </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal animation="fade-up" delay={100} duration={900}>
             <h1
               id="hero-heading"
-              className="display-heading max-w-2xl text-4xl leading-[1.05] text-bone sm:text-5xl md:text-[56px] lg:text-[64px]"
+              className="display-heading max-w-[18ch] text-[44px] font-bold leading-[1.02] tracking-[-0.025em] text-ink sm:text-5xl md:text-[60px] lg:text-[68px]"
             >
-              Architecte, chef d&apos;orchestre
-              <br />
-              et{" "}
-              <span className="text-gold">gardien</span> de vos
-              <br />
-              projets <span className="text-gold">SAP</span>.
+              Votre SAP, sans approximations.
             </h1>
           </ScrollReveal>
 
           <ScrollReveal animation="fade-up" delay={250} duration={900}>
-            <p className="mt-3 text-base font-medium uppercase tracking-[0.18em] text-gold/90 md:text-[15px]">
-              Human First &mdash; Build Success
+            <p className="mt-8 max-w-xl text-[17px] leading-[1.7] text-graphite">
+              20+ ans a batir, piloter et exploiter des paysages SAP pour des
+              entreprises qui ne peuvent pas se permettre
+              d&apos;approximations&nbsp;— de{" "}
+              <span className="font-semibold text-ink">Safran</span> a{" "}
+              <span className="font-semibold text-ink">VINCI Construction</span>
+              , en passant par{" "}
+              <span className="font-semibold text-ink">GRDF</span>,{" "}
+              <span className="font-semibold text-ink">RTE</span> et{" "}
+              <span className="font-semibold text-ink">ENGIE</span>.
             </p>
           </ScrollReveal>
 
-          <ScrollReveal animation="fade-up" delay={350} duration={900}>
-            <p className="mt-8 max-w-xl text-[17px] leading-[1.65] text-bone/80">
-              19&nbsp;ans à bâtir, piloter et exploiter des paysages SAP pour
-              des entreprises qui ne peuvent pas se permettre
-              d&apos;approximations. De{" "}
-              <span className="text-bone">Safran</span> à{" "}
-              <span className="text-bone">VINCI Construction</span>, en passant
-              par <span className="text-bone">GRDF</span>,{" "}
-              <span className="text-bone">RTE</span> et{" "}
-              <span className="text-bone">ENGIE</span>.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal animation="fade-up" delay={450}>
-            <div className="mt-10 flex flex-wrap gap-4">
+          <ScrollReveal animation="fade-up" delay={350}>
+            <div className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-3">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 rounded-sm bg-gold px-6 py-3 font-mono text-xs uppercase tracking-kicker text-ink transition-all duration-200 hover:bg-gold-hover hover:shadow-lg hover:shadow-gold/20"
+                className="group inline-flex items-center gap-2 bg-ink px-7 py-3.5 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-bone transition-colors duration-200 hover:bg-oxblood"
               >
                 Discuter d&apos;un projet
                 <ArrowRight
-                  size={16}
-                  strokeWidth={1.5}
+                  size={14}
+                  strokeWidth={2}
                   className="transition-transform duration-200 group-hover:translate-x-1"
                 />
               </Link>
               <Link
                 href="/expertise"
-                className="group inline-flex items-center gap-2 rounded-sm border border-ash-light/30 px-6 py-3 font-mono text-xs uppercase tracking-kicker text-bone transition-all duration-200 hover:border-bone hover:text-bone"
+                className="group inline-flex items-center gap-2 px-3 py-3.5 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-ink underline decoration-gold decoration-2 underline-offset-[6px] transition-colors duration-200 hover:text-oxblood hover:decoration-oxblood"
               >
                 Voir l&apos;expertise
                 <ArrowUpRight
-                  size={16}
-                  strokeWidth={1.5}
+                  size={14}
+                  strokeWidth={2}
                   className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                 />
               </Link>
             </div>
           </ScrollReveal>
+
+          <ScrollReveal animation="fade-up" delay={500}>
+            <p className="mt-12 max-w-md border-l-2 border-oxblood pl-4 text-[15px] italic leading-relaxed text-graphite">
+              «&nbsp;Un projet SAP reussi, c&apos;est d&apos;abord une equipe
+              qui comprend ce qu&apos;elle construit. La technique vient
+              apres.&nbsp;»
+              <span className="mt-2 block font-mono text-[10px] not-italic uppercase tracking-[0.2em] text-ash">
+                — Amine Silemane, fondateur
+              </span>
+            </p>
+          </ScrollReveal>
         </div>
 
-        {/* Right column — signature card: Amine's posture, quote, signature block.
-            Replaces the canvas particle field with something human. */}
+        {/* Right — editorial portrait */}
         <div className="relative lg:col-span-5">
-          <ScrollReveal animation="fade-up" delay={250} duration={1000}>
+          <ScrollReveal animation="fade-up" delay={200} duration={1000}>
             <figure className="relative">
-              <div className="relative overflow-hidden rounded-sm border border-gold/20 bg-gradient-to-br from-graphite/40 to-ink">
-                {/* Editorial-style portrait crop, no glow halo */}
+              <div className="relative overflow-hidden bg-graphite">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/amine-portrait.png"
                   alt="Amine Silemane — fondateur de SIA Associates"
-                  className="aspect-[4/5] w-full object-cover object-top grayscale-[15%] saturate-[0.95]"
+                  className="aspect-[4/5] w-full object-cover object-top"
                 />
-                {/* corner marks — editorial framing */}
-                <span className="absolute left-3 top-3 h-3 w-3 border-l border-t border-gold/60" />
-                <span className="absolute right-3 top-3 h-3 w-3 border-r border-t border-gold/60" />
-                <span className="absolute bottom-3 left-3 h-3 w-3 border-b border-l border-gold/60" />
-                <span className="absolute bottom-3 right-3 h-3 w-3 border-b border-r border-gold/60" />
               </div>
-              <figcaption className="mt-4 flex items-baseline justify-between border-t border-white/10 pt-4">
+              <figcaption className="mt-5 flex items-baseline justify-between border-t border-ink/15 pt-4">
                 <div>
-                  <p className="font-display text-lg font-semibold text-bone">
+                  <p className="font-display text-lg font-semibold text-ink">
                     Amine Silemane
                   </p>
-                  <p className="mt-0.5 font-mono text-[11px] uppercase tracking-kicker text-ash-light">
+                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.22em] text-ash">
                     Fondateur · Architecte SAP Senior
                   </p>
                 </div>
-                <p className="font-mono text-[11px] text-ash-light">
-                  EST. 2007
+                <p className="font-mono text-[10px] tracking-[0.15em] text-ash">
+                  EST. 2024
                 </p>
               </figcaption>
-              {/* Pull quote — positions the brand in one line */}
-              <blockquote className="mt-6 border-l-2 border-gold pl-4 text-[15px] leading-relaxed text-bone/85">
-                «&nbsp;Un projet SAP réussi, c&apos;est d&apos;abord une équipe
-                qui comprend ce qu&apos;elle construit. La technique vient
-                après.&nbsp;»
-              </blockquote>
             </figure>
           </ScrollReveal>
         </div>
       </div>
 
-      {/* Narrative proof strip — replaces generic 19+/8/27/100% KPI grid.
-          Each stat is now a short claim, not a decontextualized number. */}
-      <div className="section-container relative pb-20 md:pb-28">
-        <div className="grid gap-px overflow-hidden rounded-sm border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
-          {PROOF.map((p, i) => (
+      {/* Proof strip — editorial hairlines, no cards, no glow */}
+      <div className="section-container relative pb-24 md:pb-32">
+        <div className="grid divide-y divide-hairline border-y border-hairline md:grid-cols-2 md:divide-x md:divide-y-0 lg:grid-cols-4">
+          {STATS.map((stat, i) => (
             <ScrollReveal
-              key={p.unit}
+              key={stat.label}
               animation="fade-up"
               delay={200 + i * 100}
             >
-              <div className="h-full bg-ink p-6 md:p-7">
-                <div className="flex items-baseline gap-2">
-                  <span className="font-display text-4xl font-semibold leading-none tracking-tight text-gold tabular md:text-5xl">
-                    {p.figure}
-                  </span>
-                  <span className="font-mono text-[11px] uppercase tracking-kicker text-ash-light">
-                    {p.unit}
-                  </span>
-                </div>
-                <p className="mt-3 text-sm leading-[1.55] text-bone/75">
-                  {p.claim}
+              <div className="px-6 py-8 md:px-8 md:py-10">
+                <p className="font-display text-5xl font-bold leading-none tracking-[-0.03em] text-ink tabular">
+                  <AnimatedCounter
+                    target={stat.value}
+                    suffix={stat.suffix}
+                    duration={1500 + i * 200}
+                  />
+                </p>
+                <p className="mt-4 text-sm leading-[1.55] text-graphite">
+                  {stat.label}
                 </p>
               </div>
             </ScrollReveal>
