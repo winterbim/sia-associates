@@ -17,8 +17,8 @@ export function Hero() {
       className="relative overflow-hidden bg-ink"
       aria-labelledby="hero-heading"
     >
-      {/* Static ABAP / CDS / BTP yaml watermark — signals SAP craft
-          without animation. 5% opacity, masked to the center. */}
+      {/* Live-typing ABAP / CDS / BTP code panel on the right — the
+          signifying backdrop. 55% opacity, masked on both edges. */}
       <CodeWatermark />
 
       {/* Editorial hairline above the fold */}

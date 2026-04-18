@@ -220,17 +220,17 @@ export function CodeWatermark({ className = "" }: { className?: string }) {
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[min(46rem,55%)] overflow-hidden opacity-[0.22] md:block ${className}`}
+      className={`pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[min(52rem,62%)] overflow-hidden opacity-[0.55] md:block ${className}`}
       style={{
         maskImage:
-          "linear-gradient(to right, transparent 0%, black 35%, black 85%, transparent 100%)",
+          "linear-gradient(to right, transparent 0%, black 18%, black 92%, transparent 100%)",
         WebkitMaskImage:
-          "linear-gradient(to right, transparent 0%, black 35%, black 85%, transparent 100%)",
+          "linear-gradient(to right, transparent 0%, black 18%, black 92%, transparent 100%)",
       }}
     >
       <div
         ref={scrollRef}
-        className="h-full overflow-hidden px-10 py-16 font-mono text-[12px] leading-[1.8] md:text-[13px] md:leading-[1.85]"
+        className="h-full overflow-hidden px-10 py-14 font-mono text-[13px] leading-[1.8] md:text-[14px] md:leading-[1.85]"
       >
         {lines.map((ln, i) => {
           const segs = segmentsUpTo(ln.full, ln.typedChars);
