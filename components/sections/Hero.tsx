@@ -5,10 +5,10 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 const STATS = [
-  { value: 20, suffix: "+", label: "Annees SAP" },
+  { value: 19, suffix: "+", label: "Années SAP" },
   { value: 8, suffix: "", label: "Grands comptes servis" },
-  { value: 2024, suffix: "", label: "Annee de creation" },
-  { value: 100, suffix: "%", label: "Independance" },
+  { value: 27, suffix: "", label: "Projets" },
+  { value: 100, suffix: "%", label: "Transparence" },
 ] as const;
 
 export function Hero() {
@@ -27,12 +27,15 @@ export function Hero() {
         {/* Left column — masthead + H1 + lede */}
         <div className="lg:col-span-7">
           <ScrollReveal animation="fade-up" duration={700}>
-            <div className="mb-8 flex items-center gap-3">
+            <div className="mb-3 flex items-center gap-3">
               <span className="h-px w-10 bg-gold" />
               <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-bone/75">
-                Conseil SAP independant &middot; depuis 2024
+                Conseil SAP &middot; depuis 2007
               </p>
             </div>
+            <p className="mb-8 font-display text-lg font-medium tracking-wide text-gold md:text-xl">
+              Human First Build Success
+            </p>
           </ScrollReveal>
 
           <ScrollReveal animation="fade-up" delay={100} duration={900}>
@@ -50,10 +53,10 @@ export function Hero() {
 
           <ScrollReveal animation="fade-up" delay={250} duration={900}>
             <p className="mt-8 max-w-xl text-[17px] leading-[1.7] text-bone/75">
-              20+ ans a batir, piloter et exploiter des paysages SAP pour des
+              19+ ans à bâtir, piloter et exploiter des paysages SAP pour des
               entreprises qui ne peuvent pas se permettre
-              d&apos;approximations&nbsp;— de{" "}
-              <span className="font-semibold text-bone">Safran</span> a{" "}
+              d&apos;approximations. De{" "}
+              <span className="font-semibold text-bone">Safran</span> à{" "}
               <span className="font-semibold text-bone">VINCI Construction</span>
               , en passant par{" "}
               <span className="font-semibold text-bone">GRDF</span>,{" "}
@@ -123,7 +126,7 @@ export function Hero() {
                   </p>
                 </div>
                 <p className="font-mono text-[10px] tracking-[0.15em] text-ash-light">
-                  EST. 2024
+                  EST. 2007
                 </p>
               </figcaption>
             </figure>
