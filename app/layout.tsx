@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Lexend, Source_Sans_3, JetBrains_Mono } from "next/font/google";
+import { Instrument_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-// Typography per UI/UX Pro Max recommendation for Enterprise / Trust & Authority:
-// Lexend for display (corporate, accessibility-focused readability),
-// Source Sans 3 for body (professional, clean, WCAG AAA-friendly),
-// JetBrains Mono kept for technical/monospace labels (SAP transaction codes).
-const lexend = Lexend({
+// Instrument Sans — editorial grotesque with distinct character (ink-trap
+// details, tighter letter shapes) that reads as intentionally designed,
+// not AI-generated. Used for all display copy.
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });
 
-const sourceSans = Source_Sans_3({
+// Inter for body — neutral, highly legible at every size.
+const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-sans",
@@ -142,7 +142,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${lexend.variable} ${sourceSans.variable} ${jetbrainsMono.variable}`}
+      className={`${instrumentSans.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <script

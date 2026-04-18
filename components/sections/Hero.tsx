@@ -1,4 +1,5 @@
 import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { CodeWatermark } from "@/components/CodeWatermark";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -16,6 +17,10 @@ export function Hero() {
       className="relative overflow-hidden bg-ink"
       aria-labelledby="hero-heading"
     >
+      {/* Static ABAP / CDS / BTP yaml watermark — signals SAP craft
+          without animation. 5% opacity, masked to the center. */}
+      <CodeWatermark />
+
       {/* Editorial hairline above the fold */}
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-24 h-px bg-white/10" />
 
@@ -37,10 +42,10 @@ export function Hero() {
           <ScrollReveal animation="fade-up" delay={100} duration={900}>
             <h1
               id="hero-heading"
-              className="display-heading max-w-3xl text-[40px] font-bold leading-[1.05] tracking-[-0.02em] text-bone sm:text-5xl md:text-[56px] lg:text-[60px]"
+              className="display-heading max-w-[22ch] text-[32px] font-semibold leading-[1.08] tracking-[-0.015em] text-bone sm:text-[38px] md:text-[44px] lg:text-[48px]"
             >
               Architecte,{" "}
-              <em className="not-italic font-bold text-oxblood">
+              <em className="not-italic font-semibold text-oxblood">
                 chef d&apos;orchestre
               </em>{" "}
               et gardien de vos projets <span className="text-oxblood">SAP</span>.

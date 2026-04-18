@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["var(--font-display)", "Lexend", "system-ui", "sans-serif"],
-        sans: ["var(--font-sans)", "Source Sans 3", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Instrument Sans", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "SFMono-Regular", "Menlo", "monospace"],
       },
       colors: {
