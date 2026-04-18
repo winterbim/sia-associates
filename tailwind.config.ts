@@ -9,27 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        // Display uses the same humanist sans as body — SAP's own "72" typeface
-        // system does the same (no serif contrast). Weight & size carry hierarchy.
-        display: [
-          "var(--font-sans)",
-          "72",
-          "72override",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "sans-serif",
-        ],
-        sans: [
-          "var(--font-sans)",
-          "72",
-          "72override",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Helvetica Neue",
-          "sans-serif",
-        ],
+        display: ["var(--font-display)", "Lexend", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "Source Sans 3", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "SFMono-Regular", "Menlo", "monospace"],
       },
       colors: {

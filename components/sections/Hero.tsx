@@ -1,5 +1,4 @@
 import { AnimatedCounter } from "@/components/AnimatedCounter";
-import { SapBackdrop } from "@/components/SapBackdrop";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -17,9 +16,6 @@ export function Hero() {
       className="relative overflow-hidden bg-ink"
       aria-labelledby="hero-heading"
     >
-      {/* Semantic, subtle SAP-themed backdrop — not generic particles. */}
-      <SapBackdrop />
-
       {/* Editorial hairline above the fold */}
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-24 h-px bg-white/10" />
 

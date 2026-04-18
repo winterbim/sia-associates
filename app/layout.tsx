@@ -1,19 +1,28 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Lexend, Source_Sans_3, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-// IBM Plex Sans — humanist neutral sans, closest free approximation
-// to SAP's proprietary "72" typeface used across SAP Fiori / S/4HANA UIs.
-const plexSans = IBM_Plex_Sans({
+// Typography per UI/UX Pro Max recommendation for Enterprise / Trust & Authority:
+// Lexend for display (corporate, accessibility-focused readability),
+// Source Sans 3 for body (professional, clean, WCAG AAA-friendly),
+// JetBrains Mono kept for technical/monospace labels (SAP transaction codes).
+const lexend = Lexend({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const plexMono = IBM_Plex_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--font-mono",
@@ -133,7 +142,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${plexSans.variable} ${plexMono.variable}`}
+      className={`${lexend.variable} ${sourceSans.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <script
