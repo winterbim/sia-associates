@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <rect width="600" height="400" fill="#E8DFC9"/>
+  <!-- Desk -->
+  <rect x="0" y="320" width="600" height="80" fill="#8B7355"/>
+  <rect x="0" y="320" width="600" height="4" fill="#6F5B41"/>
+  <!-- Monitor frame -->
+  <rect x="80" y="60" width="440" height="260" rx="6" fill="#1a1f27"/>
+  <rect x="90" y="70" width="420" height="240" rx="2" fill="#F4EFE6"/>
+  <!-- Monitor stand -->
+  <rect x="280" y="320" width="40" height="20" fill="#2A2F38"/>
+  <rect x="240" y="338" width="120" height="6" rx="2" fill="#2A2F38"/>
+  <!-- SAP Fiori Launchpad mock -->
+  <!-- Top bar -->
+  <rect x="90" y="70" width="420" height="24" fill="#354A5F"/>
+  <rect x="98" y="78" width="60" height="8" fill="#F4EFE6" opacity="0.9"/>
+  <circle cx="488" cy="82" r="6" fill="#C8A24B" opacity="0.9"/>
+  <text x="128" y="85" font-family="monospace" font-size="8" fill="#F4EFE6">SAP Fiori</text>
+  <!-- Section headers -->
+  <text x="104" y="112" font-family="monospace" font-size="9" fill="#6E6A62" letter-spacing="1">FINANCE</text>
+  <text x="104" y="206" font-family="monospace" font-size="9" fill="#6E6A62" letter-spacing="1">LOGISTIQUE</text>
+  <!-- Tile row 1 -->
+  <g>
+    <rect x="104" y="120" width="72" height="68" fill="#ffffff" stroke="#D8CEB7" stroke-width="1"/>
+    <rect x="104" y="120" width="72" height="4" fill="#6B7A8F"/>
+    <text x="112" y="140" font-family="sans-serif" font-size="9" font-weight="600" fill="#2A2F38">Grand Livre</text>
+    <text x="112" y="176" font-family="sans-serif" font-size="18" font-weight="700" fill="#6B7A8F">247</text>
+    <text x="112" y="184" font-family="monospace" font-size="7" fill="#6E6A62">écritures</text>
+
+    <rect x="184" y="120" width="72" height="68" fill="#ffffff" stroke="#D8CEB7" stroke-width="1"/>
+    <rect x="184" y="120" width="72" height="4" fill="#8BA68F"/>
+    <text x="192" y="140" font-family="sans-serif" font-size="9" font-weight="600" fill="#2A2F38">Clôture M</text>
+    <text x="192" y="176" font-family="sans-serif" font-size="18" font-weight="700" fill="#8BA68F">J+3</text>
+
+    <rect x="264" y="120" width="72" height="68" fill="#ffffff" stroke="#D8CEB7" stroke-width="1"/>
+    <rect x="264" y="120" width="72" height="4" fill="#C8A24B"/>
+    <text x="272" y="140" font-family="sans-serif" font-size="9" font-weight="600" fill="#2A2F38">Trésorerie</text>
+    <text x="272" y="176" font-family="sans-serif" font-size="18" font-weight="700" fill="#C8A24B">12,4M</text>
+    <text x="272" y="184" font-family="monospace" font-size="7" fill="#6E6A62">EUR dispo</text>
+
+    <rect x="344" y="120" width="72" height="68" fill="#ffffff" stroke="#D8CEB7" stroke-width="1"/>
+    <rect x="344" y="120" width="72" height="4" fill="#B5755B"/>
+    <text x="352" y="140" font-family="sans-serif" font-size="9" font-weight="600" fill="#2A2F38">Factures</text>
+    <text x="352" y="176" font-family="sans-serif" font-size="18" font-weight="700" fill="#B5755B">38</text>
+    <text x="352" y="184" font-family="monospace" font-size="7" fill="#6E6A62">à valider</text>
+
+    <rect x="424" y="120" width="72" height="68" fill="#ffffff" stroke="#D8CEB7" stroke-width="1"/>
+    <rect x="424" y="120" width="72" height="4" fill="#6B1F2A"/>
+    <text x="432" y="140" font-family="sans-serif" font-size="9" font-weight="600" fill="#2A2F38">Écarts</text>
+    <text x="432" y="176" font-family="sans-serif" font-size="18" font-weight="700" fill="#6B1F2A">3</text>
+    <text x="432" y="184" font-family="monospace" font-size="7" fill="#6E6A62">actifs</text>
+  </g>
+  <!-- Tile row 2 -->
+  <g>
+    <rect x="104" y="214" width="72" height="68" fill="#ffffff" stroke="#D8CEB7" stroke-width="1"/>
+    <rect x="104" y="214" width="72" height="4" fill="#6B7A8F"/>
+    <text x="112" y="234" font-family="sans-serif" font-size="9" font-weight="600" fill="#2A2F38">Stocks</text>
+    <text x="112" y="270" font-family="sans-serif" font-size="18" font-weight="700" fill="#6B7A8F">94%</text>
+
+    <rect x="184" y="214" width="72" height="68" fill="#ffffff" stroke="#D8CEB7" stroke-width="1"/>
+    <rect x="184" y="214" width="72" height="4" fill="#8BA68F"/>
+    <text x="192" y="234" font-family="sans-serif" font-size="9" font-weight="600" fill="#2A2F38">Commandes</text>
+    <text x="192" y="270" font-family="sans-serif" font-size="18" font-weight="700" fill="#8BA68F">1 284</text>
+
+    <rect x="264" y="214" width="72" height="68" fill="#ffffff" stroke="#D8CEB7" stroke-width="1"/>
+    <rect x="264" y="214" width="72" height="4" fill="#C8A24B"/>
+    <text x="272" y="234" font-family="sans-serif" font-size="9" font-weight="600" fill="#2A2F38">Livraisons</text>
+    <text x="272" y="270" font-family="sans-serif" font-size="18" font-weight="700" fill="#C8A24B">98,2%</text>
+
+    <rect x="344" y="214" width="72" height="68" fill="#ffffff" stroke="#D8CEB7" stroke-width="1"/>
+    <rect x="344" y="214" width="72" height="4" fill="#B5755B"/>
+    <text x="352" y="234" font-family="sans-serif" font-size="9" font-weight="600" fill="#2A2F38">Ruptures</text>
+    <text x="352" y="270" font-family="sans-serif" font-size="18" font-weight="700" fill="#B5755B">2</text>
+
+    <rect x="424" y="214" width="72" height="68" fill="#ffffff" stroke="#D8CEB7" stroke-width="1"/>
+    <rect x="424" y="214" width="72" height="4" fill="#6B1F2A"/>
+    <text x="432" y="234" font-family="sans-serif" font-size="9" font-weight="600" fill="#2A2F38">Retours</text>
+    <text x="432" y="270" font-family="sans-serif" font-size="18" font-weight="700" fill="#6B1F2A">17</text>
+  </g>
+  <!-- Keyboard hint -->
+  <rect x="200" y="352" width="200" height="8" rx="2" fill="#2A2F38" opacity="0.7"/>
+  <!-- Coffee on desk -->
+  <ellipse cx="80" cy="355" rx="18" ry="3" fill="#2A2F38" opacity="0.4"/>
+  <path d="M 62 355 L 64 330 L 96 330 L 98 355 Z" fill="#F4EFE6" stroke="#BCB4A4" stroke-width="1"/>
+  <ellipse cx="80" cy="330" rx="16" ry="2.5" fill="#3D2817"/>
+</svg>

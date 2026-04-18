@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <!-- Warm ivory wall -->
+  <rect width="600" height="400" fill="#EDE6D6"/>
+  <!-- Whiteboard frame -->
+  <rect x="40" y="40" width="520" height="300" rx="4" fill="#FDFBF5" stroke="#BCB4A4" stroke-width="2"/>
+  <!-- Marker tray -->
+  <rect x="40" y="340" width="520" height="10" fill="#9B8F79"/>
+  <circle cx="520" cy="345" r="3" fill="#C8A24B"/>
+  <circle cx="505" cy="345" r="3" fill="#6B1F2A"/>
+  <circle cx="490" cy="345" r="3" fill="#2A2F38"/>
+  <!-- Architecture sketch — legacy → target -->
+  <!-- Left cluster (ECC) -->
+  <g stroke="#2A2F38" stroke-width="1.5" fill="none">
+    <rect x="80" y="90" width="100" height="50" rx="2"/>
+    <rect x="80" y="160" width="100" height="30" rx="2"/>
+    <rect x="80" y="205" width="100" height="30" rx="2"/>
+  </g>
+  <text x="130" y="120" text-anchor="middle" font-family="monospace" font-size="11" fill="#2A2F38">ECC 6.0</text>
+  <text x="130" y="180" text-anchor="middle" font-family="monospace" font-size="9" fill="#6E6A62">Z-code</text>
+  <text x="130" y="225" text-anchor="middle" font-family="monospace" font-size="9" fill="#6E6A62">IDocs</text>
+  <!-- Arrow -->
+  <g stroke="#C8A24B" stroke-width="2" fill="none">
+    <path d="M200,170 L380,170" stroke-dasharray="6 4"/>
+    <path d="M370,162 L385,170 L370,178"/>
+  </g>
+  <text x="290" y="160" text-anchor="middle" font-family="monospace" font-size="10" fill="#C8A24B">Clean Core</text>
+  <!-- Right cluster (S/4 + BTP) -->
+  <g stroke="#2A2F38" stroke-width="1.5" fill="none">
+    <rect x="400" y="90" width="120" height="50" rx="2"/>
+    <rect x="400" y="160" width="120" height="30" rx="2"/>
+    <rect x="400" y="205" width="120" height="30" rx="2"/>
+  </g>
+  <text x="460" y="120" text-anchor="middle" font-family="monospace" font-size="11" fill="#2A2F38">S/4HANA</text>
+  <text x="460" y="180" text-anchor="middle" font-family="monospace" font-size="9" fill="#6E6A62">BTP / RAP</text>
+  <text x="460" y="225" text-anchor="middle" font-family="monospace" font-size="9" fill="#6E6A62">Fiori</text>
+  <!-- Hand-drawn underline on title -->
+  <path d="M 200 270 C 250 265 300 275 400 268" stroke="#6B1F2A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <text x="300" y="260" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="18" fill="#2A2F38">Roadmap 2026-2027</text>
+  <!-- Small notes -->
+  <text x="80" y="315" font-family="monospace" font-size="9" fill="#6E6A62">// audit → remédiation → Go-Live</text>
+  <!-- Corner tape -->
+  <rect x="26" y="26" width="30" height="15" fill="#C8A24B" opacity="0.35" transform="rotate(-8 41 33)"/>
+  <rect x="548" y="26" width="30" height="15" fill="#C8A24B" opacity="0.35" transform="rotate(6 563 33)"/>
+</svg>
