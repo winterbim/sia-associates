@@ -2,15 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// Live-typing ABAP / CDS / BTP code panel — the hero's dynamic backdrop.
-// Real SAP snippets are typed out line by line like an ADT Eclipse
-// session, with a blinking caret at the cursor. Static under
-// prefers-reduced-motion.
+// HUD-style live ABAP panel — the hero's dynamic backdrop.
+// Desktop-only (>=1280px). Framed with corner marks, label bar,
+// record dot, CRT scan line, and IDE gutter line numbers.
 
 const LINES: Array<Array<{ tone: "comment" | "keyword" | "ident" | "string" | "default"; text: string }>> = [
-  [
-    { tone: "comment", text: "* Clean Core audit — only released APIs called here" },
-  ],
+  [{ tone: "comment", text: "* Clean Core audit — only released APIs called here" }],
   [
     { tone: "keyword", text: "CLASS" },
     { tone: "default", text: " " },
@@ -40,14 +37,9 @@ const LINES: Array<Array<{ tone: "comment" | "keyword" | "ident" | "string" | "d
     { tone: "keyword", text: "TYPE" },
     { tone: "default", text: " sy-sysid." },
   ],
-  [
-    { tone: "keyword", text: "ENDCLASS" },
-    { tone: "default", text: "." },
-  ],
+  [{ tone: "keyword", text: "ENDCLASS" }, { tone: "default", text: "." }],
   [],
-  [
-    { tone: "comment", text: "-- CDS view: sales orders since cutoff" },
-  ],
+  [{ tone: "comment", text: "-- CDS view: sales orders since cutoff" }],
   [
     { tone: "keyword", text: "SELECT" },
     { tone: "default", text: " so_id, currency_code, total_amount" },
@@ -72,42 +64,20 @@ const LINES: Array<Array<{ tone: "comment" | "keyword" | "ident" | "string" | "d
     { tone: "default", text: "(lt_orders)." },
   ],
   [],
-  [
-    { tone: "comment", text: "# btp.yaml — side-by-side extension manifest" },
-  ],
-  [
-    { tone: "ident", text: "service" },
-    { tone: "default", text: ": xsuaa" },
-  ],
-  [
-    { tone: "ident", text: "plan" },
-    { tone: "default", text: ": application" },
-  ],
-  [
-    { tone: "ident", text: "parameters" },
-    { tone: "default", text: ":" },
-  ],
+  [{ tone: "comment", text: "# btp.yaml — side-by-side extension manifest" }],
+  [{ tone: "ident", text: "service" }, { tone: "default", text: ": xsuaa" }],
+  [{ tone: "ident", text: "plan" }, { tone: "default", text: ": application" }],
+  [{ tone: "ident", text: "parameters" }, { tone: "default", text: ":" }],
   [
     { tone: "default", text: "  " },
     { tone: "ident", text: "tenant-mode" },
     { tone: "default", text: ": shared" },
   ],
   [],
-  [
-    { tone: "comment", text: "** Work process tuning — production SAP Basis" },
-  ],
-  [
-    { tone: "keyword", text: "PARAMETERS" },
-    { tone: "default", text: " rdisp/wp_no_dia = 24" },
-  ],
-  [
-    { tone: "keyword", text: "PARAMETERS" },
-    { tone: "default", text: " rdisp/wp_no_btc = 12" },
-  ],
-  [
-    { tone: "keyword", text: "PARAMETERS" },
-    { tone: "default", text: " abap/heap_area_total = 8G" },
-  ],
+  [{ tone: "comment", text: "** Work process tuning — production SAP Basis" }],
+  [{ tone: "keyword", text: "PARAMETERS" }, { tone: "default", text: " rdisp/wp_no_dia = 24" }],
+  [{ tone: "keyword", text: "PARAMETERS" }, { tone: "default", text: " rdisp/wp_no_btc = 12" }],
+  [{ tone: "keyword", text: "PARAMETERS" }, { tone: "default", text: " abap/heap_area_total = 8G" }],
 ];
 
 const TONE_COLOR: Record<"comment" | "keyword" | "ident" | "string" | "default", string> = {
@@ -121,7 +91,6 @@ const TONE_COLOR: Record<"comment" | "keyword" | "ident" | "string" | "default",
 type Segment = { tone: keyof typeof TONE_COLOR; text: string };
 type TypedLine = { full: Segment[]; typedChars: number };
 
-// How many total chars so far → which segment + which char inside it
 function segmentsUpTo(full: Segment[], upto: number): Segment[] {
   const out: Segment[] = [];
   let remaining = upto;
@@ -142,15 +111,14 @@ function lineLen(segs: Segment[]) {
   return segs.reduce((n, s) => n + s.text.length, 0);
 }
 
-const VISIBLE = 14; // number of lines shown at once
-const TYPE_MS = 28; // per char
-const LINE_PAUSE = 420; // after a finished line
-const LOOP_PAUSE = 1800; // when we finish the script
+const VISIBLE = 13;
+const TYPE_MS = 30;
+const LINE_PAUSE = 420;
+const LOOP_PAUSE = 1800;
 
 export function CodeWatermark({ className = "" }: { className?: string }) {
   const [lines, setLines] = useState<TypedLine[]>([]);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -160,7 +128,6 @@ export function CodeWatermark({ className = "" }: { className?: string }) {
     return () => mq.removeEventListener?.("change", onChange);
   }, []);
 
-  // Static fallback
   useEffect(() => {
     if (!reducedMotion) return;
     setLines(
@@ -168,7 +135,6 @@ export function CodeWatermark({ className = "" }: { className?: string }) {
     );
   }, [reducedMotion]);
 
-  // Typing engine
   useEffect(() => {
     if (reducedMotion) return;
     let cancelled = false;
@@ -178,21 +144,17 @@ export function CodeWatermark({ className = "" }: { className?: string }) {
     const setSafe = (next: TypedLine[]) => {
       if (!cancelled) setLines(next);
     };
-
-    const sleep = (ms: number) =>
-      new Promise<void>((r) => setTimeout(r, ms));
+    const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
     async function run() {
       while (!cancelled) {
         const template = LINES[idx % LINES.length] ?? [];
         const total = lineLen(template);
 
-        // push empty line
         state = [...state, { full: template, typedChars: 0 }];
         if (state.length > VISIBLE) state = state.slice(-VISIBLE);
         setSafe(state);
 
-        // type char by char
         for (let c = 1; c <= total; c++) {
           if (cancelled) return;
           state = [
@@ -202,13 +164,11 @@ export function CodeWatermark({ className = "" }: { className?: string }) {
           setSafe(state);
           await sleep(TYPE_MS + Math.random() * 20);
         }
-
         await sleep(total === 0 ? 160 : LINE_PAUSE);
         idx++;
         if (idx % LINES.length === 0) await sleep(LOOP_PAUSE);
       }
     }
-
     run();
     return () => {
       cancelled = true;
@@ -216,60 +176,126 @@ export function CodeWatermark({ className = "" }: { className?: string }) {
   }, [reducedMotion]);
 
   const activeIdx = lines.length - 1;
+  const startLineNumber = 1 + Math.max(0, lines.length - VISIBLE);
 
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[min(52rem,62%)] overflow-hidden opacity-[0.55] md:block ${className}`}
-      style={{
-        maskImage:
-          "linear-gradient(to right, transparent 0%, black 18%, black 92%, transparent 100%)",
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent 0%, black 18%, black 92%, transparent 100%)",
-      }}
+      className={`pointer-events-none absolute bottom-12 right-8 z-0 hidden w-[min(38rem,44%)] select-none xl:block ${className}`}
     >
-      <div
-        ref={scrollRef}
-        className="h-full overflow-hidden px-10 py-14 font-mono text-[13px] leading-[1.8] md:text-[14px] md:leading-[1.85]"
-      >
-        {lines.map((ln, i) => {
-          const segs = segmentsUpTo(ln.full, ln.typedChars);
-          const isActive = i === activeIdx;
-          const isEmptyPlaceholder = ln.full.length === 0;
-          return (
-            <div key={i} className="whitespace-pre">
-              {segs.map((s, j) => (
-                <span key={j} style={{ color: TONE_COLOR[s.tone] }}>
-                  {s.text}
-                </span>
+      {/* HUD frame */}
+      <div className="relative border border-gold/35 bg-gradient-to-br from-ink/60 to-graphite/30 backdrop-blur-[1px]">
+        {/* Corner marks */}
+        <span className="absolute -left-px -top-px h-2 w-2 border-l border-t border-gold" />
+        <span className="absolute -right-px -top-px h-2 w-2 border-r border-t border-gold" />
+        <span className="absolute -bottom-px -left-px h-2 w-2 border-b border-l border-gold" />
+        <span className="absolute -bottom-px -right-px h-2 w-2 border-b border-r border-gold" />
+
+        {/* Label bar */}
+        <div className="flex items-center justify-between border-b border-white/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ash-light">
+          <span>session://sap/adt · zcl_migration_runner</span>
+          <span className="flex items-center gap-2">
+            <span
+              className="inline-block h-1.5 w-1.5 rounded-full bg-oxblood"
+              style={{ animation: reducedMotion ? undefined : "rec-pulse 1.6s ease-in-out infinite" }}
+            />
+            <span className="text-oxblood">REC</span>
+          </span>
+        </div>
+
+        {/* CRT horizontal scan lines texture */}
+        <div
+          className="pointer-events-none absolute inset-x-0 top-8 bottom-0 opacity-[0.08]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(to bottom, transparent 0, transparent 2px, #C8A24B 2px, #C8A24B 3px)",
+          }}
+        />
+
+        {/* Slow vertical scan line */}
+        {!reducedMotion && (
+          <div
+            className="pointer-events-none absolute inset-x-0 top-8 h-8"
+            style={{
+              background:
+                "linear-gradient(to bottom, transparent 0%, rgba(200,162,75,0.08) 50%, transparent 100%)",
+              animation: "scan-move 6s linear infinite",
+            }}
+          />
+        )}
+
+        {/* Code body with gutter */}
+        <div className="relative flex font-mono text-[12px] leading-[1.85]">
+          {/* Line number gutter */}
+          <div className="min-w-[2.4rem] select-none border-r border-white/8 bg-black/20 px-2 py-4 text-right text-[10px] text-ash/55">
+            {lines.map((_, i) => (
+              <div key={i}>
+                {String(startLineNumber + i).padStart(2, "0")}
+              </div>
+            ))}
+            {lines.length === 0 &&
+              Array.from({ length: VISIBLE }).map((_, i) => (
+                <div key={i} className="text-transparent">
+                  00
+                </div>
               ))}
-              {isActive && !reducedMotion && !isEmptyPlaceholder && (
-                <span
-                  className="inline-block align-[-1px]"
-                  style={{
-                    width: "0.55em",
-                    height: "1.05em",
-                    background: "#C8A24B",
-                    marginLeft: "1px",
-                    animation: "code-caret 1.05s steps(2) infinite",
-                  }}
-                />
-              )}
-              {isEmptyPlaceholder && "\u00A0"}
-            </div>
-          );
-        })}
+          </div>
+
+          {/* Code content */}
+          <div className="flex-1 overflow-hidden px-4 py-4 text-[12px]">
+            {lines.length === 0
+              ? Array.from({ length: VISIBLE }).map((_, i) => (
+                  <div key={i}>&nbsp;</div>
+                ))
+              : lines.map((ln, i) => {
+                  const segs = segmentsUpTo(ln.full, ln.typedChars);
+                  const isActive = i === activeIdx;
+                  const isEmpty = ln.full.length === 0;
+                  return (
+                    <div key={i} className="whitespace-pre">
+                      {segs.map((s, j) => (
+                        <span key={j} style={{ color: TONE_COLOR[s.tone] }}>
+                          {s.text}
+                        </span>
+                      ))}
+                      {isActive && !reducedMotion && !isEmpty && (
+                        <span
+                          className="inline-block align-[-1px]"
+                          style={{
+                            width: "0.55em",
+                            height: "1.05em",
+                            background: "#C8A24B",
+                            marginLeft: "1px",
+                            animation: "code-caret 1.05s steps(2) infinite",
+                          }}
+                        />
+                      )}
+                      {isEmpty && "\u00A0"}
+                    </div>
+                  );
+                })}
+          </div>
+        </div>
+
+        {/* Footer bar */}
+        <div className="flex items-center justify-between border-t border-white/10 px-4 py-1.5 font-mono text-[9.5px] uppercase tracking-[0.22em] text-ash-light/70">
+          <span>sap s/4hana · cloud tier 1</span>
+          <span>abap ▸ cds ▸ btp</span>
+        </div>
       </div>
+
       <style jsx>{`
         @keyframes code-caret {
-          0%,
-          49% {
-            opacity: 1;
-          }
-          50%,
-          100% {
-            opacity: 0;
-          }
+          0%, 49% { opacity: 1; }
+          50%, 100% { opacity: 0; }
+        }
+        @keyframes rec-pulse {
+          0%, 100% { opacity: 0.35; transform: scale(0.9); }
+          50% { opacity: 1; transform: scale(1.2); }
+        }
+        @keyframes scan-move {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(420px); }
         }
       `}</style>
     </div>
