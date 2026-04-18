@@ -38,9 +38,13 @@ export function Hero() {
           <ScrollReveal animation="fade-up" delay={100} duration={900}>
             <h1
               id="hero-heading"
-              className="display-heading max-w-[18ch] text-[44px] font-bold leading-[1.02] tracking-[-0.025em] text-bone sm:text-5xl md:text-[60px] lg:text-[68px]"
+              className="display-heading max-w-3xl text-[40px] font-bold leading-[1.05] tracking-[-0.02em] text-bone sm:text-5xl md:text-[56px] lg:text-[60px]"
             >
-              Votre SAP, sans approximations.
+              Architecte,{" "}
+              <em className="not-italic font-bold text-oxblood">
+                chef d&apos;orchestre
+              </em>{" "}
+              et gardien de vos projets <span className="text-gold">SAP</span>.
             </h1>
           </ScrollReveal>
 
