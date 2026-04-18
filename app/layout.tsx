@@ -1,24 +1,21 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-const fraunces = Fraunces({
+// IBM Plex Sans — humanist neutral sans, closest free approximation
+// to SAP's proprietary "72" typeface used across SAP Fiori / S/4HANA UIs.
+const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-  axes: ["opsz", "SOFT"],
-});
-
-const interTight = Inter_Tight({
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
+  weight: ["400", "500"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -30,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s · SIA Associates",
   },
   description:
-    "Cabinet de conseil SAP independant. Architecture, pilotage, exploitation et cloud SAP. 20+ ans d'experience, de Safran a VINCI Construction.",
+    "Cabinet de conseil SAP independant. Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'experience, de Safran a VINCI Construction.",
   keywords: [
     "SAP",
     "conseil SAP",
@@ -50,13 +47,13 @@ export const metadata: Metadata = {
     siteName: "SIA Associates",
     title: "SIA Associates — Conseil SAP Independant",
     description:
-      "Architecture, pilotage, exploitation et cloud SAP. 20+ ans d'experience au service des grands comptes francais.",
+      "Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'experience au service des grands comptes francais.",
   },
   twitter: {
     card: "summary_large_image",
     title: "SIA Associates — Conseil SAP Independant",
     description:
-      "Architecture, pilotage, exploitation et cloud SAP. 20+ ans d'experience.",
+      "Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'experience.",
   },
   robots: {
     index: true,
@@ -136,7 +133,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${fraunces.variable} ${interTight.variable} ${jetbrainsMono.variable}`}
+      className={`${plexSans.variable} ${plexMono.variable}`}
     >
       <head>
         <script

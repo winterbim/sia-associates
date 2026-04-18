@@ -9,12 +9,31 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["var(--font-display)", "Georgia", "serif"],
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
+        // Display uses the same humanist sans as body — SAP's own "72" typeface
+        // system does the same (no serif contrast). Weight & size carry hierarchy.
+        display: [
+          "var(--font-sans)",
+          "72",
+          "72override",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "sans-serif",
+        ],
+        sans: [
+          "var(--font-sans)",
+          "72",
+          "72override",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Helvetica Neue",
+          "sans-serif",
+        ],
+        mono: ["var(--font-mono)", "SFMono-Regular", "Menlo", "monospace"],
       },
       colors: {
-        ink: "#0A0E12",
+        ink: "#0F1318",
         bone: "#F4EFE6",
         gold: "#C8A24B",
         "gold-hover": "#B8923B",
@@ -36,6 +55,10 @@ const config: Config = {
         display: "-0.02em",
         "display-tight": "-0.03em",
         kicker: "0.2em",
+      },
+      borderRadius: {
+        xl: "12px",
+        "2xl": "16px",
       },
       animation: {
         marquee: "marquee 45s linear infinite",
@@ -78,6 +101,7 @@ const config: Config = {
       },
       transitionTimingFunction: {
         "out-expo": "cubic-bezier(0.22, 1, 0.36, 1)",
+        spring: "cubic-bezier(0.34, 1.56, 0.64, 1)",
       },
     },
   },
