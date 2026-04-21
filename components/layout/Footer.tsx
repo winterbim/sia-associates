@@ -56,19 +56,15 @@ export function Footer() {
               <li className="flex items-start gap-2 text-sm text-ash-light">
                 <Mail size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
                 <a
-                  href="mailto:contact@sia-associates.fr"
+                  href="mailto:siamanagement75@gmail.com"
                   className="transition-colors hover:text-bone"
                 >
-                  contact@sia-associates.fr
+                  siamanagement75@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-ash-light">
                 <MapPin size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
-                <span>
-                  11 avenue Maryse Bastié
-                  <br />
-                  91220 Brétigny-sur-Orge
-                </span>
+                <span>Paris &amp; International</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-ash-light">
                 <Linkedin size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />

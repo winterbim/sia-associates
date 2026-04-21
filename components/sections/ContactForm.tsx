@@ -170,7 +170,7 @@ export function ContactForm() {
           <AlertCircle size={18} strokeWidth={1.5} className="shrink-0 text-oxblood" />
           <p className="text-sm text-oxblood">
             Une erreur est survenue. Veuillez reessayer ou ecrire directement a
-            contact@sia-associates.fr.
+            siamanagement75@gmail.com.
           </p>
         </div>
       )}

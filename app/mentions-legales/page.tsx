@@ -34,8 +34,8 @@ export default function MentionsLegalesPage() {
                 Directeur de publication : Amine SILEMANE
                 <br />
                 Contact :{" "}
-                <a href="mailto:contact@sia-associates.fr" className="text-gold hover:text-gold-hover">
-                  contact@sia-associates.fr
+                <a href="mailto:siamanagement75@gmail.com" className="text-gold hover:text-gold-hover">
+                  siamanagement75@gmail.com
                 </a>
               </p>
             </section>
@@ -88,8 +88,8 @@ export default function MentionsLegalesPage() {
                 <strong className="text-ink">Vos droits :</strong> conformement au RGPD, vous disposez d&apos;un droit
                 d&apos;acces, de rectification, de suppression et de portabilite de
                 vos donnees. Pour exercer ces droits, ecrivez a{" "}
-                <a href="mailto:contact@sia-associates.fr" className="text-gold hover:text-gold-hover">
-                  contact@sia-associates.fr
+                <a href="mailto:siamanagement75@gmail.com" className="text-gold hover:text-gold-hover">
+                  siamanagement75@gmail.com
                 </a>
                 .
               </p>

@@ -35,8 +35,8 @@ const CASES = [
     sector: "Construction",
     title: "Consulting senior",
     description:
-      "SAP Senior BC Consultant au sein du groupe. Support a l'architecture applicative, optimisation du run, accompagnement des equipes internes. Mission en cours.",
-    tags: ["Senior BC", "Run Ops", "Architecture"],
+      "SAP Senior BC Consultant integre au groupe : referent technique sur le paysage SAP en production, support a l'architecture applicative, optimisation du run, cadrage des evolutions, accompagnement et montee en competence des equipes internes. Mission longue, toujours en cours.",
+    tags: ["Senior BC", "Run Ops", "Architecture", "Montee en competence"],
   },
 ] as const;
 
@@ -49,7 +49,7 @@ export default function ClientsPage() {
           <p className="kicker mb-4">Clients</p>
           <h1 className="display-heading max-w-3xl text-3xl text-bone md:text-5xl">
             Des grands comptes,{" "}
-            <em className="text-gold">des missions reelles</em>
+            <em className="not-italic text-oxblood">des missions reelles</em>
           </h1>
           <p className="mt-6 max-w-2xl text-base text-ash-light md:text-lg">
             Chaque logo represente des mois de collaboration, des systemes
@@ -140,13 +140,17 @@ export default function ClientsPage() {
       {/* Case studies */}
       <section className="bg-ink py-16 md:py-24" aria-labelledby="cases-heading">
         <div className="section-container">
-          <p className="kicker mb-4">Cas phares</p>
+          <p className="kicker mb-4">Cas phares · exemples concrets</p>
           <h2
             id="cases-heading"
-            className="display-heading mb-12 text-2xl text-bone md:text-4xl"
+            className="display-heading mb-4 text-2xl text-bone md:text-4xl"
           >
-            Trois secteurs, <em className="text-gold">trois missions</em>
+            Trois secteurs, <em className="not-italic text-oxblood">trois missions</em>
           </h2>
+          <p className="mb-12 max-w-xl text-sm leading-relaxed text-ash-light">
+            Trois contextes très différents, trois postures complémentaires —
+            pilote, architecte, consultant senior en mission longue.
+          </p>
 
           <div className="grid gap-8 md:grid-cols-3">
             {CASES.map((c) => (

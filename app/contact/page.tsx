@@ -17,7 +17,7 @@ export default function ContactPage() {
           <p className="kicker mb-4">Contact</p>
           <h1 className="display-heading max-w-3xl text-3xl text-bone md:text-5xl">
             Parlons de votre{" "}
-            <em className="text-gold">projet SAP</em>
+            <em className="not-italic text-oxblood">projet SAP</em>
           </h1>
           <p className="mt-6 max-w-2xl text-base text-ash-light md:text-lg">
             Premier echange d&apos;une heure offert. Cadrage initial, second avis,
@@ -47,19 +47,15 @@ export default function ContactPage() {
                   <li className="flex items-start gap-3 text-sm text-ash">
                     <Mail size={18} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
                     <a
-                      href="mailto:contact@sia-associates.fr"
+                      href="mailto:siamanagement75@gmail.com"
                       className="transition-colors hover:text-ink"
                     >
-                      contact@sia-associates.fr
+                      siamanagement75@gmail.com
                     </a>
                   </li>
                   <li className="flex items-start gap-3 text-sm text-ash">
                     <MapPin size={18} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
-                    <span>
-                      11 avenue Maryse Bastie
-                      <br />
-                      91220 Bretigny-sur-Orge
-                    </span>
+                    <span>Paris &amp; International</span>
                   </li>
                   <li className="flex items-start gap-3 text-sm text-ash">
                     <Clock size={18} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
@@ -68,14 +64,14 @@ export default function ContactPage() {
                 </ul>
               </div>
 
-              {/* ESN block */}
+              {/* Qui êtes-vous block */}
               <div className="rounded-lg border border-gold/20 bg-gold/5 p-6">
-                <p className="kicker mb-2">Vous etes une ESN ?</p>
+                <p className="kicker mb-2">Qui etes-vous ?</p>
                 <p className="text-sm leading-relaxed text-ash">
-                  Je collabore regulierement en sous-traitance avec des
-                  integrateurs et des ESN. Si vous cherchez un expert SAP BC /
-                  Basis senior pour renforcer une equipe projet, contactez-moi
-                  avec le contexte de la mission.
+                  Je collabore regulierement en sous-traitance avec des clients
+                  finaux, des integrateurs ou des ESN. Si vous cherchez un
+                  expert SAP pour renforcer ou creer de nouvelles equipes,
+                  contactez-moi avec le contexte et l&apos;enjeu de la mission.
                 </p>
               </div>
             </div>

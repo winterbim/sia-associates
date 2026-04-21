@@ -13,7 +13,7 @@ const PRINCIPLES = [
     num: "01",
     title: "La verite, toujours",
     description:
-      "Un projet mal engage vaut mieux reconnu tot qu'enterre sous six mois de comites. Je dis ce que je vois — meme quand c'est inconfortable.",
+      "Un projet mal engage vaut mieux reconnu tot qu'enterre sous six mois de comites. Je dis ce que je vois — meme quand c'est inconfortable — et je le dis clairement, a chaque etape.",
   },
   {
     num: "02",
@@ -25,13 +25,13 @@ const PRINCIPLES = [
     num: "03",
     title: "La rigueur du chiffrage",
     description:
-      "Un devis serre qui derape de 40% n'est pas un devis, c'est un piege. Je prefere un chiffrage honnete, meme plus eleve, qu'un engagement que je ne peux pas tenir.",
+      "Un devis serre qui derape de 40% n'est pas un devis, c'est un piege. Je m'engage sur un chiffrage honnete — meme plus eleve — que je respecte et que je livre. Pas d'effet de seuil en cours de route.",
   },
   {
     num: "04",
     title: "L'independance revendiquee",
     description:
-      "Aucun partenariat commercial ne m'engage a pousser telle ou telle solution. Le choix technique sert votre interet, pas des commissions.",
+      "Aucun partenariat commercial ne m'engage a pousser telle ou telle solution. Le choix technique sert votre interet, pas des commissions. Et cette independance tient dans le temps, mission apres mission.",
   },
 ] as const;
 
@@ -75,7 +75,7 @@ export default function ApprochePage() {
           <p className="kicker mb-4">Approche</p>
           <h1 className="display-heading max-w-3xl text-3xl text-bone md:text-5xl">
             Une methode,{" "}
-            <em className="text-gold">pas un discours commercial</em>
+            <em className="not-italic text-oxblood">pas un discours commercial</em>
           </h1>
           <p className="mt-6 max-w-2xl text-base text-ash-light md:text-lg">
             Quatre principes non negociables et un processus en quatre phases.
@@ -126,7 +126,7 @@ export default function ApprochePage() {
             id="phases-heading"
             className="display-heading mb-6 text-2xl text-bone md:text-4xl"
           >
-            Quatre phases, <em className="text-gold">zero surprise</em>
+            Quatre phases, <em className="not-italic text-oxblood">zero surprise</em>
           </h2>
           <p className="mb-12 max-w-xl text-ash-light">
             Chaque mission suit le meme deroulement. Vous savez ou vous en etes a
