@@ -4,7 +4,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Clients",
   description:
-    "De VINCI Construction a GRDF, en passant par Safran, RTE et ENGIE — decouvrez les grands comptes qui ont fait confiance a SIA Associates.",
+    "De VINCI Construction à GRDF, en passant par Safran, RTE et ENGIE — découvrez les grands comptes qui ont fait confiance à SIA Associates.",
 };
 
 const CLIENTS = [
@@ -18,10 +18,10 @@ const CLIENTS = [
 
 const CASES = [
   {
-    sector: "Energie",
+    sector: "Énergie",
     title: "Pilotage technique",
     description:
-      "Pilotage technique SAP sur paysage critique d'un operateur énergétique francais. Coordination migration, fiabilisation des interfaces, sécurisation des flux metiers. Zero incident majeur post-migration.",
+      "Pilotage technique SAP sur paysage critique d'un opérateur énergétique français. Coordination migration, fiabilisation des interfaces, sécurisation des flux métiers. Zéro incident majeur post-migration.",
     tags: ["Pilotage", "Basis", "Migration"],
   },
   {
@@ -35,8 +35,8 @@ const CASES = [
     sector: "Construction",
     title: "Consulting senior",
     description:
-      "SAP Senior BC Consultant intégré au groupe : referent technique sur le paysage SAP en production, support a l'architecture applicative, optimisation du run, cadrage des evolutions, accompagnement et montee en competence des équipes internes. Mission longue, toujours en cours.",
-    tags: ["Senior BC", "Run Ops", "Architecture", "Montee en competence"],
+      "SAP Senior BC Consultant intégré au groupe : référent technique sur le paysage SAP en production, support à l'architecture applicative, optimisation du run, cadrage des évolutions, accompagnement et montée en compétence des équipes internes. Mission longue, toujours en cours.",
+    tags: ["Senior BC", "Run Ops", "Architecture", "Montée en compétence"],
   },
 ] as const;
 
@@ -49,11 +49,11 @@ export default function ClientsPage() {
           <p className="kicker mb-4">Clients</p>
           <h1 className="display-heading max-w-3xl text-3xl text-bone md:text-5xl">
             Des grands comptes,{" "}
-            <em className="not-italic text-oxblood">des missions reelles</em>
+            <em className="not-italic text-oxblood">des missions réelles</em>
           </h1>
           <p className="mt-6 max-w-2xl text-base text-ash-light md:text-lg">
-            Chaque logo represente des mois de collaboration, des systèmes
-            sécurisés, des équipes accompagnees.
+            Chaque logo représente des mois de collaboration, des systèmes
+            sécurisés, des équipes accompagnées.
           </p>
         </div>
       </section>

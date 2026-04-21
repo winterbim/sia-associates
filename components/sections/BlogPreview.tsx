@@ -84,7 +84,7 @@ export async function BlogPreview() {
                   <p className="mt-3 text-sm font-medium leading-snug text-ink">
                     {topic.topic}
                   </p>
-                  <p className="mt-2 text-xs text-ash">A venir</p>
+                  <p className="mt-2 text-xs text-ash">À venir</p>
                 </div>
               </ScrollReveal>
             ))}

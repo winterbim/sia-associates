@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Approche",
   description:
-    "Méthodologie, principes et phases de mission. Transparence, transfert de competences, rigueur du chiffrage et indépendance.",
+    "Méthodologie, principes et phases de mission. Transparence, transfert de compétences, rigueur du chiffrage et indépendance.",
 };
 
 const PRINCIPLES = [
@@ -13,25 +13,25 @@ const PRINCIPLES = [
     num: "01",
     title: "La vérité, toujours",
     description:
-      "Un projet mal engage vaut mieux reconnu tot qu'enterre sous six mois de comites. Je dis ce que je vois — même quand c'est inconfortable — et je le dis clairement, a chaque etape.",
+      "Un projet mal engagé vaut mieux reconnu tôt qu'enterré sous six mois de comités. Je dis ce que je vois — même quand c'est inconfortable — et je le dis clairement, à chaque étape.",
   },
   {
     num: "02",
-    title: "Le transfert de competences",
+    title: "Le transfert de compétences",
     description:
-      "Je ne construis pas votre dépendance a moi. Chaque mission inclut de la documentation, de la formation, et une trajectoire vers l'autonomie de vos équipes.",
+      "Je ne construis pas votre dépendance à moi. Chaque mission inclut de la documentation, de la formation, et une trajectoire vers l'autonomie de vos équipes.",
   },
   {
     num: "03",
     title: "La rigueur du chiffrage",
     description:
-      "Un devis serre qui derape de 40% n'est pas un devis, c'est un piege. Je m'engage sur un chiffrage honnete — même plus élevé — que je respecte et que je livre. Pas d'effet de seuil en cours de route.",
+      "Un devis serré qui dérape de 40% n'est pas un devis, c'est un piège. Je m'engage sur un chiffrage honnête — même plus élevé — que je respecte et que je livre. Pas d'effet de seuil en cours de route.",
   },
   {
     num: "04",
-    title: "L'indépendance revendiquee",
+    title: "L'indépendance revendiquée",
     description:
-      "Aucun partenariat commercial ne m'engage a pousser telle ou telle solution. Le choix technique sert votre interet, pas des commissions. Et cette indépendance tient dans le temps, mission après mission.",
+      "Aucun partenariat commercial ne m'engage à pousser telle ou telle solution. Le choix technique sert votre intérêt, pas des commissions. Et cette indépendance tient dans le temps, mission après mission.",
   },
 ] as const;
 
@@ -41,28 +41,28 @@ const PHASES = [
     title: "Premier échange",
     duration: "1 h · offert",
     description:
-      "Comprendre votre contexte, votre besoin, vos contraintes. Objectif : determiner si je suis la bonne personne pour votre sujet.",
+      "Comprendre votre contexte, votre besoin, vos contraintes. Objectif : déterminer si je suis la bonne personne pour votre sujet.",
   },
   {
     num: "02",
     title: "Cadrage",
     duration: "2–5 jours",
     description:
-      "Livrable écrit, chiffrage ferme. Vous ressortez avec une proposition structuree, lisible, defendable en comite.",
+      "Livrable écrit, chiffrage ferme. Vous ressortez avec une proposition structurée, lisible, défendable en comité.",
   },
   {
     num: "03",
-    title: "Execution",
-    duration: "Selon perimetre",
+    title: "Exécution",
+    duration: "Selon périmètre",
     description:
-      "Points hebdomadaires, reporting mensuel, escalade immediate en cas de difficulte. Aucune surprise en cours de route.",
+      "Points hebdomadaires, reporting mensuel, escalade immédiate en cas de difficulté. Aucune surprise en cours de route.",
   },
   {
     num: "04",
-    title: "Cloture & passation",
+    title: "Clôture & passation",
     duration: "1–2 semaines",
     description:
-      "Documentation complete, transfert aux équipes internes, bilan de mission. Je ne pars pas avant que vous soyez autonome.",
+      "Documentation complète, transfert aux équipes internes, bilan de mission. Je ne pars pas avant que vous soyez autonome.",
   },
 ] as const;
 
@@ -79,7 +79,7 @@ export default function ApprochePage() {
           </h1>
           <p className="mt-6 max-w-2xl text-base text-ash-light md:text-lg">
             Quatre principes non négociables et un processus en quatre phases.
-            Transparence totale sur la facon dont je travaille.
+            Transparence totale sur la façon dont je travaille.
           </p>
         </div>
       </section>
@@ -126,10 +126,10 @@ export default function ApprochePage() {
             id="phases-heading"
             className="display-heading mb-6 text-2xl text-bone md:text-4xl"
           >
-            Quatre phases, <em className="not-italic text-oxblood">zero surprise</em>
+            Quatre phases, <em className="not-italic text-oxblood">zéro surprise</em>
           </h2>
           <p className="mb-12 max-w-xl text-ash-light">
-            Chaque mission suit le même deroulement. Vous savez ou vous en êtes a
+            Chaque mission suit le même déroulement. Vous savez où vous en êtes à
             chaque instant.
           </p>
 

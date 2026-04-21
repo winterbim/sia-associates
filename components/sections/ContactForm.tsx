@@ -54,7 +54,7 @@ export function ContactForm() {
       <div className="rounded-lg border border-gold/30 bg-gold/5 p-8 text-center">
         <CheckCircle2 size={32} strokeWidth={1.5} className="mx-auto mb-4 text-gold" />
         <h3 className="font-display text-xl font-medium text-ink">
-          Message envoye
+          Message envoyé
         </h3>
         <p className="mt-2 text-sm text-ash">
           Merci pour votre message. Je reviens vers vous sous 48 heures.
@@ -122,7 +122,7 @@ export function ContactForm() {
             {...register("subject")}
           >
             <option value="" disabled>
-              Selectionnez un sujet
+              Sélectionnez un sujet
             </option>
             {SUBJECTS.map((s) => (
               <option key={s.value} value={s.value}>
@@ -150,8 +150,8 @@ export function ContactForm() {
             {...register("consent")}
           />
           <span className="text-sm text-ash">
-            J&apos;accepte que mes données soient traitees pour répondre a ma demande,
-            conformement a la{" "}
+            J&apos;accepte que mes données soient traitées pour répondre à ma demande,
+            conformément à la{" "}
             <a href="/mentions-legales" className="text-gold underline">
               politique de confidentialité
             </a>
@@ -169,7 +169,7 @@ export function ContactForm() {
         <div className="flex items-center gap-2 rounded-lg border border-oxblood/30 bg-oxblood/5 p-4">
           <AlertCircle size={18} strokeWidth={1.5} className="shrink-0 text-oxblood" />
           <p className="text-sm text-oxblood">
-            Une erreur est survenue. Veuillez reessayer ou écrire directement a
+            Une erreur est survenue. Veuillez réessayer ou écrire directement à
             siamanagement75@gmail.com.
           </p>
         </div>

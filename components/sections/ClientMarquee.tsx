@@ -17,7 +17,7 @@ export function ClientMarquee() {
   return (
     <section
       className="border-y border-hairline bg-bone py-16"
-      aria-label="Clients de reference"
+      aria-label="Clients de référence"
     >
       <div className="section-container">
         <div className="mb-10 flex flex-col items-start gap-2 md:flex-row md:items-end md:justify-between">
@@ -29,7 +29,7 @@ export function ClientMarquee() {
             </p>
           </div>
           <p className="font-mono text-[11px] uppercase tracking-kicker text-ash">
-            6 references publiques · 2007 → 2026
+            6 références publiques · 2007 → 2026
           </p>
         </div>
 

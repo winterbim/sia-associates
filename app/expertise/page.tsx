@@ -14,7 +14,7 @@ const PILLARS = [
     num: "01",
     icon: Compass,
     title: "Architecture SAP",
-    lead: "Concevoir un paysage SAP qui tient dans le temps — choix technologiques, intégration, Clean Core, stratégie cloud. Pas de dette technique cachee, pas de surprise en production.",
+    lead: "Concevoir un paysage SAP qui tient dans le temps — choix technologiques, intégration, Clean Core, stratégie cloud. Pas de dette technique cachée, pas de surprise en production.",
     tags: ["SAP Basis", "S/4HANA", "BTP", "Clean Core", "Intégration"],
     details: [
       "Audit d'architecture existante et recommandations",
@@ -29,7 +29,7 @@ const PILLARS = [
     num: "02",
     icon: Route,
     title: "Pilotage de projet SAP",
-    lead: "Du cadrage au Go-Live. Gouvernance, conduite du changement, coordination d'équipes on-shore / near-shore / off-shore. Méthodologie SAP Activate eprouvee sur des projets Safran, GRDF et RTE.",
+    lead: "Du cadrage au Go-Live. Gouvernance, conduite du changement, coordination d'équipes on-shore / near-shore / off-shore. Méthodologie SAP Activate éprouvée sur des projets Safran, GRDF et RTE.",
     tags: ["SAP Activate", "PMO", "Change", "Gouvernance"],
     details: [
       "Cadrage de projet et chiffrage ferme",
@@ -44,11 +44,11 @@ const PILLARS = [
     num: "03",
     icon: Wrench,
     title: "Exploitation applicative",
-    lead: "Maintenance corrective et evolutive (TMA), support N2/N3, run ops optimisé. Parce qu'un projet ne s'arrete pas a la mise en production.",
+    lead: "Maintenance corrective et évolutive (TMA), support N2/N3, run ops optimisé. Parce qu'un projet ne s'arrête pas à la mise en production.",
     tags: ["TMA", "N2/N3", "Run Ops", "Monitoring"],
     details: [
-      "Support Basis N2/N3 et resolution d'incidents",
-      "Maintenance corrective et evolutive (TMA)",
+      "Support Basis N2/N3 et résolution d'incidents",
+      "Maintenance corrective et évolutive (TMA)",
       "Optimisation des performances système",
       "Gestion des transports et des releases",
       "Monitoring et alerting proactif",
@@ -59,14 +59,14 @@ const PILLARS = [
     num: "04",
     icon: Cloud,
     title: "Cloud SAP",
-    lead: "RISE with SAP, Grow with SAP, Azure, AWS, OVHcloud souverain. Choisir la bonne infrastructure selon vos contraintes de souveraineté et budgetaires.",
+    lead: "RISE with SAP, Grow with SAP, Azure, AWS, OVHcloud souverain. Choisir la bonne infrastructure selon vos contraintes de souveraineté et budgétaires.",
     tags: ["RISE", "Azure", "AWS", "OVHcloud"],
     details: [
       "Audit cloud-readiness du paysage existant",
       "Comparatif RISE / Grow / IaaS souverain",
-      "Migration vers le cloud (planning, execution, validation)",
+      "Migration vers le cloud (planning, exécution, validation)",
       "Optimisation des coûts cloud",
-      "Conformite et souveraineté des données",
+      "Conformité et souveraineté des données",
     ],
   },
   {
@@ -74,14 +74,14 @@ const PILLARS = [
     num: "05",
     icon: ShieldCheck,
     title: "Cybersécurité SAP",
-    lead: "Dans l'écosystème SAP, la cybersécurité consiste a protéger les données, les accès et les processus critiques de l'entreprise contre toute menace, en garantissant intégrité, confidentialité et conformité. Cela prévaut a tous les domaines de l'entreprise. Un enjeu global en termes de sécurité et surtout de Business.",
+    lead: "Dans l'écosystème SAP, la cybersécurité consiste à protéger les données, les accès et les processus critiques de l'entreprise contre toute menace, en garantissant intégrité, confidentialité et conformité. Cela prévaut à tous les domaines de l'entreprise. Un enjeu global en termes de sécurité et surtout de Business.",
     tags: ["SSO", "IAM", "Security Notes", "RGPD", "Audit"],
     details: [
       "Sécurisation des accès et authentification — SSO (Azure AD, IAS), MFA, Identity Providers (IAS, AD, S/4, BTP)",
       "Sécurisation des paysages SAP — analyse de surface d'attaque, Security Notes, patching, durcissement",
       "Sécurisation des interfaces — OData, RFC, API, Cloud Connectors",
       "Audit de sécurité SAP — S/4, ECC, BTP, HANA",
-      "Verification conformité RGPD / ISO / audit interne, recommandations et plan d'action priorises",
+      "Vérification conformité RGPD / ISO / audit interne, recommandations et plan d'action priorisés",
     ],
   },
 ] as const;
@@ -98,7 +98,7 @@ export default function ExpertisePage() {
             <em className="not-italic text-oxblood">l&apos;ensemble du cycle</em> SAP
           </h1>
           <p className="mt-6 max-w-2xl text-base text-ash-light md:text-lg">
-            De la conception a l&apos;exploitation quotidienne, en passant par le
+            De la conception à l&apos;exploitation quotidienne, en passant par le
             pilotage de projet, la stratégie cloud et la cybersécurité.
           </p>
         </div>
@@ -157,7 +157,7 @@ export default function ExpertisePage() {
                 </div>
 
                 <div className="rounded-lg border border-hairline bg-bone p-6 md:p-8">
-                  <p className="kicker mb-4">Ce que je delivre</p>
+                  <p className="kicker mb-4">Ce que je délivre</p>
                   <ul className="space-y-3">
                     {pillar.details.map((detail) => (
                       <li

@@ -3,10 +3,10 @@ import { SankeyWorkflow } from "@/components/SankeyWorkflow";
 
 const CASES = [
   {
-    sector: "Energie",
+    sector: "Énergie",
     title: "Pilotage technique",
     description:
-      "Pilotage technique SAP sur paysage critique d'un operateur énergétique francais. Coordination migration, fiabilisation des interfaces, sécurisation des flux metiers. Zero incident majeur post-migration.",
+      "Pilotage technique SAP sur paysage critique d'un opérateur énergétique français. Coordination migration, fiabilisation des interfaces, sécurisation des flux métiers. Zéro incident majeur post-migration.",
     tags: ["Pilotage", "Basis", "Migration"],
   },
   {
@@ -20,13 +20,13 @@ const CASES = [
     sector: "Construction",
     title: "Consulting senior",
     description:
-      "SAP Senior BC Consultant au sein du groupe. Support a l'architecture applicative, optimisation du run, accompagnement des équipes internes. Mission en cours.",
+      "SAP Senior BC Consultant au sein du groupe. Support à l'architecture applicative, optimisation du run, accompagnement des équipes internes. Mission en cours.",
     tags: ["Senior BC", "Run Ops", "Architecture"],
   },
 ] as const;
 
 const TIMELINE_NODES = [
-  { id: "energy", label: "ENERGIE", x: 30, y: 20, width: 120, height: 30, color: "#1a1f27" },
+  { id: "energy", label: "ÉNERGIE", x: 30, y: 20, width: 120, height: 30, color: "#1a1f27" },
   { id: "industry", label: "INDUSTRIE", x: 220, y: 20, width: 120, height: 30, color: "#1a1f27" },
   { id: "construction", label: "CONSTRUCTION", x: 410, y: 20, width: 140, height: 30, color: "#1a1f27" },
 ];
@@ -44,12 +44,12 @@ export function Cases() {
     >
       <div className="section-container">
         <ScrollReveal animation="fade-up">
-          <p className="kicker mb-4">Realisations</p>
+          <p className="kicker mb-4">Réalisations</p>
           <h2
             id="cases-heading"
             className="display-heading mb-12 text-2xl text-bone md:text-4xl"
           >
-            Des missions, <em className="text-oxblood">des resultats</em>
+            Des missions, <em className="text-oxblood">des résultats</em>
           </h2>
         </ScrollReveal>
 

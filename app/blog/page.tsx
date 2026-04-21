@@ -100,11 +100,11 @@ export default async function BlogPage() {
               <div className="mb-12 rounded-lg border border-gold/20 bg-gold/5 p-8 text-center">
                 <Tag size={32} strokeWidth={1.5} className="mx-auto mb-4 text-gold" />
                 <h2 className="font-display text-xl font-medium text-ink">
-                  Le blog arrive bientot
+                  Le blog arrive bientôt
                 </h2>
                 <p className="mt-2 text-sm text-ash">
-                  Les articles sont generes automatiquement chaque semaine.
-                  Voici les sujets a venir.
+                  Les articles sont générés automatiquement chaque semaine.
+                  Voici les sujets à venir.
                 </p>
               </div>
 

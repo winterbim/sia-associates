@@ -42,7 +42,7 @@ export function Keywords() {
 
       <div className="section-container relative">
         <ScrollReveal animation="fade-up">
-          <p className="kicker mb-4">Competences</p>
+          <p className="kicker mb-4">Compétences</p>
           <h2
             id="keywords-heading"
             className="display-heading mb-12 text-2xl text-bone md:text-4xl"
@@ -54,7 +54,7 @@ export function Keywords() {
         {/* Keyword cloud with staggered reveals */}
         <div
           className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 md:gap-x-8 md:gap-y-5"
-          aria-label="Nuage de competences SAP"
+          aria-label="Nuage de compétences SAP"
         >
           {KEYWORDS.xl.map((kw, i) => (
             <ScrollReveal key={kw} animation="blur" delay={i * 80}>
@@ -88,8 +88,8 @@ export function Keywords() {
 
         <ScrollReveal animation="fade-up" delay={1500}>
           <p className="mx-auto mt-12 max-w-2xl text-center text-sm leading-relaxed text-ash-light md:text-base">
-            Au-dela des mots-clés : une comprehension transverse des corps de
-            metier SAP. Finance, logistique, achats, production, RH, BI — chacun a
+            Au-delà des mots-clés : une compréhension transverse des corps de
+            métier SAP. Finance, logistique, achats, production, RH, BI — chacun a
             ses règles, ses contraintes, ses non-dits. Je parle la langue de
             chacun.
           </p>

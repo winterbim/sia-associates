@@ -29,7 +29,7 @@ const PILLARS = [
     href: "/expertise#exploitation",
     icon: Wrench,
     description:
-      "Maintenance corrective et evolutive (TMA), support N2/N3, run ops optimisé. Un projet ne s'arrete pas a la mise en production.",
+      "Maintenance corrective et évolutive (TMA), support N2/N3, run ops optimisé. Un projet ne s'arrête pas à la mise en production.",
     tags: ["TMA", "N2/N3", "Run Ops", "Monitoring"],
   },
   {
@@ -38,7 +38,7 @@ const PILLARS = [
     href: "/expertise#cloud",
     icon: Cloud,
     description:
-      "RISE with SAP, Grow with SAP, Azure, AWS, OVHcloud souverain. Choisir la bonne infrastructure selon vos contraintes de souveraineté et budgetaires.",
+      "RISE with SAP, Grow with SAP, Azure, AWS, OVHcloud souverain. Choisir la bonne infrastructure selon vos contraintes de souveraineté et budgétaires.",
     tags: ["RISE", "Azure", "AWS", "OVHcloud"],
   },
   {
@@ -47,7 +47,7 @@ const PILLARS = [
     href: "/expertise#cybersecurite",
     icon: ShieldCheck,
     description:
-      "Proteger les données, les accès et les processus critiques de l'entreprise contre toute menace. Integrite, confidentialité, conformité — un enjeu global.",
+      "Protéger les données, les accès et les processus critiques de l'entreprise contre toute menace. Intégrité, confidentialité, conformité — un enjeu global.",
     tags: ["SSO", "IAM", "Security Notes", "RGPD"],
   },
 ] as const;
@@ -65,7 +65,7 @@ export function Pillars() {
             Quatre piliers, <em>un seul objectif</em>
           </h2>
           <p className="mb-12 max-w-xl text-ash">
-            Couvrir l&apos;ensemble du cycle de vie SAP — de la conception a
+            Couvrir l&apos;ensemble du cycle de vie SAP — de la conception à
             l&apos;exploitation quotidienne.
           </p>
         </ScrollReveal>

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s · SIA Associates",
   },
   description:
-    "Cabinet de conseil SAP indépendant. Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'expérience, de Safran a VINCI Construction.",
+    "Cabinet de conseil SAP indépendant. Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'expérience, de Safran à VINCI Construction.",
   keywords: [
     "SAP",
     "conseil SAP",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "SIA Associates",
     title: "SIA Associates — Conseil SAP Indépendant",
     description:
-      "Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'expérience au service des grands comptes francais.",
+      "Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'expérience au service des grands comptes français.",
   },
   twitter: {
     card: "summary_large_image",
@@ -81,7 +81,7 @@ const jsonLd = {
         "Cabinet de conseil SAP indépendant — architecture, pilotage, exploitation et cloud.",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "11 avenue Maryse Bastie",
+        streetAddress: "11 avenue Maryse Bastié",
         addressLocality: "Brétigny-sur-Orge",
         postalCode: "91220",
         addressCountry: "FR",
@@ -118,7 +118,7 @@ const jsonLd = {
       },
       alumniOf: {
         "@type": "CollegeOrUniversity",
-        name: "Universite d'Evry",
+        name: "Université d'Évry",
       },
       knowsAbout: [
         "SAP Basis",

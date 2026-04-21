@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     const ip = forwarded?.split(",")[0]?.trim() ?? "unknown";
     if (isRateLimited(ip)) {
       return NextResponse.json(
-        { error: "Trop de messages. Reessayez dans une heure." },
+        { error: "Trop de messages. Réessayez dans une heure." },
         { status: 429 }
       );
     }
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 
     if (!result.success) {
       return NextResponse.json(
-        { error: "Donnees invalides", détails: result.error.flatten() },
+        { error: "Données invalides", détails: result.error.flatten() },
         { status: 400 }
       );
     }

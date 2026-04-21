@@ -8,14 +8,14 @@ const DIFFS = [
     title: "La vue transverse",
     icon: Layers,
     description:
-      "Finance, logistique, achats, production, RH, BI — je parle le langage de chaque corps de metier SAP. Un architecte qui ne comprend qu'un seul module n'est pas un architecte.",
+      "Finance, logistique, achats, production, RH, BI — je parle le langage de chaque corps de métier SAP. Un architecte qui ne comprend qu'un seul module n'est pas un architecte.",
   },
   {
     num: "02",
     title: "L'expérience multi-clients",
     icon: Globe,
     description:
-      "Energie (GRDF, RTE, ENGIE), industrie (Safran, VINCI Construction), intégration (Applium) — chaque secteur a ses contraintes. Je les ai vues, je les ai traitees.",
+      "Énergie (GRDF, RTE, ENGIE), industrie (Safran, VINCI Construction), intégration (Applium) — chaque secteur a ses contraintes. Je les ai vues, je les ai traitées.",
   },
   {
     num: "03",
@@ -34,7 +34,7 @@ export function Differentiators() {
     >
       <div className="section-container">
         <ScrollReveal animation="fade-up">
-          <p className="kicker mb-4">Differenciation</p>
+          <p className="kicker mb-4">Différenciation</p>
           <h2
             id="diff-heading"
             className="display-heading mb-12 text-2xl md:text-4xl"

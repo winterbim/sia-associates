@@ -25,12 +25,12 @@ const INTENTS = [
   },
   {
     num: "05",
-    text: "Un second regard sur un projet en difficulte",
+    text: "Un second regard sur un projet en difficulté",
     href: "/approche#audit",
   },
   {
     num: "06",
-    text: "Un renfort ponctuel d'expertise sur un sujet precis",
+    text: "Un renfort ponctuel d'expertise sur un sujet précis",
     href: "/contact",
   },
 ] as const;

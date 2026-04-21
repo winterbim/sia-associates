@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mentions legales",
-  description: "Mentions legales et politique de confidentialité de SIA Associates.",
+  title: "Mentions légales",
+  description: "Mentions légales et politique de confidentialité de SIA Associates.",
   robots: { index: false, follow: false },
 };
 
@@ -12,24 +12,24 @@ export default function MentionsLegalesPage() {
       <section className="bg-bone py-16 md:py-24">
         <div className="section-container max-w-3xl">
           <h1 className="display-heading mb-12 text-3xl md:text-4xl">
-            Mentions legales
+            Mentions légales
           </h1>
 
           <div className="prose-sm space-y-10 text-ash [&_h2]:font-display [&_h2]:text-xl [&_h2]:font-medium [&_h2]:text-ink [&_h2]:mb-4 [&_p]:leading-relaxed [&_p]:mb-3">
             <section>
-              <h2>Editeur du site</h2>
+              <h2>Éditeur du site</h2>
               <p>
-                <strong className="text-ink">SIA ASSOCIATES</strong> · Societe par Actions Simplifiee (SAS)
+                <strong className="text-ink">SIA ASSOCIATES</strong> · Société par Actions Simplifiée (SAS)
               </p>
               <p>
-                Siège social : 11 avenue Maryse Bastie, 91220 Brétigny-sur-Orge
+                Siège social : 11 avenue Maryse Bastié, 91220 Brétigny-sur-Orge
                 <br />
                 SIREN : 930 478 151
                 <br />
                 SIRET : 930 478 151 00010
               </p>
               <p>
-                President : Amine SILEMANE
+                Président : Amine SILEMANE
                 <br />
                 Directeur de publication : Amine SILEMANE
                 <br />
@@ -41,7 +41,7 @@ export default function MentionsLegalesPage() {
             </section>
 
             <section>
-              <h2>Hebergement</h2>
+              <h2>Hébergement</h2>
               <p>
                 Vercel Inc.
                 <br />
@@ -52,42 +52,42 @@ export default function MentionsLegalesPage() {
             </section>
 
             <section>
-              <h2>Propriete intellectuelle</h2>
+              <h2>Propriété intellectuelle</h2>
               <p>
                 L&apos;ensemble du contenu de ce site (textes, images, structure)
-                est la propriete exclusive de SIA ASSOCIATES, sauf mention
+                est la propriété exclusive de SIA ASSOCIATES, sauf mention
                 contraire. Toute reproduction, même partielle, est interdite sans
-                autorisation ecrite préalable.
+                autorisation écrite préalable.
               </p>
             </section>
 
             <section>
               <h2>Politique de confidentialité</h2>
               <p>
-                <strong className="text-ink">Donnees collectees :</strong> nom, email, entreprise, sujet et message via le
-                formulaire de contact. Ces données sont traitees uniquement pour
-                répondre a votre demande.
+                <strong className="text-ink">Données collectées :</strong> nom, email, entreprise, sujet et message via le
+                formulaire de contact. Ces données sont traitées uniquement pour
+                répondre à votre demande.
               </p>
               <p>
-                <strong className="text-ink">Base legale :</strong> consentement explicite (case a cocher du formulaire).
+                <strong className="text-ink">Base légale :</strong> consentement explicite (case à cocher du formulaire).
               </p>
               <p>
-                <strong className="text-ink">Duree de conservation :</strong> 12 mois après le dernier échange, puis
+                <strong className="text-ink">Durée de conservation :</strong> 12 mois après le dernier échange, puis
                 suppression.
               </p>
               <p>
                 <strong className="text-ink">Sous-traitant technique :</strong> Resend (envoi d&apos;emails). Aucune
-                donnee n&apos;est transmise a des tiers a des fins commerciales.
+                donnée n&apos;est transmise à des tiers à des fins commerciales.
               </p>
               <p>
                 <strong className="text-ink">Cookies :</strong> ce site n&apos;utilise aucun cookie tiers. Les seuls cookies
-                eventuels sont techniques (session, preferences) et strictement
+                éventuels sont techniques (session, préférences) et strictement
                 nécessaires.
               </p>
               <p>
-                <strong className="text-ink">Vos droits :</strong> conformement au RGPD, vous disposez d&apos;un droit
-                d&apos;accès, de rectification, de suppression et de portabilite de
-                vos données. Pour exercer ces droits, écrivez a{" "}
+                <strong className="text-ink">Vos droits :</strong> conformément au RGPD, vous disposez d&apos;un droit
+                d&apos;accès, de rectification, de suppression et de portabilité de
+                vos données. Pour exercer ces droits, écrivez à{" "}
                 <a href="mailto:siamanagement75@gmail.com" className="text-gold hover:text-gold-hover">
                   siamanagement75@gmail.com
                 </a>
@@ -96,9 +96,9 @@ export default function MentionsLegalesPage() {
             </section>
 
             <section>
-              <h2>Credits</h2>
+              <h2>Crédits</h2>
               <p>
-                Site concu et développé avec Next.js. Typographies : Fraunces,
+                Site conçu et développé avec Next.js. Typographies : Fraunces,
                 Inter Tight, JetBrains Mono (Google Fonts, licences libres).
               </p>
             </section>
