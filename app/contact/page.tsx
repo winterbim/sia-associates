@@ -41,7 +41,7 @@ export default function ContactPage() {
             <div className="space-y-8">
               <div className="rounded-lg border border-hairline bg-bone p-6">
                 <h3 className="font-display text-lg font-medium text-ink">
-                  Coordonnees
+                  Coordonnées
                 </h3>
                 <ul className="mt-4 space-y-4">
                   <li className="flex items-start gap-3 text-sm text-ash">
@@ -59,7 +59,7 @@ export default function ContactPage() {
                   </li>
                   <li className="flex items-start gap-3 text-sm text-ash">
                     <Clock size={18} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
-                    <span>Réponse sous 48 h ouvrables</span>
+                    <span>Réponse sous 72 h ouvrables</span>
                   </li>
                 </ul>
               </div>
@@ -68,9 +68,9 @@ export default function ContactPage() {
               <div className="rounded-lg border border-gold/20 bg-gold/5 p-6">
                 <p className="kicker mb-2">Qui êtes-vous ?</p>
                 <p className="text-sm leading-relaxed text-ash">
-                  Je collabore regulierement en sous-traitance avec des clients
+                  Je collabore régulièrement en sous-traitance avec des clients
                   finaux, des intégrateurs ou des ESN. Si vous cherchez un
-                  expert SAP pour renforcer ou creer de nouvelles équipes,
+                  expert SAP pour renforcer ou créer de nouvelles équipes,
                   contactez-moi avec le contexte et l&apos;enjeu de la mission.
                 </p>
               </div>

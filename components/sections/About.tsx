@@ -96,6 +96,16 @@ export function About() {
               </blockquote>
             </ScrollReveal>
 
+            <ScrollReveal animation="fade-up" delay={400}>
+              <p className="mt-6 max-w-2xl text-[15px] leading-[1.7] text-graphite md:text-base">
+                Je reste convaincu que la réussite passe par de bonnes
+                relations humaines. Chaque interaction, chaque collaboration
+                peut être bénéfique et enrichissante pour toutes les
+                parties — en partageant la même vision et la même méthode
+                de travail.
+              </p>
+            </ScrollReveal>
+
             {/* Editorial scene strip — warmth, human, no glow.
                 TODO: replace with real photos. */}
             <ScrollReveal animation="fade-up" delay={400}>

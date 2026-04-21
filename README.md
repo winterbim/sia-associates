@@ -1,6 +1,6 @@
 # SIA Associates — Site vitrine
 
-Site vitrine de **SIA ASSOCIATES**, cabinet de conseil SAP independant fonde par Amine Silemane.
+Site vitrine de **SIA ASSOCIATES**, cabinet de conseil SAP indépendant fondé par Amine Silemane.
 
 ## Stack
 
@@ -9,7 +9,7 @@ Site vitrine de **SIA ASSOCIATES**, cabinet de conseil SAP independant fonde par
 - **Resend** pour le formulaire de contact
 - Deploiement **Vercel**
 
-## Developpement local
+## Développement local
 
 ```bash
 npm install
@@ -22,16 +22,16 @@ Le formulaire de contact fonctionne sans RESEND_API_KEY (log en console).
 ## Commandes
 
 ```bash
-npm run dev        # Serveur de developpement
+npm run dev        # Serveur de développement
 npm run build      # Build production
 npm run start      # Serveur production
 npm run lint       # ESLint
-npm run typecheck  # Verification TypeScript
+npm run typecheck  # Vérification TypeScript
 ```
 
 ## Deploiement Vercel
 
-### 1. Creer le repository GitHub
+### 1. Créer le repository GitHub
 
 ```bash
 git init
@@ -45,7 +45,7 @@ git push -u origin main
 ### 2. Importer sur Vercel
 
 1. Aller sur [vercel.com/new](https://vercel.com/new)
-2. **Import Git Repository** → selectionner `sia-associates`
+2. **Import Git Repository** → sélectionner `sia-associates`
 3. **Framework** : Next.js (auto-detecte)
 4. **Environment Variables** :
    - `RESEND_API_KEY` = `re_xxx` (obtenu sur resend.com)
@@ -62,9 +62,9 @@ git push -u origin main
 
 ### 4. Configurer Resend
 
-1. Creer un compte sur [resend.com](https://resend.com)
-2. Ajouter et verifier le domaine `sia-associates.fr` (DKIM + SPF)
-3. Generer une API key et la renseigner dans les variables Vercel
+1. Créer un compte sur [resend.com](https://resend.com)
+2. Ajouter et vérifier le domaine `sia-associates.fr` (DKIM + SPF)
+3. Générer une clé API et la renseigner dans les variables Vercel
 
 ## Structure du projet
 
