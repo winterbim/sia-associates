@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Compass, Route, Wrench, Cloud } from "lucide-react";
+import { Compass, Route, Wrench, Cloud, ShieldCheck } from "lucide-react";
+import { ExpertiseBlueprint } from "@/components/ExpertiseBlueprint";
 
 export const metadata: Metadata = {
   title: "Expertise",
@@ -58,7 +59,7 @@ const PILLARS = [
     num: "04",
     icon: Cloud,
     title: "Cloud SAP",
-    lead: "RISE with SAP, Grow with SAP, Azure, AWS, OVHcloud souverain. Choisir la bonne infrastructure selon vos contraintes reglementaires, de souverainete et budgetaires.",
+    lead: "RISE with SAP, Grow with SAP, Azure, AWS, OVHcloud souverain. Choisir la bonne infrastructure selon vos contraintes de souverainete et budgetaires.",
     tags: ["RISE", "Azure", "AWS", "OVHcloud"],
     details: [
       "Audit cloud-readiness du paysage existant",
@@ -66,6 +67,21 @@ const PILLARS = [
       "Migration vers le cloud (planning, execution, validation)",
       "Optimisation des couts cloud",
       "Conformite et souverainete des donnees",
+    ],
+  },
+  {
+    id: "cybersecurite",
+    num: "05",
+    icon: ShieldCheck,
+    title: "Cybersecurite SAP",
+    lead: "Dans l'ecosysteme SAP, la cybersecurite consiste a proteger les donnees, les acces et les processus critiques de l'entreprise contre toute menace, en garantissant integrite, confidentialite et conformite. Cela prevaut a tous les domaines de l'entreprise. Un enjeu global en termes de securite et surtout de Business.",
+    tags: ["SSO", "IAM", "Security Notes", "RGPD", "Audit"],
+    details: [
+      "Securisation des acces et authentification — SSO (Azure AD, IAS), MFA, Identity Providers (IAS, AD, S/4, BTP)",
+      "Securisation des paysages SAP — analyse de surface d'attaque, Security Notes, patching, durcissement",
+      "Securisation des interfaces — OData, RFC, API, Cloud Connectors",
+      "Audit de securite SAP — S/4, ECC, BTP, HANA",
+      "Verification conformite RGPD / ISO / audit interne, recommandations et plan d'action priorises",
     ],
   },
 ] as const;
@@ -78,46 +94,20 @@ export default function ExpertisePage() {
         <div className="section-container">
           <p className="kicker mb-4">Expertise</p>
           <h1 className="display-heading max-w-3xl text-3xl text-bone md:text-5xl">
-            Quatre piliers pour couvrir{" "}
-            <em className="text-gold">l&apos;ensemble du cycle</em> SAP
+            Cinq piliers pour couvrir{" "}
+            <em className="not-italic text-oxblood">l&apos;ensemble du cycle</em> SAP
           </h1>
           <p className="mt-6 max-w-2xl text-base text-ash-light md:text-lg">
             De la conception a l&apos;exploitation quotidienne, en passant par le
-            pilotage de projet et la strategie cloud.
+            pilotage de projet, la strategie cloud et la cybersecurite.
           </p>
         </div>
       </section>
 
-      {/* Sankey workflow overview */}
-      <section className="border-b border-hairline bg-bone py-12">
+      {/* Expertise blueprint — 5-pillar visual map */}
+      <section className="border-b border-hairline bg-bone py-16 md:py-20">
         <div className="section-container">
-          <svg viewBox="0 0 1000 80" className="w-full" aria-hidden="true">
-            {/* Main flow */}
-            <text x="20" y="15" fill="#6E6A62" fontSize="9" fontFamily="monospace">BESOIN CLIENT</text>
-            <path d="M20,30 L120,30" stroke="#C8A24B" strokeWidth="2" strokeDasharray="4 4" className="animate-flow-path" />
-
-            {/* Branch flows */}
-            <path d="M120,30 C180,30 180,15 250,15 L400,15" stroke="#C8A24B" strokeWidth="6" opacity="0.25" />
-            <path d="M120,30 C180,30 180,30 250,30 L400,30" stroke="#C8A24B" strokeWidth="5" opacity="0.2" />
-            <path d="M120,30 C180,30 180,45 250,45 L400,45" stroke="#C8A24B" strokeWidth="5" opacity="0.2" />
-            <path d="M120,30 C180,30 180,60 250,60 L400,60" stroke="#C8A24B" strokeWidth="4" opacity="0.15" />
-
-            {/* Labels */}
-            <text x="310" y="18" fill="#2A2F38" fontSize="9" fontFamily="monospace" textAnchor="middle">01 Architecture</text>
-            <text x="310" y="33" fill="#2A2F38" fontSize="9" fontFamily="monospace" textAnchor="middle">02 Pilotage</text>
-            <text x="310" y="48" fill="#2A2F38" fontSize="9" fontFamily="monospace" textAnchor="middle">03 Exploitation</text>
-            <text x="310" y="63" fill="#2A2F38" fontSize="9" fontFamily="monospace" textAnchor="middle">04 Cloud</text>
-
-            {/* Convergence */}
-            <path d="M400,15 C480,15 480,37 550,37" stroke="#C8A24B" strokeWidth="2" opacity="0.15" />
-            <path d="M400,30 C480,30 480,37 550,37" stroke="#C8A24B" strokeWidth="2" opacity="0.15" />
-            <path d="M400,45 C480,45 480,37 550,37" stroke="#C8A24B" strokeWidth="2" opacity="0.15" />
-            <path d="M400,60 C480,60 480,37 550,37" stroke="#C8A24B" strokeWidth="2" opacity="0.15" />
-
-            <circle cx="550" cy="37" r="4" fill="#C8A24B" className="animate-pulse-gold" />
-            <path d="M554,37 L980,37" stroke="#C8A24B" strokeWidth="1" strokeDasharray="4 4" opacity="0.2" className="animate-flow-path" />
-            <text x="770" y="35" fill="#6E6A62" fontSize="9" fontFamily="monospace" textAnchor="middle">VOTRE SAP, MAITRISE</text>
-          </svg>
+          <ExpertiseBlueprint />
         </div>
       </section>
 

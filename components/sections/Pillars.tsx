@@ -1,4 +1,4 @@
-import { Compass, Route, Wrench, Cloud, ArrowUpRight } from "lucide-react";
+import { Compass, Route, Wrench, Cloud, ShieldCheck, ArrowUpRight } from "lucide-react";
 import { SapLandscape } from "@/components/SapLandscape";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import Link from "next/link";
@@ -38,8 +38,17 @@ const PILLARS = [
     href: "/expertise#cloud",
     icon: Cloud,
     description:
-      "RISE with SAP, Grow with SAP, Azure, AWS, OVHcloud souverain. La bonne infrastructure selon vos contraintes.",
+      "RISE with SAP, Grow with SAP, Azure, AWS, OVHcloud souverain. Choisir la bonne infrastructure selon vos contraintes de souverainete et budgetaires.",
     tags: ["RISE", "Azure", "AWS", "OVHcloud"],
+  },
+  {
+    num: "05",
+    title: "Cybersecurite SAP",
+    href: "/expertise#cybersecurite",
+    icon: ShieldCheck,
+    description:
+      "Proteger les donnees, les acces et les processus critiques de l'entreprise contre toute menace. Integrite, confidentialite, conformite — un enjeu global.",
+    tags: ["SSO", "IAM", "Security Notes", "RGPD"],
   },
 ] as const;
 
