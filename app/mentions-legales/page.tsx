@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Mentions legales",
-  description: "Mentions legales et politique de confidentialite de SIA Associates.",
+  description: "Mentions legales et politique de confidentialité de SIA Associates.",
   robots: { index: false, follow: false },
 };
 
@@ -22,7 +22,7 @@ export default function MentionsLegalesPage() {
                 <strong className="text-ink">SIA ASSOCIATES</strong> · Societe par Actions Simplifiee (SAS)
               </p>
               <p>
-                Siege social : 11 avenue Maryse Bastie, 91220 Bretigny-sur-Orge
+                Siège social : 11 avenue Maryse Bastie, 91220 Brétigny-sur-Orge
                 <br />
                 SIREN : 930 478 151
                 <br />
@@ -56,23 +56,23 @@ export default function MentionsLegalesPage() {
               <p>
                 L&apos;ensemble du contenu de ce site (textes, images, structure)
                 est la propriete exclusive de SIA ASSOCIATES, sauf mention
-                contraire. Toute reproduction, meme partielle, est interdite sans
-                autorisation ecrite prealable.
+                contraire. Toute reproduction, même partielle, est interdite sans
+                autorisation ecrite préalable.
               </p>
             </section>
 
             <section>
-              <h2>Politique de confidentialite</h2>
+              <h2>Politique de confidentialité</h2>
               <p>
                 <strong className="text-ink">Donnees collectees :</strong> nom, email, entreprise, sujet et message via le
-                formulaire de contact. Ces donnees sont traitees uniquement pour
-                repondre a votre demande.
+                formulaire de contact. Ces données sont traitees uniquement pour
+                répondre a votre demande.
               </p>
               <p>
                 <strong className="text-ink">Base legale :</strong> consentement explicite (case a cocher du formulaire).
               </p>
               <p>
-                <strong className="text-ink">Duree de conservation :</strong> 12 mois apres le dernier echange, puis
+                <strong className="text-ink">Duree de conservation :</strong> 12 mois après le dernier échange, puis
                 suppression.
               </p>
               <p>
@@ -82,12 +82,12 @@ export default function MentionsLegalesPage() {
               <p>
                 <strong className="text-ink">Cookies :</strong> ce site n&apos;utilise aucun cookie tiers. Les seuls cookies
                 eventuels sont techniques (session, preferences) et strictement
-                necessaires.
+                nécessaires.
               </p>
               <p>
                 <strong className="text-ink">Vos droits :</strong> conformement au RGPD, vous disposez d&apos;un droit
-                d&apos;acces, de rectification, de suppression et de portabilite de
-                vos donnees. Pour exercer ces droits, ecrivez a{" "}
+                d&apos;accès, de rectification, de suppression et de portabilite de
+                vos données. Pour exercer ces droits, écrivez a{" "}
                 <a href="mailto:siamanagement75@gmail.com" className="text-gold hover:text-gold-hover">
                   siamanagement75@gmail.com
                 </a>
@@ -98,7 +98,7 @@ export default function MentionsLegalesPage() {
             <section>
               <h2>Credits</h2>
               <p>
-                Site concu et developpe avec Next.js. Typographies : Fraunces,
+                Site concu et développé avec Next.js. Typographies : Fraunces,
                 Inter Tight, JetBrains Mono (Google Fonts, licences libres).
               </p>
             </section>

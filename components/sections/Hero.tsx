@@ -91,9 +91,9 @@ export function Hero() {
 
           <ScrollReveal animation="fade-up" delay={500}>
             <p className="mt-12 max-w-md border-l-2 border-oxblood pl-4 text-[15px] italic leading-relaxed text-bone/80">
-              «&nbsp;Un projet SAP reussi, c&apos;est d&apos;abord une equipe
+              «&nbsp;Un projet SAP réussi, c&apos;est d&apos;abord une équipe
               qui comprend ce qu&apos;elle construit. La technique vient
-              apres.&nbsp;»
+              après.&nbsp;»
               <span className="mt-2 block font-mono text-[10px] not-italic uppercase tracking-[0.2em] text-ash-light">
                 — Amine Silemane, fondateur
               </span>

@@ -62,7 +62,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   architecture: "Architecture",
   migration: "Migration",
   cloud: "Cloud",
-  methodology: "Methodologie",
+  methodology: "Méthodologie",
   trends: "Tendances",
   basis: "Basis",
 };

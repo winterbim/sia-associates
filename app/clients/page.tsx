@@ -21,21 +21,21 @@ const CASES = [
     sector: "Energie",
     title: "Pilotage technique",
     description:
-      "Pilotage technique SAP sur paysage critique d'un operateur energetique francais. Coordination migration, fiabilisation des interfaces, securisation des flux metiers. Zero incident majeur post-migration.",
+      "Pilotage technique SAP sur paysage critique d'un operateur énergétique francais. Coordination migration, fiabilisation des interfaces, sécurisation des flux metiers. Zero incident majeur post-migration.",
     tags: ["Pilotage", "Basis", "Migration"],
   },
   {
     sector: "Industrie",
     title: "Architecture technique",
     description:
-      "Architecture SAP technique pour un groupe industriel de defense. Cadrage de la trajectoire cloud, strategie Basis, gouvernance des environnements. Paysage securise et maintenable.",
+      "Architecture SAP technique pour un groupe industriel de défense. Cadrage de la trajectoire cloud, stratégie Basis, gouvernance des environnements. Paysage sécurisé et maintenable.",
     tags: ["Architecture", "Basis", "Cloud"],
   },
   {
     sector: "Construction",
     title: "Consulting senior",
     description:
-      "SAP Senior BC Consultant integre au groupe : referent technique sur le paysage SAP en production, support a l'architecture applicative, optimisation du run, cadrage des evolutions, accompagnement et montee en competence des equipes internes. Mission longue, toujours en cours.",
+      "SAP Senior BC Consultant intégré au groupe : referent technique sur le paysage SAP en production, support a l'architecture applicative, optimisation du run, cadrage des evolutions, accompagnement et montee en competence des équipes internes. Mission longue, toujours en cours.",
     tags: ["Senior BC", "Run Ops", "Architecture", "Montee en competence"],
   },
 ] as const;
@@ -52,8 +52,8 @@ export default function ClientsPage() {
             <em className="not-italic text-oxblood">des missions reelles</em>
           </h1>
           <p className="mt-6 max-w-2xl text-base text-ash-light md:text-lg">
-            Chaque logo represente des mois de collaboration, des systemes
-            securises, des equipes accompagnees.
+            Chaque logo represente des mois de collaboration, des systèmes
+            sécurisés, des équipes accompagnees.
           </p>
         </div>
       </section>

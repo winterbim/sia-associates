@@ -27,7 +27,7 @@ export const contactSchema = z.object({
     .max(2000, "Le message ne doit pas depasser 2000 caracteres"),
   consent: z.literal(true, {
     errorMap: () => ({
-      message: "Vous devez accepter la politique de confidentialite",
+      message: "Vous devez accepter la politique de confidentialité",
     }),
   }),
   website: z.string().max(0).optional(),

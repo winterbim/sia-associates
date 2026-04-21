@@ -150,10 +150,10 @@ export function ContactForm() {
             {...register("consent")}
           />
           <span className="text-sm text-ash">
-            J&apos;accepte que mes donnees soient traitees pour repondre a ma demande,
+            J&apos;accepte que mes données soient traitees pour répondre a ma demande,
             conformement a la{" "}
             <a href="/mentions-legales" className="text-gold underline">
-              politique de confidentialite
+              politique de confidentialité
             </a>
             .
           </span>
@@ -169,7 +169,7 @@ export function ContactForm() {
         <div className="flex items-center gap-2 rounded-lg border border-oxblood/30 bg-oxblood/5 p-4">
           <AlertCircle size={18} strokeWidth={1.5} className="shrink-0 text-oxblood" />
           <p className="text-sm text-oxblood">
-            Une erreur est survenue. Veuillez reessayer ou ecrire directement a
+            Une erreur est survenue. Veuillez reessayer ou écrire directement a
             siamanagement75@gmail.com.
           </p>
         </div>

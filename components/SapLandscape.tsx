@@ -46,7 +46,7 @@ const BLOCKS: Block[] = [
     label: "Interfaces héritées",
     sub: "IDoc, RFC, flat files",
     tooltip:
-      "Connexions vers les systèmes satellites (CRM, WMS, BI, paie…). À rationaliser via Integration Suite.",
+      "Connexions vers les systèmes satellites (CRM, WMS, BI, paie…). À rationaliser via Intégration Suite.",
     tone: "legacy",
   },
 
@@ -110,7 +110,7 @@ const BLOCKS: Block[] = [
     label: "SAP BTP",
     sub: "Extensions side-by-side",
     tooltip:
-      "La plateforme pour tous les développements spécifiques. RAP, CAP, Build, Integration Suite, IA Joule.",
+      "La plateforme pour tous les développements spécifiques. RAP, CAP, Build, Intégration Suite, IA Joule.",
     tone: "target",
   },
   {

@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/sections/ContactForm";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Discutons de votre projet SAP. Premier echange d'une heure offert — cadrage, audit, renfort ponctuel ou mission longue.",
+    "Discutons de votre projet SAP. Premier échange d'une heure offert — cadrage, audit, renfort ponctuel ou mission longue.",
 };
 
 export default function ContactPage() {
@@ -20,8 +20,8 @@ export default function ContactPage() {
             <em className="not-italic text-oxblood">projet SAP</em>
           </h1>
           <p className="mt-6 max-w-2xl text-base text-ash-light md:text-lg">
-            Premier echange d&apos;une heure offert. Cadrage initial, second avis,
-            renfort ponctuel ou mission longue — decrivez votre besoin.
+            Premier échange d&apos;une heure offert. Cadrage initial, second avis,
+            renfort ponctuel ou mission longue — décrivez votre besoin.
           </p>
         </div>
       </section>
@@ -59,18 +59,18 @@ export default function ContactPage() {
                   </li>
                   <li className="flex items-start gap-3 text-sm text-ash">
                     <Clock size={18} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
-                    <span>Reponse sous 48 h ouvrables</span>
+                    <span>Réponse sous 48 h ouvrables</span>
                   </li>
                 </ul>
               </div>
 
               {/* Qui êtes-vous block */}
               <div className="rounded-lg border border-gold/20 bg-gold/5 p-6">
-                <p className="kicker mb-2">Qui etes-vous ?</p>
+                <p className="kicker mb-2">Qui êtes-vous ?</p>
                 <p className="text-sm leading-relaxed text-ash">
                   Je collabore regulierement en sous-traitance avec des clients
-                  finaux, des integrateurs ou des ESN. Si vous cherchez un
-                  expert SAP pour renforcer ou creer de nouvelles equipes,
+                  finaux, des intégrateurs ou des ESN. Si vous cherchez un
+                  expert SAP pour renforcer ou creer de nouvelles équipes,
                   contactez-moi avec le contexte et l&apos;enjeu de la mission.
                 </p>
               </div>

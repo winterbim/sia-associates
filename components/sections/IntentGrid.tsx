@@ -10,17 +10,17 @@ const INTENTS = [
   },
   {
     num: "02",
-    text: "Un chef de projet experimente pour une migration SAP",
+    text: "Un chef de projet expérimenté pour une migration SAP",
     href: "/expertise#pilotage",
   },
   {
     num: "03",
-    text: "Un expert Basis/TMA independant pour securiser votre run",
+    text: "Un expert Basis/TMA indépendant pour sécuriser votre run",
     href: "/expertise#exploitation",
   },
   {
     num: "04",
-    text: "Un conseil neutre pour votre strategie cloud SAP",
+    text: "Un conseil neutre pour votre stratégie cloud SAP",
     href: "/expertise#cloud",
   },
   {

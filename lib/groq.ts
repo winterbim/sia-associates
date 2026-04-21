@@ -54,14 +54,14 @@ export async function generateArticle(topic: string): Promise<{
   tags: string[];
   readingTime: number;
 }> {
-  const systemPrompt = `Tu es un expert SAP senior avec 19+ ans d'experience. Tu rediges des articles techniques approfondis pour le blog de SIA Associates, cabinet de conseil SAP independant fonde par Amine Silemane.
+  const systemPrompt = `Tu es un expert SAP senior avec 19+ ans d'expérience. Tu rediges des articles techniques approfondis pour le blog de SIA Associates, cabinet de conseil SAP indépendant fonde par Amine Silemane.
 
 Regles de redaction :
 - Ton professionnel mais accessible, pas de jargon inutile
-- Exemples concrets issus de projets reels (energie, industrie, construction)
+- Exemples concrets issus de projets reels (énergie, industrie, construction)
 - Structure claire avec des sous-titres H2 et H3
 - Minimum 1500 mots, maximum 2500 mots
-- Inclure des conseils pratiques et des retours d'experience
+- Inclure des conseils pratiques et des retours d'expérience
 - Mentionner les modules SAP pertinents (Basis, S/4HANA, BTP, etc.)
 - Ne pas utiliser de bullet points excessifs, privilegier la prose
 - Ecrire en francais, sans accents (encodage simplifie)
@@ -79,7 +79,7 @@ Format de sortie STRICTEMENT en JSON :
     { role: "system", content: systemPrompt },
     {
       role: "user",
-      content: `Redige un article de blog technique sur le sujet suivant : "${topic}". L'article doit etre utile pour un DSI ou directeur de programme SAP. Reponds UNIQUEMENT en JSON valide.`,
+      content: `Redige un article de blog technique sur le sujet suivant : "${topic}". L'article doit être utile pour un DSI ou directeur de programme SAP. Reponds UNIQUEMENT en JSON valide.`,
     },
   ], { maxTokens: 4000, temperature: 0.75 });
 

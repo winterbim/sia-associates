@@ -7,8 +7,8 @@ export interface BlogTopic {
 export const BLOG_TOPICS: BlogTopic[] = [
   // Architecture
   {
-    slug: "clean-core-strategie-s4hana-2026",
-    topic: "Clean Core : comment preparer votre strategie S/4HANA en 2026 sans accumuler de dette technique",
+    slug: "clean-core-stratégie-s4hana-2026",
+    topic: "Clean Core : comment preparer votre stratégie S/4HANA en 2026 sans accumuler de dette technique",
     category: "architecture",
   },
   {
@@ -22,8 +22,8 @@ export const BLOG_TOPICS: BlogTopic[] = [
     category: "architecture",
   },
   {
-    slug: "integration-sap-cpi-api-management",
-    topic: "Integration SAP : CPI vs API Management, comment choisir pour votre paysage applicatif",
+    slug: "intégration-sap-cpi-api-management",
+    topic: "Intégration SAP : CPI vs API Management, comment choisir pour votre paysage applicatif",
     category: "architecture",
   },
 
@@ -39,8 +39,8 @@ export const BLOG_TOPICS: BlogTopic[] = [
     category: "migration",
   },
   {
-    slug: "sap-activate-methodologie-projet",
-    topic: "SAP Activate demystifie : comment appliquer cette methodologie sur un vrai projet de migration",
+    slug: "sap-activate-méthodologie-projet",
+    topic: "SAP Activate demystifie : comment appliquer cette méthodologie sur un vrai projet de migration",
     category: "migration",
   },
   {
@@ -51,18 +51,18 @@ export const BLOG_TOPICS: BlogTopic[] = [
 
   // Cloud
   {
-    slug: "rise-with-sap-retour-experience",
-    topic: "RISE with SAP : retour d'experience apres 2 ans de deployments en France",
+    slug: "rise-with-sap-retour-expérience",
+    topic: "RISE with SAP : retour d'expérience après 2 ans de deployments en France",
     category: "cloud",
   },
   {
-    slug: "souverainete-donnees-sap-cloud",
-    topic: "Souverainete des donnees et SAP Cloud : OVHcloud, Azure France, AWS Paris — quel choix pour un grand compte ?",
+    slug: "souveraineté-données-sap-cloud",
+    topic: "Souverainete des données et SAP Cloud : OVHcloud, Azure France, AWS Paris — quel choix pour un grand compte ?",
     category: "cloud",
   },
   {
-    slug: "cout-reel-migration-cloud-sap",
-    topic: "Le cout reel d'une migration cloud SAP : au-dela des promesses commerciales des editeurs",
+    slug: "coût-reel-migration-cloud-sap",
+    topic: "Le coût reel d'une migration cloud SAP : au-dela des promesses commerciales des editeurs",
     category: "cloud",
   },
   {
@@ -73,13 +73,13 @@ export const BLOG_TOPICS: BlogTopic[] = [
 
   // Methodology
   {
-    slug: "audit-sap-methodology-independant",
-    topic: "Comment mener un audit SAP independant : methodologie et livrables concrets",
+    slug: "audit-sap-methodology-indépendant",
+    topic: "Comment mener un audit SAP indépendant : méthodologie et livrables concrets",
     category: "methodology",
   },
   {
     slug: "gouvernance-sap-multi-entites",
-    topic: "Gouvernance SAP multi-entites : organiser la decision technique dans un groupe international",
+    topic: "Gouvernance SAP multi-entites : organiser la décision technique dans un groupe international",
     category: "methodology",
   },
   {
@@ -88,8 +88,8 @@ export const BLOG_TOPICS: BlogTopic[] = [
     category: "methodology",
   },
   {
-    slug: "transfert-competences-sap-equipes-internes",
-    topic: "Transfert de competences SAP : comment rendre vos equipes internes autonomes apres un projet",
+    slug: "transfert-competences-sap-équipes-internes",
+    topic: "Transfert de competences SAP : comment rendre vos équipes internes autonomes après un projet",
     category: "methodology",
   },
 
@@ -110,8 +110,8 @@ export const BLOG_TOPICS: BlogTopic[] = [
     category: "trends",
   },
   {
-    slug: "consultant-sap-independant-vs-esn",
-    topic: "Consultant SAP independant vs ESN : pourquoi le modele change en 2026",
+    slug: "consultant-sap-indépendant-vs-esn",
+    topic: "Consultant SAP indépendant vs ESN : pourquoi le modèle change en 2026",
     category: "trends",
   },
 
@@ -128,12 +128,12 @@ export const BLOG_TOPICS: BlogTopic[] = [
   },
   {
     slug: "gestion-transports-sap-devops",
-    topic: "Gestion des transports SAP a l'ere du DevOps : CTS+, gCTS et integration continue",
+    topic: "Gestion des transports SAP a l'ere du DevOps : CTS+, gCTS et intégration continue",
     category: "basis",
   },
   {
-    slug: "securite-sap-audit-autorisations",
-    topic: "Securite SAP : comment auditer vos autorisations et corriger les failles les plus courantes",
+    slug: "sécurité-sap-audit-autorisations",
+    topic: "Sécurité SAP : comment auditer vos autorisations et corriger les failles les plus courantes",
     category: "basis",
   },
 ];

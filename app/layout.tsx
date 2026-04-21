@@ -32,11 +32,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sia-associates.fr"),
   title: {
-    default: "SIA Associates — Conseil SAP Independant",
+    default: "SIA Associates — Conseil SAP Indépendant",
     template: "%s · SIA Associates",
   },
   description:
-    "Cabinet de conseil SAP independant. Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'experience, de Safran a VINCI Construction.",
+    "Cabinet de conseil SAP indépendant. Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'expérience, de Safran a VINCI Construction.",
   keywords: [
     "SAP",
     "conseil SAP",
@@ -54,15 +54,15 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://sia-associates.fr",
     siteName: "SIA Associates",
-    title: "SIA Associates — Conseil SAP Independant",
+    title: "SIA Associates — Conseil SAP Indépendant",
     description:
-      "Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'experience au service des grands comptes francais.",
+      "Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'expérience au service des grands comptes francais.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SIA Associates — Conseil SAP Independant",
+    title: "SIA Associates — Conseil SAP Indépendant",
     description:
-      "Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'experience.",
+      "Architecture, pilotage, exploitation et cloud SAP. 19+ ans d'expérience.",
   },
   robots: {
     index: true,
@@ -78,11 +78,11 @@ const jsonLd = {
       name: "SIA Associates",
       url: "https://sia-associates.fr",
       description:
-        "Cabinet de conseil SAP independant — architecture, pilotage, exploitation et cloud.",
+        "Cabinet de conseil SAP indépendant — architecture, pilotage, exploitation et cloud.",
       address: {
         "@type": "PostalAddress",
         streetAddress: "11 avenue Maryse Bastie",
-        addressLocality: "Bretigny-sur-Orge",
+        addressLocality: "Brétigny-sur-Orge",
         postalCode: "91220",
         addressCountry: "FR",
       },

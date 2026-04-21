@@ -47,7 +47,7 @@ export function Keywords() {
             id="keywords-heading"
             className="display-heading mb-12 text-2xl text-bone md:text-4xl"
           >
-            L&apos;ecosysteme SAP, <em className="text-oxblood">maitrise</em>
+            L&apos;écosystème SAP, <em className="text-oxblood">maîtrise</em>
           </h2>
         </ScrollReveal>
 
@@ -88,9 +88,9 @@ export function Keywords() {
 
         <ScrollReveal animation="fade-up" delay={1500}>
           <p className="mx-auto mt-12 max-w-2xl text-center text-sm leading-relaxed text-ash-light md:text-base">
-            Au-dela des mots-cles : une comprehension transverse des corps de
+            Au-dela des mots-clés : une comprehension transverse des corps de
             metier SAP. Finance, logistique, achats, production, RH, BI — chacun a
-            ses regles, ses contraintes, ses non-dits. Je parle la langue de
+            ses règles, ses contraintes, ses non-dits. Je parle la langue de
             chacun.
           </p>
         </ScrollReveal>

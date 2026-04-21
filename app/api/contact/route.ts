@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 
     if (!result.success) {
       return NextResponse.json(
-        { error: "Donnees invalides", details: result.error.flatten() },
+        { error: "Donnees invalides", détails: result.error.flatten() },
         { status: 400 }
       );
     }

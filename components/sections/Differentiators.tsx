@@ -12,14 +12,14 @@ const DIFFS = [
   },
   {
     num: "02",
-    title: "L'experience multi-clients",
+    title: "L'expérience multi-clients",
     icon: Globe,
     description:
-      "Energie (GRDF, RTE, ENGIE), industrie (Safran, VINCI Construction), integration (Applium) — chaque secteur a ses contraintes. Je les ai vues, je les ai traitees.",
+      "Energie (GRDF, RTE, ENGIE), industrie (Safran, VINCI Construction), intégration (Applium) — chaque secteur a ses contraintes. Je les ai vues, je les ai traitees.",
   },
   {
     num: "03",
-    title: "L'independance",
+    title: "L'indépendance",
     icon: Shield,
     description:
       "Pas d'obligation de revendre telle ou telle solution partenaire. Le meilleur choix technique pour votre contexte — pas celui qui remplit un quota commercial.",

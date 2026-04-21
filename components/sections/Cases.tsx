@@ -6,21 +6,21 @@ const CASES = [
     sector: "Energie",
     title: "Pilotage technique",
     description:
-      "Pilotage technique SAP sur paysage critique d'un operateur energetique francais. Coordination migration, fiabilisation des interfaces, securisation des flux metiers. Zero incident majeur post-migration.",
+      "Pilotage technique SAP sur paysage critique d'un operateur énergétique francais. Coordination migration, fiabilisation des interfaces, sécurisation des flux metiers. Zero incident majeur post-migration.",
     tags: ["Pilotage", "Basis", "Migration"],
   },
   {
     sector: "Industrie",
     title: "Architecture technique",
     description:
-      "Architecture SAP technique pour un groupe industriel de defense. Cadrage de la trajectoire cloud, strategie Basis, gouvernance des environnements. Paysage securise et maintenable.",
+      "Architecture SAP technique pour un groupe industriel de défense. Cadrage de la trajectoire cloud, stratégie Basis, gouvernance des environnements. Paysage sécurisé et maintenable.",
     tags: ["Architecture", "Basis", "Cloud"],
   },
   {
     sector: "Construction",
     title: "Consulting senior",
     description:
-      "SAP Senior BC Consultant au sein du groupe. Support a l'architecture applicative, optimisation du run, accompagnement des equipes internes. Mission en cours.",
+      "SAP Senior BC Consultant au sein du groupe. Support a l'architecture applicative, optimisation du run, accompagnement des équipes internes. Mission en cours.",
     tags: ["Senior BC", "Run Ops", "Architecture"],
   },
 ] as const;

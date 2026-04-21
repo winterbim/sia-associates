@@ -11,8 +11,8 @@ const PILLARS = [
     href: "/expertise#architecture",
     icon: Compass,
     description:
-      "Concevoir un paysage SAP qui tient dans le temps — choix technologiques, integration, Clean Core, strategie cloud.",
-    tags: ["SAP Basis", "S/4HANA", "BTP", "Clean Core", "Integration"],
+      "Concevoir un paysage SAP qui tient dans le temps — choix technologiques, intégration, Clean Core, stratégie cloud.",
+    tags: ["SAP Basis", "S/4HANA", "BTP", "Clean Core", "Intégration"],
   },
   {
     num: "02",
@@ -20,7 +20,7 @@ const PILLARS = [
     href: "/expertise#pilotage",
     icon: Route,
     description:
-      "Du cadrage au Go-Live. Gouvernance, conduite du changement, coordination d'equipes on-shore / near-shore / off-shore.",
+      "Du cadrage au Go-Live. Gouvernance, conduite du changement, coordination d'équipes on-shore / near-shore / off-shore.",
     tags: ["SAP Activate", "PMO", "Change", "Gouvernance"],
   },
   {
@@ -29,7 +29,7 @@ const PILLARS = [
     href: "/expertise#exploitation",
     icon: Wrench,
     description:
-      "Maintenance corrective et evolutive (TMA), support N2/N3, run ops optimise. Un projet ne s'arrete pas a la mise en production.",
+      "Maintenance corrective et evolutive (TMA), support N2/N3, run ops optimisé. Un projet ne s'arrete pas a la mise en production.",
     tags: ["TMA", "N2/N3", "Run Ops", "Monitoring"],
   },
   {
@@ -38,16 +38,16 @@ const PILLARS = [
     href: "/expertise#cloud",
     icon: Cloud,
     description:
-      "RISE with SAP, Grow with SAP, Azure, AWS, OVHcloud souverain. Choisir la bonne infrastructure selon vos contraintes de souverainete et budgetaires.",
+      "RISE with SAP, Grow with SAP, Azure, AWS, OVHcloud souverain. Choisir la bonne infrastructure selon vos contraintes de souveraineté et budgetaires.",
     tags: ["RISE", "Azure", "AWS", "OVHcloud"],
   },
   {
     num: "05",
-    title: "Cybersecurite SAP",
+    title: "Cybersécurité SAP",
     href: "/expertise#cybersecurite",
     icon: ShieldCheck,
     description:
-      "Proteger les donnees, les acces et les processus critiques de l'entreprise contre toute menace. Integrite, confidentialite, conformite — un enjeu global.",
+      "Proteger les données, les accès et les processus critiques de l'entreprise contre toute menace. Integrite, confidentialité, conformité — un enjeu global.",
     tags: ["SSO", "IAM", "Security Notes", "RGPD"],
   },
 ] as const;

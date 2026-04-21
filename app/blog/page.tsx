@@ -8,7 +8,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Articles techniques SAP : architecture S/4HANA, migration, cloud, methodologie. Retours d'experience concrets par Amine Silemane.",
+    "Articles techniques SAP : architecture S/4HANA, migration, cloud, méthodologie. Retours d'expérience concrets par Amine Silemane.",
 };
 
 export const dynamic = "force-dynamic";
@@ -23,12 +23,12 @@ export default async function BlogPage() {
         <div className="section-container">
           <p className="kicker mb-4">Blog</p>
           <h1 className="display-heading max-w-3xl text-3xl text-bone md:text-5xl">
-            Retours d&apos;experience,{" "}
+            Retours d&apos;expérience,{" "}
             <em className="text-gold">sans langue de bois</em>
           </h1>
           <p className="mt-6 max-w-2xl text-base text-ash-light md:text-lg">
             Articles techniques SAP : architecture, migration, cloud,
-            methodologie. Des insights concrets, issus de 19+ ans de terrain.
+            méthodologie. Des insights concrets, issus de 19+ ans de terrain.
           </p>
         </div>
       </section>

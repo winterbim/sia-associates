@@ -46,7 +46,7 @@ export function About() {
                 </div>
                 <figcaption className="mt-3 flex items-baseline justify-between font-mono text-[11px] uppercase tracking-kicker text-ash">
                   <span>Amine Silemane</span>
-                  <span>Bretigny-sur-Orge · FR</span>
+                  <span>Brétigny-sur-Orge · FR</span>
                 </figcaption>
               </figure>
             </ScrollReveal>
