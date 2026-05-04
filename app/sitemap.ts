@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/blog";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const base = "https://sia-associates.fr";
+  const base = "https://sia-associates.com";
   const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [

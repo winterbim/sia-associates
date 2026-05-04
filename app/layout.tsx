@@ -30,7 +30,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sia-associates.fr"),
+  metadataBase: new URL("https://sia-associates.com"),
   title: {
     default: "SIA Associates — Conseil SAP Indépendant",
     template: "%s · SIA Associates",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://sia-associates.fr",
+    url: "https://sia-associates.com",
     siteName: "SIA Associates",
     title: "SIA Associates — Conseil SAP Indépendant",
     description:
@@ -76,7 +76,7 @@ const jsonLd = {
     {
       "@type": "ProfessionalService",
       name: "SIA Associates",
-      url: "https://sia-associates.fr",
+      url: "https://sia-associates.com",
       description:
         "Cabinet de conseil SAP indépendant — architecture, pilotage, exploitation et cloud.",
       address: {
