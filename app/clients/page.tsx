@@ -23,7 +23,7 @@ const CLIENTS: readonly Client[] = [
   { name: "SAFRAN", src: "/clients/safran.png", period: "2018 – 2019" },
   { name: "RTE", src: "/clients/rte.svg", period: "2020 – 2021" },
   { name: "VINCI Construction", src: "/clients/vinci.png", period: "2022 – 2024" },
-  { name: "Financière SNOP Dunois", period: "2024 – 2025" },
+  { name: "FINANCIÈRE SNOP Dunois", period: "2024 – 2025" },
   { name: "EQUANS", period: "2025 – aujourd'hui" },
 ] as const;
 

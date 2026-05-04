@@ -8,7 +8,7 @@ export const BLOG_TOPICS: BlogTopic[] = [
   // Architecture
   {
     slug: "clean-core-stratégie-s4hana-2026",
-    topic: "Clean Core : comment preparer votre stratégie S/4HANA en 2026 sans accumuler de dette technique",
+    topic: "Clean Core : comment préparer votre stratégie S/4HANA en 2026 sans accumuler de dette technique",
     category: "architecture",
   },
   {
@@ -18,7 +18,7 @@ export const BLOG_TOPICS: BlogTopic[] = [
   },
   {
     slug: "sap-btp-cas-usage-concrets",
-    topic: "SAP BTP en pratique : 5 cas d'usage concrets pour les grands comptes francais",
+    topic: "SAP BTP en pratique : 5 cas d'usage concrets pour les grands comptes français",
     category: "architecture",
   },
   {
@@ -30,7 +30,7 @@ export const BLOG_TOPICS: BlogTopic[] = [
   // Migration
   {
     slug: "migration-ecc6-s4hana-erreurs-eviter",
-    topic: "Migration ECC6 vers S/4HANA : les 7 erreurs que je vois systematiquement chez mes clients",
+    topic: "Migration ECC6 vers S/4HANA : les 7 erreurs que je vois systématiquement chez mes clients",
     category: "migration",
   },
   {
@@ -40,7 +40,7 @@ export const BLOG_TOPICS: BlogTopic[] = [
   },
   {
     slug: "sap-activate-méthodologie-projet",
-    topic: "SAP Activate demystifie : comment appliquer cette méthodologie sur un vrai projet de migration",
+    topic: "SAP Activate démystifié : comment appliquer cette méthodologie sur un vrai projet de migration",
     category: "migration",
   },
   {
@@ -52,22 +52,22 @@ export const BLOG_TOPICS: BlogTopic[] = [
   // Cloud
   {
     slug: "rise-with-sap-retour-expérience",
-    topic: "RISE with SAP : retour d'expérience après 2 ans de deployments en France",
+    topic: "RISE with SAP : retour d'expérience après 2 ans de déploiements en France",
     category: "cloud",
   },
   {
     slug: "souveraineté-données-sap-cloud",
-    topic: "Souverainete des données et SAP Cloud : OVHcloud, Azure France, AWS Paris — quel choix pour un grand compte ?",
+    topic: "Souveraineté des données et SAP Cloud : OVHcloud, Azure France, AWS Paris — quel choix pour un grand compte ?",
     category: "cloud",
   },
   {
     slug: "coût-reel-migration-cloud-sap",
-    topic: "Le coût reel d'une migration cloud SAP : au-dela des promesses commerciales des editeurs",
+    topic: "Le coût réel d'une migration cloud SAP : au-delà des promesses commerciales des éditeurs",
     category: "cloud",
   },
   {
     slug: "grow-with-sap-pme-eti",
-    topic: "Grow with SAP : est-ce vraiment adapte aux ETI francaises ?",
+    topic: "Grow with SAP : est-ce vraiment adapté aux ETI françaises ?",
     category: "cloud",
   },
 
@@ -79,24 +79,24 @@ export const BLOG_TOPICS: BlogTopic[] = [
   },
   {
     slug: "gouvernance-sap-multi-entites",
-    topic: "Gouvernance SAP multi-entites : organiser la décision technique dans un groupe international",
+    topic: "Gouvernance SAP multi-entités : organiser la décision technique dans un groupe international",
     category: "methodology",
   },
   {
     slug: "chiffrage-projet-sap-erreurs",
-    topic: "Chiffrage de projet SAP : pourquoi 80% des estimations derapent et comment l'eviter",
+    topic: "Chiffrage de projet SAP : pourquoi 80% des estimations dérapent et comment l'éviter",
     category: "methodology",
   },
   {
     slug: "transfert-competences-sap-équipes-internes",
-    topic: "Transfert de competences SAP : comment rendre vos équipes internes autonomes après un projet",
+    topic: "Transfert de compétences SAP : comment rendre vos équipes internes autonomes après un projet",
     category: "methodology",
   },
 
   // Trends
   {
     slug: "ia-generative-sap-joule-impact",
-    topic: "IA generative et SAP : Joule, copilots et impact concret sur les projets en 2026",
+    topic: "IA générative et SAP : Joule, copilots et impact concret sur les projets en 2026",
     category: "trends",
   },
   {
@@ -106,7 +106,7 @@ export const BLOG_TOPICS: BlogTopic[] = [
   },
   {
     slug: "fin-maintenance-ecc6-2027-plan-action",
-    topic: "Fin de maintenance ECC6 en 2027 : plan d'action realiste pour les retardataires",
+    topic: "Fin de maintenance ECC6 en 2027 : plan d'action réaliste pour les retardataires",
     category: "trends",
   },
   {
@@ -118,17 +118,17 @@ export const BLOG_TOPICS: BlogTopic[] = [
   // Basis
   {
     slug: "sap-basis-best-practices-2026",
-    topic: "SAP Basis en 2026 : les best practices que tout administrateur devrait connaitre",
+    topic: "SAP Basis en 2026 : les best practices que tout administrateur devrait connaître",
     category: "basis",
   },
   {
     slug: "monitoring-sap-proactif-solution-manager",
-    topic: "Monitoring SAP proactif : au-dela de Solution Manager, les outils et pratiques qui changent la donne",
+    topic: "Monitoring SAP proactif : au-delà de Solution Manager, les outils et pratiques qui changent la donne",
     category: "basis",
   },
   {
     slug: "gestion-transports-sap-devops",
-    topic: "Gestion des transports SAP a l'ere du DevOps : CTS+, gCTS et intégration continue",
+    topic: "Gestion des transports SAP à l'ère du DevOps : CTS+, gCTS et intégration continue",
     category: "basis",
   },
   {

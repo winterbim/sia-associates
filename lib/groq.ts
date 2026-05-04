@@ -54,23 +54,23 @@ export async function generateArticle(topic: string): Promise<{
   tags: string[];
   readingTime: number;
 }> {
-  const systemPrompt = `Tu es un expert SAP senior avec 19+ ans d'expérience. Tu rediges des articles techniques approfondis pour le blog de SIA Associates, cabinet de conseil SAP indépendant fonde par Amine Silemane.
+  const systemPrompt = `Tu es un expert SAP senior avec 19+ ans d'expérience. Tu rédiges des articles techniques approfondis pour le blog de SIA Associates, cabinet de conseil SAP indépendant fondé par Amine Silemane.
 
-Regles de redaction :
+Règles de rédaction :
 - Ton professionnel mais accessible, pas de jargon inutile
-- Exemples concrets issus de projets reels (énergie, industrie, construction)
+- Exemples concrets issus de projets réels (énergie, industrie, construction)
 - Structure claire avec des sous-titres H2 et H3
 - Minimum 1500 mots, maximum 2500 mots
 - Inclure des conseils pratiques et des retours d'expérience
 - Mentionner les modules SAP pertinents (Basis, S/4HANA, BTP, etc.)
-- Ne pas utiliser de bullet points excessifs, privilegier la prose
-- Ecrire en francais, sans accents (encodage simplifie)
+- Ne pas utiliser de bullet points excessifs, privilégier la prose
+- Écrire en français correct et complet, avec tous les accents (é, è, ê, à, â, î, ï, ô, û, ù, ç). L'encodage est UTF-8, jamais d'accents omis ni de simplifications du type « francais » ou « developpe ».
 
 Format de sortie STRICTEMENT en JSON :
 {
-  "title": "Titre accrocheur de l'article",
-  "excerpt": "Resume en 2 phrases maximum (150 caracteres max)",
-  "content": "Contenu complet en Markdown (H2 avec ##, H3 avec ###, **gras**, *italique*)",
+  "title": "Titre accrocheur de l'article (avec tous les accents)",
+  "excerpt": "Résumé en 2 phrases maximum (150 caractères max, accents inclus)",
+  "content": "Contenu complet en Markdown (H2 avec ##, H3 avec ###, **gras**, *italique*) — tout le texte doit être en français correct avec accents",
   "tags": ["tag1", "tag2", "tag3"],
   "readingTime": 8
 }`;
@@ -79,7 +79,7 @@ Format de sortie STRICTEMENT en JSON :
     { role: "system", content: systemPrompt },
     {
       role: "user",
-      content: `Redige un article de blog technique sur le sujet suivant : "${topic}". L'article doit être utile pour un DSI ou directeur de programme SAP. Reponds UNIQUEMENT en JSON valide.`,
+      content: `Rédige un article de blog technique sur le sujet suivant : « ${topic} ». L'article doit être utile pour un DSI ou directeur de programme SAP. Réponds UNIQUEMENT en JSON valide, en français avec tous les accents.`,
     },
   ], { maxTokens: 4000, temperature: 0.75 });
 

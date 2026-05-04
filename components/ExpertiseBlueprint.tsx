@@ -159,6 +159,18 @@ export function ExpertiseBlueprint() {
           <g>
             <circle cx="1050" cy="160" r="6" fill="#6B1F2A" />
             <circle cx="1050" cy="160" r="11" fill="none" stroke="#6B1F2A" strokeOpacity="0.3" strokeWidth="1" />
+            <text
+              x="1050"
+              y="140"
+              fontSize="10"
+              fontFamily="var(--font-mono), monospace"
+              fill="#6B1F2A"
+              textAnchor="middle"
+              fontWeight="600"
+              style={{ letterSpacing: "0.14em" }}
+            >
+              VOTRE SAP
+            </text>
           </g>
 
           {/* Four linear pillars */}

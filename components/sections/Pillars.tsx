@@ -12,7 +12,7 @@ const PILLARS = [
     icon: Compass,
     description:
       "Concevoir un paysage SAP qui tient dans le temps — choix technologiques, intégration, stratégie cloud.",
-    tags: ["SAP Basis", "S/4HANA", "BTP", "Intégration"],
+    tags: ["SAP Basis", "S/4HANA", "BTP", "Clean Core", "Intégration"],
   },
   {
     num: "02",
