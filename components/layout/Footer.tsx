@@ -84,12 +84,20 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-ash-light md:flex-row">
           <p>&copy; {new Date().getFullYear()} SIA Associates. Tous droits réservés.</p>
-          <Link
-            href="/mentions-legales"
-            className="transition-colors hover:text-bone"
-          >
-            Mentions légales
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/qr"
+              className="transition-colors hover:text-bone"
+            >
+              Générateur QR
+            </Link>
+            <Link
+              href="/mentions-legales"
+              className="transition-colors hover:text-bone"
+            >
+              Mentions légales
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Mail, MapPin, Clock } from "lucide-react";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { ContactVCard } from "@/components/sections/ContactVCard";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -74,6 +75,9 @@ export default function ContactPage() {
                   contactez-moi avec le contexte et l&apos;enjeu de la mission.
                 </p>
               </div>
+
+              {/* VCard QR Code */}
+              <ContactVCard />
             </div>
           </div>
         </div>
