@@ -4,13 +4,17 @@ import { QRCodeSVG } from "qrcode.react";
 import { UserPlus } from "lucide-react";
 
 export function ContactVCard() {
+  // vCard 3.0: N is "Family;Given;Additional;Prefix;Suffix". Most readers
+  // display "Given Family" for personal contacts. Putting "Associates" as
+  // family name and "SIA" as given name makes the contact appear as
+  // "SIA Associates" once saved, instead of "Associates SIA".
   const vcard = `BEGIN:VCARD
 VERSION:3.0
-N:Sia;Associates;;;
-FN:Sia Associates
-ORG:Sia Associates
-TITLE:Consultant SAP Indépendant
-TEL;TYPE=WORK,VOICE:
+N:Associates;SIA;;;
+FN:SIA Associates
+ORG:SIA Associates
+TITLE:Consultant SAP
+TEL;TYPE=CELL,VOICE:+33630156331
 EMAIL:siamanagement75@gmail.com
 URL:https://sia-associates.com
 END:VCARD`;

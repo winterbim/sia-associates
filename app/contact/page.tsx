@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, Clock } from "lucide-react";
+import { Mail, MapPin, Clock, Phone } from "lucide-react";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { ContactVCard } from "@/components/sections/ContactVCard";
 
@@ -45,6 +45,15 @@ export default function ContactPage() {
                   Coordonnées
                 </h3>
                 <ul className="mt-4 space-y-4">
+                  <li className="flex items-start gap-3 text-sm text-ash">
+                    <Phone size={18} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
+                    <a
+                      href="tel:+33630156331"
+                      className="transition-colors hover:text-ink"
+                    >
+                      +33 6 30 15 63 31
+                    </a>
+                  </li>
                   <li className="flex items-start gap-3 text-sm text-ash">
                     <Mail size={18} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
                     <a

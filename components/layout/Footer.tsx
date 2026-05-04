@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, MapPin, Linkedin } from "lucide-react";
+import { Mail, MapPin, Linkedin, Phone } from "lucide-react";
 
 export function Footer() {
   return (
@@ -54,6 +54,15 @@ export function Footer() {
             <p className="kicker mb-4">Contact</p>
             <ul className="flex flex-col gap-3">
               <li className="flex items-start gap-2 text-sm text-ash-light">
+                <Phone size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
+                <a
+                  href="tel:+33630156331"
+                  className="transition-colors hover:text-bone"
+                >
+                  +33 6 30 15 63 31
+                </a>
+              </li>
+              <li className="flex items-start gap-2 text-sm text-ash-light">
                 <Mail size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
                 <a
                   href="mailto:siamanagement75@gmail.com"
@@ -85,12 +94,6 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-ash-light md:flex-row">
           <p>&copy; {new Date().getFullYear()} SIA Associates. Tous droits réservés.</p>
           <div className="flex items-center gap-4">
-            <Link
-              href="/qr"
-              className="transition-colors hover:text-bone"
-            >
-              Générateur QR
-            </Link>
             <Link
               href="/mentions-legales"
               className="transition-colors hover:text-bone"
