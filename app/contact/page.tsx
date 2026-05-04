@@ -6,7 +6,7 @@ import { ContactVCard } from "@/components/sections/ContactVCard";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Discutons de votre projet SAP. Premier échange d'une heure offert — cadrage, audit, renfort ponctuel ou mission longue.",
+    "Discutons de votre projet SAP. Premier échange de 15 minutes offert — cadrage, audit, renfort ponctuel ou mission longue.",
 };
 
 export default function ContactPage() {
@@ -21,7 +21,7 @@ export default function ContactPage() {
             <em className="not-italic text-oxblood">projet SAP</em>
           </h1>
           <p className="mt-6 max-w-2xl text-base text-ash-light md:text-lg">
-            Premier échange d&apos;une heure offert. Cadrage initial, second avis,
+            Premier échange de 15 minutes offert. Cadrage initial, second avis,
             renfort ponctuel ou mission longue — décrivez votre besoin.
           </p>
         </div>

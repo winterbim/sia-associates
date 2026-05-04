@@ -11,8 +11,8 @@ const PILLARS = [
     href: "/expertise#architecture",
     icon: Compass,
     description:
-      "Concevoir un paysage SAP qui tient dans le temps — choix technologiques, intégration, Clean Core, stratégie cloud.",
-    tags: ["SAP Basis", "S/4HANA", "BTP", "Clean Core", "Intégration"],
+      "Concevoir un paysage SAP qui tient dans le temps — choix technologiques, intégration, stratégie cloud.",
+    tags: ["SAP Basis", "S/4HANA", "BTP", "Intégration"],
   },
   {
     num: "02",
@@ -29,8 +29,8 @@ const PILLARS = [
     href: "/expertise#exploitation",
     icon: Wrench,
     description:
-      "Maintenance corrective et évolutive (TMA), support N2/N3, run ops optimisé. Un projet ne s'arrête pas à la mise en production.",
-    tags: ["TMA", "N2/N3", "Run Ops", "Monitoring"],
+      "Support N2/N3, run ops optimisé. Un projet ne s'arrête pas à la mise en production.",
+    tags: ["N2/N3", "Run Ops", "Monitoring"],
   },
   {
     num: "04",

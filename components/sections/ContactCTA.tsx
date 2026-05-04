@@ -43,7 +43,7 @@ export function ContactCTA() {
 
         <ScrollReveal animation="fade-up" delay={200}>
           <blockquote className="mx-auto mb-8 max-w-lg font-display text-base italic leading-relaxed text-ash-light md:text-lg">
-            &ldquo;Un premier échange d&apos;une heure ne coûte rien et
+            &ldquo;Un premier échange de quinze minutes ne coûte rien et
             clarifie souvent beaucoup. Parlons de votre contexte.&rdquo;
           </blockquote>
         </ScrollReveal>

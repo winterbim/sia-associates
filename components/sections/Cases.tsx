@@ -20,7 +20,7 @@ const CASES = [
     sector: "Construction",
     title: "Consulting senior",
     description:
-      "SAP Senior BC Consultant au sein du groupe. Support à l'architecture applicative, optimisation du run, accompagnement des équipes internes. Mission en cours.",
+      "SAP Senior BC Consultant au sein du groupe. Support à l'architecture applicative, optimisation du run, accompagnement des équipes internes.",
     tags: ["Senior BC", "Run Ops", "Architecture"],
   },
 ] as const;

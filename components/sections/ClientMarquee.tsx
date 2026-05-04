@@ -4,13 +4,18 @@ import Image from "next/image";
 // trust-signal framing (kicker + context line). No infinite loop marquee —
 // respects reduced-motion and reads as a credential row, not a slideshow.
 
-const CLIENTS = [
-  { name: "Safran", src: "/clients/safran.png" },
+type Client = {
+  name: string;
+  src?: string;
+};
+
+const CLIENTS: readonly Client[] = [
   { name: "VINCI", src: "/clients/vinci.png" },
-  { name: "ENGIE", src: "/clients/engie.png" },
   { name: "GRDF", src: "/clients/grdf.svg" },
   { name: "RTE", src: "/clients/rte.svg" },
-  { name: "Applium", src: "/clients/applium.svg" },
+  { name: "SAFRAN", src: "/clients/safran.png" },
+  { name: "ENGIE", src: "/clients/engie.png" },
+  { name: "EQUANS" },
 ] as const;
 
 export function ClientMarquee() {
@@ -29,7 +34,7 @@ export function ClientMarquee() {
             </p>
           </div>
           <p className="font-mono text-[11px] uppercase tracking-kicker text-ash">
-            6 références publiques · 2007 → 2026
+            11 références publiques · 2010 → 2026
           </p>
         </div>
 
@@ -39,13 +44,19 @@ export function ClientMarquee() {
               key={client.name}
               className="flex items-center justify-center"
             >
-              <Image
-                src={client.src}
-                alt={`Logo ${client.name}`}
-                width={200}
-                height={80}
-                className="h-10 w-auto opacity-60 grayscale transition-[opacity,filter] duration-200 ease-out hover:opacity-100 hover:grayscale-0 md:h-12"
-              />
+              {client.src ? (
+                <Image
+                  src={client.src}
+                  alt={`Logo ${client.name}`}
+                  width={200}
+                  height={80}
+                  className="h-10 w-auto opacity-60 grayscale transition-[opacity,filter] duration-200 ease-out hover:opacity-100 hover:grayscale-0 md:h-12"
+                />
+              ) : (
+                <span className="font-display text-base font-semibold uppercase tracking-[0.18em] text-ink/60 transition-colors duration-200 hover:text-ink md:text-lg">
+                  {client.name}
+                </span>
+              )}
             </li>
           ))}
         </ul>

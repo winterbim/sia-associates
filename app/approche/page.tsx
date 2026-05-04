@@ -39,7 +39,7 @@ const PHASES = [
   {
     num: "01",
     title: "Premier échange",
-    duration: "1 h · offert",
+    duration: "15 min · offert",
     description:
       "Comprendre votre contexte, votre besoin, vos contraintes. Objectif : déterminer si je suis la bonne personne pour votre sujet.",
   },

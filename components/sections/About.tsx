@@ -69,7 +69,7 @@ export function About() {
             <ScrollReveal animation="fade-up" delay={100}>
               <p className="text-base leading-[1.7] text-graphite md:text-[17px]">
                 Je suis <strong className="text-ink">Amine Silemane</strong>,
-                consultant SAP indépendant depuis 2007. Mon parcours m&apos;a
+                consultant SAP depuis 2007. Mon parcours m&apos;a
                 conduit des grandes ESN aux directions informatiques de groupes
                 comme Safran, VINCI Construction, ENGIE, GRDF et RTE.
               </p>
@@ -87,8 +87,10 @@ export function About() {
             <ScrollReveal animation="fade-up" delay={300}>
               <blockquote className="mt-8 border-l-2 border-gold pl-5">
                 <p className="font-display text-lg leading-relaxed text-ink md:text-xl">
-                  «&nbsp;Quand vous travaillez avec SIA Associates, vous
-                  travaillez avec moi. Pas avec un junior envoyé à ma place.&nbsp;»
+                  «&nbsp;Je travaille de façon organique&nbsp;: j&apos;intègre
+                  les besoins, les contraintes et la sécurité SAP dans un flux
+                  naturel, pour construire une solution cohérente, évolutive
+                  et alignée avec votre réalité métier.&nbsp;»
                 </p>
                 <footer className="mt-3 font-mono text-[11px] uppercase tracking-kicker text-ash">
                   — A.S., fondateur
