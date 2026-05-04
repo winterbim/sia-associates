@@ -1,0 +1,51 @@
+name: Weekly blog article
+
+on:
+  # Every Monday at 09:00 Europe/Paris (07:00 UTC in winter, 08:00 UTC in summer).
+  # Pick 07:00 UTC; the article publishes a touch earlier in summer, which is
+  # acceptable for an editorial cadence.
+  schedule:
+    - cron: "0 7 * * 1"
+  # Allow on-demand runs from the Actions tab — useful for testing or
+  # backfilling a missed week.
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Force a specific topic slug (leave empty to pick the next ungenerated one)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate article
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          SLUG: ${{ inputs.slug }}
+        run: node scripts/generate-weekly-article.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No new article to commit (catalog likely exhausted)."
+            exit 0
+          fi
+          slug=$(git status --porcelain | grep "content/blog/" | head -1 | awk '{print $2}' | xargs basename | sed 's/.json//')
+          git add content/blog/ public/blog/
+          git commit -m "blog: weekly article — $slug"
+          git push

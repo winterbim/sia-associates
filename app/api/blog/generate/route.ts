@@ -23,6 +23,7 @@ export async function POST(request: Request) {
 
     let topic: string;
     let slug: string;
+    let category: string | undefined;
 
     if (body.slug) {
       // Generate specific article by slug
@@ -32,6 +33,7 @@ export async function POST(request: Request) {
       }
       topic = found.topic;
       slug = found.slug;
+      category = found.category;
     } else if (body.topic) {
       // Custom topic
       topic = body.topic;
@@ -41,11 +43,25 @@ export async function POST(request: Request) {
         .replace(/^-|-$/g, "")
         .substring(0, 80);
     } else {
-      // Auto: pick this week's topic
-      const weekNum = getCurrentWeekNumber();
-      const weekTopic = getTopicForWeek(weekNum);
+      // Auto: pick this week's topic, skipping ones already generated so a
+      // weekly cron eventually fills the whole catalog instead of looping
+      // back to articles we already have.
+      const articlesDirCheck = path.join(process.cwd(), "content", "blog");
+      let existing: Set<string>;
+      try {
+        const files = await fs.readdir(articlesDirCheck);
+        existing = new Set(files.filter((f) => f.endsWith(".json")).map((f) => f.replace(".json", "")));
+      } catch {
+        existing = new Set();
+      }
+      const baseWeek = getCurrentWeekNumber();
+      let weekTopic = getTopicForWeek(baseWeek);
+      for (let i = 1; existing.has(weekTopic.slug) && i < BLOG_TOPICS.length; i++) {
+        weekTopic = getTopicForWeek(baseWeek + i);
+      }
       topic = weekTopic.topic;
       slug = weekTopic.slug;
+      category = weekTopic.category;
     }
 
     // Check if article already exists
@@ -74,6 +90,7 @@ export async function POST(request: Request) {
       slug,
       ...article,
       coverSvg,
+      category: category ?? "trends",
       publishedAt: new Date().toISOString(),
       author: "Amine Silemane",
     };

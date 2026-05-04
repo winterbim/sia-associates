@@ -11,7 +11,17 @@ export interface BlogArticle {
   coverSvg: string;
   publishedAt: string;
   author: string;
+  category: string;
 }
+
+export const CATEGORY_ORDER: readonly string[] = [
+  "architecture",
+  "migration",
+  "cloud",
+  "methodology",
+  "basis",
+  "trends",
+] as const;
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
