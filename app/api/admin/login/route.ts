@@ -28,21 +28,55 @@ export async function POST(request: Request) {
   }
 
   const ip = getClientIp(request);
-  const ok = await rateLimitOk(ip);
-  if (!ok) {
-    return NextResponse.json(
-      { error: "Trop de tentatives. Réessayez dans 15 minutes." },
-      { status: 429 },
-    );
+  try {
+    const ok = await rateLimitOk(ip);
+    if (!ok) {
+      return NextResponse.json(
+        { error: "Trop de tentatives. Réessayez dans 15 minutes." },
+        { status: 429 },
+      );
+    }
+  } catch (err) {
+    console.error("[admin-login] rate-limit error (non-fatal):", err);
   }
 
-  const valid = await checkPassword(password);
+  // checkPassword can throw if ADMIN_PASSWORD_HASH is missing — surface
+  // a clear configuration error rather than a generic 500.
+  let valid: boolean;
+  try {
+    valid = await checkPassword(password);
+  } catch (err) {
+    console.error("[admin-login] password check failed:", err);
+    return NextResponse.json(
+      { error: "Configuration incomplète : ADMIN_PASSWORD_HASH manquant sur Vercel." },
+      { status: 500 },
+    );
+  }
   if (!valid) {
     return NextResponse.json({ error: "Identifiants incorrects" }, { status: 401 });
   }
 
-  const { challengeId, code } = await createChallenge();
-  await sendLoginCode(code);
+  let challengeId: string;
+  let code: string;
+  try {
+    const challenge = await createChallenge();
+    challengeId = challenge.challengeId;
+    code = challenge.code;
+  } catch (err) {
+    console.error("[admin-login] challenge generation failed:", err);
+    return NextResponse.json(
+      { error: "Configuration incomplète : ADMIN_JWT_SECRET manquant sur Vercel." },
+      { status: 500 },
+    );
+  }
+
+  try {
+    await sendLoginCode(code);
+  } catch (err) {
+    console.error("[admin-login] email send failed:", err);
+    const message = err instanceof Error ? err.message : "Échec de l'envoi du code";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 
   return NextResponse.json({ challengeId });
 }

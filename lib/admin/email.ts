@@ -5,9 +5,9 @@
 
 import { Resend } from "resend";
 
-function getClient(): Resend {
+function getClient(): Resend | null {
   const key = process.env.RESEND_API_KEY;
-  if (!key) throw new Error("RESEND_API_KEY missing");
+  if (!key) return null;
   return new Resend(key);
 }
 
@@ -26,6 +26,16 @@ function getFromEmail(): string {
 export async function sendLoginCode(code: string): Promise<void> {
   const resend = getClient();
   const to = getAdminEmail();
+  // Always log the code to Vercel runtime logs so the admin has a way
+  // to retrieve it even if Resend isn't configured yet (initial setup).
+  // In production logs you can grep for "[admin-login]".
+  console.log(`[admin-login] code=${code} email=${to} sent=${resend !== null}`);
+  if (!resend) {
+    // No Resend configured — surface a clear error to the client.
+    throw new Error(
+      "RESEND_API_KEY non configuré sur Vercel. Le code a été écrit dans les logs serveur.",
+    );
+  }
   await resend.emails.send({
     from: getFromEmail(),
     to,
@@ -59,6 +69,12 @@ export async function sendNewPasswordHash(plaintext: string, newHash: string): P
   // plaintext too so they remember what they typed.
   const resend = getClient();
   const to = getAdminEmail();
+  console.log(`[admin-password-rotate] new hash=${newHash} for ${to}`);
+  if (!resend) {
+    throw new Error(
+      "RESEND_API_KEY non configuré. Le nouveau hash a été écrit dans les logs serveur Vercel.",
+    );
+  }
   await resend.emails.send({
     from: getFromEmail(),
     to,
