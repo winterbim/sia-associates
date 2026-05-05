@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { getSiteContent } from "@/lib/admin/content-store";
 
 // Three editorial vignettes that illustrate "Human First Build Success":
 // a whiteboard sketch, a workshop table, a real Fiori launchpad view.
@@ -22,7 +23,8 @@ const SCENES = [
   },
 ] as const;
 
-export function About() {
+export async function About() {
+  const { about } = await getSiteContent();
   return (
     <section className="bg-bone py-20 md:py-28" aria-labelledby="about-heading">
       <div className="section-container">
@@ -33,11 +35,12 @@ export function About() {
               <figure className="relative">
                 <div className="relative overflow-hidden rounded-sm border border-hairline">
                   <Image
-                    src="/amine-portrait.png"
+                    src={about.portraitUrl || "/amine-portrait.png"}
                     alt="Amine Silemane — Fondateur de SIA Associates"
                     width={560}
                     height={720}
                     className="aspect-[4/5] w-full object-cover object-top"
+                    unoptimized={about.portraitUrl?.startsWith("http")}
                   />
                   <span className="absolute left-3 top-3 h-3 w-3 border-l border-t border-gold/70" />
                   <span className="absolute right-3 top-3 h-3 w-3 border-r border-t border-gold/70" />
@@ -68,43 +71,30 @@ export function About() {
 
             <ScrollReveal animation="fade-up" delay={100}>
               <p className="text-base leading-[1.7] text-graphite md:text-[17px]">
-                Je suis <strong className="text-ink">Amine Silemane</strong>,
-                consultant SAP depuis 2007. Mon parcours m&apos;a
-                conduit des grandes ESN aux directions informatiques de groupes
-                comme Safran, VINCI Construction, ENGIE, GRDF et RTE.
+                {about.paragraph1}
               </p>
             </ScrollReveal>
 
             <ScrollReveal animation="fade-up" delay={200}>
               <p className="mt-5 text-base leading-[1.7] text-graphite md:text-[17px]">
-                Ce que je retiens de ces 19 années&nbsp;: les meilleurs projets
-                SAP ne sont pas ceux qui ont le plus de budget — ce sont ceux où
-                un interlocuteur senior comprend à la fois la technique et le
-                métier, et reste engagé du début à la fin.
+                {about.paragraph2}
               </p>
             </ScrollReveal>
 
             <ScrollReveal animation="fade-up" delay={300}>
               <blockquote className="mt-8 border-l-2 border-gold pl-5">
                 <p className="font-display text-lg leading-relaxed text-ink md:text-xl">
-                  «&nbsp;Je travaille de façon organique&nbsp;: j&apos;intègre
-                  les besoins, les contraintes et la sécurité SAP dans un flux
-                  naturel, pour construire une solution cohérente, évolutive
-                  et alignée avec votre réalité métier.&nbsp;»
+                  «&nbsp;{about.quote}&nbsp;»
                 </p>
                 <footer className="mt-3 font-mono text-[11px] uppercase tracking-kicker text-ash">
-                  — A.S., fondateur
+                  {about.quoteAuthor}
                 </footer>
               </blockquote>
             </ScrollReveal>
 
             <ScrollReveal animation="fade-up" delay={400}>
               <p className="mt-6 max-w-2xl text-[15px] leading-[1.7] text-graphite md:text-base">
-                Je reste convaincu que la réussite passe par de bonnes
-                relations humaines. Chaque interaction, chaque collaboration
-                peut être bénéfique et enrichissante pour toutes les
-                parties — en partageant la même vision et la même méthode
-                de travail.
+                {about.paragraph3}
               </p>
             </ScrollReveal>
 

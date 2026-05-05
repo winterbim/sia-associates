@@ -3,6 +3,7 @@ import { Instrument_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AdminTrigger } from "@/components/admin/AdminTrigger";
 
 // Instrument Sans — editorial grotesque with distinct character (ink-trap
 // details, tighter letter shapes) that reads as intentionally designed,
@@ -156,6 +157,7 @@ export default function RootLayout({
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <AdminTrigger />
       </body>
     </html>
   );

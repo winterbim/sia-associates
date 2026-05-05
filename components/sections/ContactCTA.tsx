@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { getSiteContent } from "@/lib/admin/content-store";
 
-export function ContactCTA() {
+export async function ContactCTA() {
+  const { contact } = await getSiteContent();
   return (
     <section
       className="relative overflow-hidden bg-ink py-20 md:py-28"
@@ -58,10 +60,10 @@ export function ContactCTA() {
               <ArrowRight size={16} strokeWidth={1.5} className="transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
             <a
-              href="mailto:siamanagement75@gmail.com"
+              href={`mailto:${contact.email}`}
               className="inline-flex items-center gap-2 rounded-xl border border-ash-light/30 px-8 py-4 font-mono text-xs uppercase tracking-kicker text-bone transition-all duration-200 hover:border-bone hover:shadow-lg hover:shadow-white/5"
             >
-              siamanagement75@gmail.com
+              {contact.email}
             </a>
           </div>
         </ScrollReveal>

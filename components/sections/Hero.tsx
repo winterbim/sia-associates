@@ -3,6 +3,7 @@ import { CodeWatermark } from "@/components/CodeWatermark";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { getSiteContent } from "@/lib/admin/content-store";
 
 const STATS = [
   { value: 19, suffix: "+", label: "Années SAP" },
@@ -11,7 +12,8 @@ const STATS = [
   { value: 100, suffix: "%", label: "Transparence" },
 ] as const;
 
-export function Hero() {
+export async function Hero() {
+  const { hero } = await getSiteContent();
   return (
     <section
       className="relative overflow-hidden bg-ink"
@@ -27,11 +29,11 @@ export function Hero() {
             <div className="mb-3 flex items-center gap-3">
               <span className="h-px w-10 bg-gold" />
               <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-bone/75">
-                Conseil SAP &middot; depuis 2007
+                {hero.eyebrow}
               </p>
             </div>
             <p className="mb-8 font-display text-lg font-medium tracking-wide text-oxblood md:text-xl">
-              Human First Build Success
+              {hero.tagline}
             </p>
           </ScrollReveal>
 
@@ -40,25 +42,19 @@ export function Hero() {
               id="hero-heading"
               className="display-heading max-w-[22ch] text-[32px] font-semibold leading-[1.08] tracking-[-0.015em] text-bone sm:text-[38px] md:text-[44px] lg:text-[48px]"
             >
-              Architecte,{" "}
+              {hero.titleLeft}
               <em className="not-italic font-semibold text-oxblood">
-                chef d&apos;orchestre
-              </em>{" "}
-              et gardien de vos projets <span className="text-oxblood">SAP</span>.
+                {hero.titleAccent}
+              </em>
+              {hero.titleMiddle}
+              <span className="text-oxblood">{hero.titleEnd}</span>
+              {hero.titleRight}
             </h1>
           </ScrollReveal>
 
           <ScrollReveal animation="fade-up" delay={250} duration={900}>
             <p className="mt-8 max-w-xl text-[17px] leading-[1.7] text-bone/75">
-              19+ ans à bâtir, piloter et exploiter des paysages SAP pour des
-              entreprises qui ne peuvent pas se permettre
-              d&apos;approximations. De{" "}
-              <span className="font-semibold text-bone">Safran</span> à{" "}
-              <span className="font-semibold text-bone">VINCI Construction</span>
-              , en passant par{" "}
-              <span className="font-semibold text-bone">GRDF</span>,{" "}
-              <span className="font-semibold text-bone">RTE</span> et{" "}
-              <span className="font-semibold text-bone">ENGIE</span>.
+              {hero.lede}
             </p>
           </ScrollReveal>
 
@@ -91,11 +87,9 @@ export function Hero() {
 
           <ScrollReveal animation="fade-up" delay={500}>
             <p className="mt-12 max-w-md border-l-2 border-oxblood pl-4 text-[15px] italic leading-relaxed text-bone/80">
-              «&nbsp;Un projet SAP réussi, c&apos;est d&apos;abord une équipe
-              qui comprend ce qu&apos;elle construit. La technique vient
-              après.&nbsp;»
+              «&nbsp;{hero.quote}&nbsp;»
               <span className="mt-2 block font-mono text-[10px] not-italic uppercase tracking-[0.2em] text-ash-light">
-                — Amine Silemane, fondateur
+                {hero.quoteAuthor}
               </span>
             </p>
           </ScrollReveal>

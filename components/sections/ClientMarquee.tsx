@@ -1,24 +1,15 @@
 import Image from "next/image";
+import { getSiteContent } from "@/lib/admin/content-store";
 
 // Per UI/UX Pro Max "Enterprise Gateway" pattern: static logo grid with
 // trust-signal framing (kicker + context line). No infinite loop marquee —
 // respects reduced-motion and reads as a credential row, not a slideshow.
 
-type Client = {
-  name: string;
-  src?: string;
-};
-
-const CLIENTS: readonly Client[] = [
-  { name: "VINCI", src: "/clients/vinci.png" },
-  { name: "GRDF", src: "/clients/grdf.svg" },
-  { name: "RTE", src: "/clients/rte.svg" },
-  { name: "SAFRAN", src: "/clients/safran.png" },
-  { name: "ENGIE", src: "/clients/engie.png" },
-  { name: "EQUANS" },
-] as const;
-
-export function ClientMarquee() {
+export async function ClientMarquee() {
+  const { clients } = await getSiteContent();
+  // Show clients that have a logo first, fallback wordmark for the
+  // rest. Cap to 6 here so the row stays a single line.
+  const CLIENTS = clients.slice(0, 6);
   return (
     <section
       className="border-y border-hairline bg-bone py-16"
@@ -34,7 +25,7 @@ export function ClientMarquee() {
             </p>
           </div>
           <p className="font-mono text-[11px] uppercase tracking-kicker text-ash">
-            11 références publiques · 2010 → 2026
+            {clients.length} références publiques · 2010 → 2026
           </p>
         </div>
 

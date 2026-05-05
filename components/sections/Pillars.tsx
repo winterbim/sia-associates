@@ -1,58 +1,29 @@
-import { Compass, Route, Wrench, Cloud, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { Compass, Route, Wrench, Cloud, ShieldCheck, ArrowUpRight, type LucideIcon } from "lucide-react";
 import { SapLandscape } from "@/components/SapLandscape";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import Link from "next/link";
+import { getSiteContent } from "@/lib/admin/content-store";
 
+// Icons aren't editable from the admin — we map by pillar id so the
+// admin can still freely edit titles/leads/tags.
+const ICONS_BY_ID: Record<string, LucideIcon> = {
+  architecture: Compass,
+  pilotage: Route,
+  exploitation: Wrench,
+  cloud: Cloud,
+  cybersecurite: ShieldCheck,
+};
 
-const PILLARS = [
-  {
-    num: "01",
-    title: "Architecture SAP",
-    href: "/expertise#architecture",
-    icon: Compass,
-    description:
-      "Concevoir un paysage SAP qui tient dans le temps — choix technologiques, intégration, stratégie cloud.",
-    tags: ["SAP Basis", "S/4HANA", "BTP", "Clean Core", "Intégration"],
-  },
-  {
-    num: "02",
-    title: "Pilotage de projet SAP",
-    href: "/expertise#pilotage",
-    icon: Route,
-    description:
-      "Du cadrage au Go-Live. Gouvernance, conduite du changement, coordination d'équipes on-shore / near-shore / off-shore.",
-    tags: ["PMO", "Change", "Gouvernance"],
-  },
-  {
-    num: "03",
-    title: "Exploitation applicative",
-    href: "/expertise#exploitation",
-    icon: Wrench,
-    description:
-      "Support N2/N3, run ops optimisé. Un projet ne s'arrête pas à la mise en production.",
-    tags: ["N2/N3", "Run Ops", "Monitoring"],
-  },
-  {
-    num: "04",
-    title: "Cloud SAP",
-    href: "/expertise#cloud",
-    icon: Cloud,
-    description:
-      "RISE with SAP, Grow with SAP, Azure, AWS, OVHcloud souverain. Choisir la bonne infrastructure selon vos contraintes de souveraineté et budgétaires.",
-    tags: ["RISE", "Azure", "AWS", "OVHcloud"],
-  },
-  {
-    num: "05",
-    title: "Cybersécurité SAP",
-    href: "/expertise#cybersecurite",
-    icon: ShieldCheck,
-    description:
-      "Protéger les données, les accès et les processus critiques de l'entreprise contre toute menace. Intégrité, confidentialité, conformité — un enjeu global.",
-    tags: ["SSO", "IAM", "Security Notes", "RGPD"],
-  },
-] as const;
-
-export function Pillars() {
+export async function Pillars() {
+  const { pillars } = await getSiteContent();
+  const PILLARS = pillars.map((p) => ({
+    num: p.num,
+    title: p.title,
+    href: `/expertise#${p.id}`,
+    icon: ICONS_BY_ID[p.id] ?? Compass,
+    description: p.lead,
+    tags: p.tags,
+  }));
   return (
     <section className="bg-bone py-20 md:py-28" aria-labelledby="pillars-heading">
       <div className="section-container">

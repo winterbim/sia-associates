@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin, Linkedin, Phone } from "lucide-react";
+import { getSiteContent } from "@/lib/admin/content-store";
 
-export function Footer() {
+export async function Footer() {
+  const { contact } = await getSiteContent();
   return (
     <footer className="border-t border-hairline bg-ink" role="contentinfo">
       <div className="section-container py-16">
@@ -56,24 +58,24 @@ export function Footer() {
               <li className="flex items-start gap-2 text-sm text-ash-light">
                 <Phone size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
                 <a
-                  href="tel:+33630156331"
+                  href={`tel:${contact.phone}`}
                   className="transition-colors hover:text-bone"
                 >
-                  +33 6 30 15 63 31
+                  {contact.phoneDisplay}
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-ash-light">
                 <Mail size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
                 <a
-                  href="mailto:siamanagement75@gmail.com"
+                  href={`mailto:${contact.email}`}
                   className="transition-colors hover:text-bone"
                 >
-                  siamanagement75@gmail.com
+                  {contact.email}
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-ash-light">
                 <MapPin size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
-                <span>Paris &amp; International</span>
+                <span>{contact.location}</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-ash-light">
                 <Linkedin size={16} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />

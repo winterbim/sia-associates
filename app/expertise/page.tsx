@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Compass, Route, Wrench, Cloud, ShieldCheck } from "lucide-react";
+import { Compass, Route, Wrench, Cloud, ShieldCheck, type LucideIcon } from "lucide-react";
 import { ExpertiseBlueprint } from "@/components/ExpertiseBlueprint";
+import { getSiteContent } from "@/lib/admin/content-store";
 
 export const metadata: Metadata = {
   title: "Expertise",
@@ -8,85 +9,20 @@ export const metadata: Metadata = {
     "Architecture SAP, pilotage de projet, exploitation applicative et cloud. 19+ ans d'expérience SAP au service des grands comptes.",
 };
 
-const PILLARS = [
-  {
-    id: "architecture",
-    num: "01",
-    icon: Compass,
-    title: "Architecture SAP",
-    lead: "Concevoir un paysage SAP qui tient dans le temps — choix technologiques, intégration, stratégie cloud. Pas de dette technique cachée, pas de surprise en production.",
-    tags: ["SAP Basis", "S/4HANA", "BTP", "Clean Core", "Intégration"],
-    details: [
-      "Audit d'architecture existante et recommandations",
-      "Design du paysage cible (dev, QA, prod, sandbox)",
-      "Stratégie d'intégration (PI/PO, CPI, API Management)",
-      "Trajectoire et roadmap S/4HANA",
-      "Dimensionnement et choix d'infrastructure",
-    ],
-  },
-  {
-    id: "pilotage",
-    num: "02",
-    icon: Route,
-    title: "Pilotage de projet SAP",
-    lead: "Du cadrage au Go-Live. Gouvernance, conduite du changement, coordination d'équipes on-shore / near-shore / off-shore. Succès chez Safran, GRDF, RTE, VINCI Construction et EQUANS.",
-    tags: ["PMO", "Change", "Gouvernance"],
-    details: [
-      "Cadrage de projet et chiffrage ferme",
-      "Mise en place de la gouvernance projet",
-      "Coordination des équipes multi-sites",
-      "Conduite du changement et formation",
-      "Reporting et escalade proactive",
-    ],
-  },
-  {
-    id: "exploitation",
-    num: "03",
-    icon: Wrench,
-    title: "Exploitation applicative",
-    lead: "Support N2/N3, run ops optimisé. Parce qu'un projet ne s'arrête pas à la mise en production.",
-    tags: ["N2/N3", "Run Ops", "Monitoring"],
-    details: [
-      "Support Basis N2/N3 et résolution d'incidents",
-      "Optimisation des performances système",
-      "Gestion des transports et des releases",
-      "Monitoring et alerting proactif",
-      "Amélioration des process et documentation",
-    ],
-  },
-  {
-    id: "cloud",
-    num: "04",
-    icon: Cloud,
-    title: "Cloud SAP",
-    lead: "RISE with SAP, Grow with SAP, Azure, AWS, OVHcloud souverain. Choisir la bonne infrastructure selon vos contraintes de souveraineté et budgétaires.",
-    tags: ["RISE", "Azure", "AWS", "OVHcloud"],
-    details: [
-      "Audit cloud-readiness du paysage existant",
-      "Comparatif RISE / Grow / IaaS souverain",
-      "Migration vers le cloud (planning, exécution, validation)",
-      "Optimisation des coûts cloud",
-      "Conformité et souveraineté des données",
-    ],
-  },
-  {
-    id: "cybersecurite",
-    num: "05",
-    icon: ShieldCheck,
-    title: "Cybersécurité SAP",
-    lead: "Dans l'écosystème SAP, la cybersécurité consiste à protéger les données, les accès et les processus critiques de l'entreprise contre toute menace, en garantissant intégrité, confidentialité et conformité. Cela prévaut à tous les domaines de l'entreprise. Un enjeu global en termes de sécurité et surtout de Business.",
-    tags: ["SSO", "IAM", "Security Notes", "RGPD", "Audit"],
-    details: [
-      "Sécurisation des accès et authentification — SSO (Azure AD, IAS), MFA, Identity Providers (IAS, AD, S/4, BTP)",
-      "Sécurisation des paysages SAP — analyse de surface d'attaque, Security Notes, patching, durcissement",
-      "Sécurisation des interfaces — OData, RFC, API, Cloud Connectors",
-      "Audit de sécurité SAP — S/4, ECC, BTP, HANA",
-      "Vérification conformité RGPD / ISO / audit interne, recommandations et plan d'action priorisés",
-    ],
-  },
-] as const;
+const ICONS_BY_ID: Record<string, LucideIcon> = {
+  architecture: Compass,
+  pilotage: Route,
+  exploitation: Wrench,
+  cloud: Cloud,
+  cybersecurite: ShieldCheck,
+};
 
-export default function ExpertisePage() {
+export default async function ExpertisePage() {
+  const { pillars } = await getSiteContent();
+  const PILLARS = pillars.map((p) => ({
+    ...p,
+    icon: ICONS_BY_ID[p.id] ?? Compass,
+  }));
   return (
     <div className="pt-20 md:pt-24">
       {/* Hero */}

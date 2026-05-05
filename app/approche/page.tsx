@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { getSiteContent } from "@/lib/admin/content-store";
 
 export const metadata: Metadata = {
   title: "Approche",
@@ -35,38 +36,10 @@ const PRINCIPLES = [
   },
 ] as const;
 
-const PHASES = [
-  {
-    num: "01",
-    title: "Premier échange",
-    duration: "15 min · offert",
-    description:
-      "Comprendre votre contexte, votre besoin, vos contraintes. Objectif : déterminer si je suis la bonne personne pour votre sujet.",
-  },
-  {
-    num: "02",
-    title: "Cadrage",
-    duration: "2–5 jours",
-    description:
-      "Livrable écrit, chiffrage ferme. Vous ressortez avec une proposition structurée, lisible, défendable en comité.",
-  },
-  {
-    num: "03",
-    title: "Exécution",
-    duration: "Selon périmètre",
-    description:
-      "Points hebdomadaires, reporting mensuel, escalade immédiate en cas de difficulté. Aucune surprise en cours de route.",
-  },
-  {
-    num: "04",
-    title: "Clôture & passation",
-    duration: "1–2 semaines",
-    description:
-      "Documentation complète, transfert aux équipes internes, bilan de mission. Je ne pars pas avant que vous soyez autonome.",
-  },
-] as const;
-
-export default function ApprochePage() {
+export default async function ApprochePage() {
+  const {
+    approche: { phases: PHASES },
+  } = await getSiteContent();
   return (
     <div className="pt-20 md:pt-24">
       {/* Hero */}

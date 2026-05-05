@@ -43,7 +43,7 @@ export function Header() {
         className="section-container flex h-16 items-center justify-between md:h-20"
         aria-label="Navigation principale"
       >
-        <Link href="/" className="shrink-0">
+        <Link href="/" className="shrink-0" data-admin-trigger="logo">
           <Image
             src="/logo-sia.svg"
             alt="SIA Associates"

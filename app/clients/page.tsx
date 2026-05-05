@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { getSiteContent } from "@/lib/admin/content-store";
 
 export const metadata: Metadata = {
   title: "Clients",
@@ -7,51 +8,8 @@ export const metadata: Metadata = {
     "De VINCI Construction à GRDF, en passant par Safran, RTE et ENGIE — découvrez les grands comptes qui ont fait confiance à SIA Associates.",
 };
 
-type Client = {
-  name: string;
-  src?: string;
-  period: string;
-};
-
-const CLIENTS: readonly Client[] = [
-  { name: "UGAP", period: "2010 – 2011" },
-  { name: "COFIROUTE", period: "2011 – 2012" },
-  { name: "MONOPRIX", period: "2014" },
-  { name: "MOTUL", period: "2014 – 2015" },
-  { name: "ENGIE", src: "/clients/engie.png", period: "2015 – 2016" },
-  { name: "GRDF", src: "/clients/grdf.svg", period: "2016 – 2018" },
-  { name: "SAFRAN", src: "/clients/safran.png", period: "2018 – 2019" },
-  { name: "RTE", src: "/clients/rte.svg", period: "2020 – 2021" },
-  { name: "VINCI Construction", src: "/clients/vinci.png", period: "2022 – 2024" },
-  { name: "FINANCIÈRE SNOP Dunois", period: "2024 – 2025" },
-  { name: "EQUANS", period: "2025 – aujourd'hui" },
-] as const;
-
-const CASES = [
-  {
-    sector: "Énergie",
-    title: "Pilotage technique",
-    description:
-      "Pilotage technique SAP sur paysage critique d'un opérateur énergétique français. Coordination migration, fiabilisation des interfaces, sécurisation des flux métiers. Zéro incident majeur post-migration.",
-    tags: ["Pilotage", "Basis", "Migration"],
-  },
-  {
-    sector: "Industrie",
-    title: "Architecture technique",
-    description:
-      "Architecture SAP technique pour un groupe industriel de défense. Cadrage de la trajectoire cloud, stratégie Basis, gouvernance des environnements. Paysage sécurisé et maintenable.",
-    tags: ["Architecture", "Basis", "Cloud"],
-  },
-  {
-    sector: "Construction",
-    title: "Consulting senior",
-    description:
-      "SAP Senior BC Consultant intégré au groupe : référent technique sur le paysage SAP en production, support à l'architecture applicative, optimisation du run, cadrage des évolutions, accompagnement et montée en compétence des équipes internes.",
-    tags: ["Senior BC", "Run Ops", "Architecture", "Montée en compétence"],
-  },
-] as const;
-
-export default function ClientsPage() {
+export default async function ClientsPage() {
+  const { clients: CLIENTS, cases: CASES } = await getSiteContent();
   return (
     <div className="pt-20 md:pt-24">
       {/* Hero */}

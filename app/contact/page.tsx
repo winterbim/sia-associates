@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Mail, MapPin, Clock, Phone } from "lucide-react";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { ContactVCard } from "@/components/sections/ContactVCard";
+import { getSiteContent } from "@/lib/admin/content-store";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -9,7 +10,8 @@ export const metadata: Metadata = {
     "Discutons de votre projet SAP. Premier échange de 15 minutes offert — cadrage, audit, renfort ponctuel ou mission longue.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const { contact } = await getSiteContent();
   return (
     <div className="pt-20 md:pt-24">
       {/* Hero */}
@@ -48,28 +50,28 @@ export default function ContactPage() {
                   <li className="flex items-start gap-3 text-sm text-ash">
                     <Phone size={18} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
                     <a
-                      href="tel:+33630156331"
+                      href={`tel:${contact.phone}`}
                       className="transition-colors hover:text-ink"
                     >
-                      +33 6 30 15 63 31
+                      {contact.phoneDisplay}
                     </a>
                   </li>
                   <li className="flex items-start gap-3 text-sm text-ash">
                     <Mail size={18} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
                     <a
-                      href="mailto:siamanagement75@gmail.com"
+                      href={`mailto:${contact.email}`}
                       className="transition-colors hover:text-ink"
                     >
-                      siamanagement75@gmail.com
+                      {contact.email}
                     </a>
                   </li>
                   <li className="flex items-start gap-3 text-sm text-ash">
                     <MapPin size={18} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
-                    <span>Paris &amp; International</span>
+                    <span>{contact.location}</span>
                   </li>
                   <li className="flex items-start gap-3 text-sm text-ash">
                     <Clock size={18} strokeWidth={1.5} className="mt-0.5 shrink-0 text-gold" />
-                    <span>Réponse sous 72 h ouvrables</span>
+                    <span>{contact.responseTime}</span>
                   </li>
                 </ul>
               </div>
