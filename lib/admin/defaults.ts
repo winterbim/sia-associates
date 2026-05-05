@@ -183,17 +183,17 @@ export const DEFAULT_CONTENT: SiteContent = {
     },
   ],
   clients: [
-    { name: "UGAP", period: "2010 – 2011" },
-    { name: "COFIROUTE", period: "2011 – 2012" },
-    { name: "MONOPRIX", period: "2014" },
-    { name: "MOTUL", period: "2014 – 2015" },
+    { name: "UGAP", src: "/clients/ugap.png", period: "2010 – 2011" },
+    { name: "COFIROUTE", src: "/clients/cofiroute.svg", period: "2011 – 2012" },
+    { name: "MONOPRIX", src: "/clients/monoprix.svg", period: "2014" },
+    { name: "MOTUL", src: "/clients/motul.svg", period: "2014 – 2015" },
     { name: "ENGIE", src: "/clients/engie.png", period: "2015 – 2016" },
     { name: "GRDF", src: "/clients/grdf.svg", period: "2016 – 2018" },
     { name: "SAFRAN", src: "/clients/safran.png", period: "2018 – 2019" },
     { name: "RTE", src: "/clients/rte.svg", period: "2020 – 2021" },
-    { name: "VINCI Construction", src: "/clients/vinci.png", period: "2022 – 2024" },
+    { name: "VINCI Construction", src: "/clients/vinci.svg", period: "2022 – 2024" },
     { name: "FINANCIÈRE SNOP Dunois", period: "2024 – 2025" },
-    { name: "EQUANS", period: "2025 – aujourd'hui" },
+    { name: "EQUANS", src: "/clients/equans.png", period: "2025 – aujourd'hui" },
   ],
   approche: {
     phases: [
