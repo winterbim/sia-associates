@@ -66,15 +66,15 @@ export default async function BlogArticlePage({ params }: Props) {
       {/* Article header */}
       <section className="bg-ink py-12 md:py-20">
         <div className="section-container max-w-4xl">
-          <ScrollReveal animation="fade-up">
-            <Link
-              href="/blog"
-              className="group mb-8 inline-flex items-center gap-2 text-sm text-ash-light transition-colors hover:text-bone"
-            >
-              <ArrowLeft size={14} strokeWidth={1.5} className="transition-transform group-hover:-translate-x-1" />
-              Retour au blog
-            </Link>
-          </ScrollReveal>
+          {/* Back button is rendered without ScrollReveal so navigation
+              stays visible from raw HTML — never hidden behind JS. */}
+          <Link
+            href="/blog"
+            className="group mb-8 inline-flex items-center gap-2 rounded-sm bg-oxblood px-5 py-3 text-base font-semibold text-bone shadow-md transition-all duration-200 hover:bg-[#8a2937] hover:shadow-lg md:text-lg"
+          >
+            <ArrowLeft size={22} strokeWidth={2.25} className="transition-transform group-hover:-translate-x-1" />
+            Retour au blog
+          </Link>
 
           <ScrollReveal animation="fade-up" delay={100}>
             <div className="mb-4 flex flex-wrap gap-2">
