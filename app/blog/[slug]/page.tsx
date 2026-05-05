@@ -123,15 +123,17 @@ export default async function BlogArticlePage({ params }: Props) {
         </div>
       </section>
 
-      {/* Article content */}
+      {/* Article content — rendered without ScrollReveal: the wrapper
+          keeps content at opacity:0 until an IntersectionObserver fires
+          on hydration, which means a flaky JS load leaves the article
+          looking blank below the cover. The body of an article must be
+          visible from raw HTML, no JS dependency. */}
       <section className="bg-bone py-12 md:py-16">
         <div className="section-container max-w-3xl">
-          <ScrollReveal animation="fade-up">
-            <div
-              className="prose-custom"
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
-            />
-          </ScrollReveal>
+          <article
+            className="prose-custom"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          />
         </div>
       </section>
 
