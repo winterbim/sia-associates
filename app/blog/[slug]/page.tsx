@@ -134,6 +134,38 @@ export default async function BlogArticlePage({ params }: Props) {
             className="prose-custom"
             dangerouslySetInnerHTML={{ __html: htmlContent }}
           />
+
+          {/* Editorial disclaimer — kept on every article so the legal
+              context is one tab away from any quote that might be
+              taken out of context (errors of fact, brand names, third-
+              party tools). This isn't a substitute for ToS but it
+              shows good faith and disambiguates intent. */}
+          <aside className="mt-16 rounded-sm border border-hairline bg-white/50 p-5 text-xs leading-relaxed text-ash">
+            <p className="font-mono uppercase tracking-kicker text-[10px] text-ash-light mb-2">
+              Avertissement éditorial
+            </p>
+            <p>
+              Cet article reflète l&apos;opinion personnelle de l&apos;auteur,
+              fondée sur son expérience générale du conseil SAP. Il ne
+              constitue ni un conseil juridique, financier ou technique
+              opposable, ni une recommandation d&apos;investissement, et
+              ne saurait engager la responsabilité de SIA Associates en
+              cas de décision prise sur sa seule base — toute décision
+              opérationnelle doit être validée par un professionnel
+              dans le contexte spécifique du lecteur.
+            </p>
+            <p className="mt-2">
+              Les noms de clients cités le sont à titre de référence
+              professionnelle, sans divulgation d&apos;information
+              confidentielle ou d&apos;élément couvert par un accord de
+              confidentialité. Aucun élément de cet article ne reproduit
+              de donnée propriétaire d&apos;un client. SAP®, S/4HANA®,
+              RISE with SAP®, Joule®, Fiori®, BTP® et autres marques
+              citées sont la propriété de SAP SE ou de leurs détenteurs
+              respectifs. SIA Associates n&apos;est ni affilié, ni
+              partenaire commercial, ni revendeur de SAP SE.
+            </p>
+          </aside>
         </div>
       </section>
 

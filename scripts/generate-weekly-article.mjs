@@ -166,6 +166,11 @@ async function main() {
     category: target.category,
     publishedAt: new Date().toISOString(),
     author: "Amine Silemane",
+    // Cron-generated articles always land as drafts. They stay invisible
+    // to the public until the admin reviews them in /admin and flips
+    // draft to false. This is the editorial safety net — no AI text
+    // ever shows up live without a human read-through.
+    draft: true,
   };
 
   await fs.writeFile(path.join(blogDir, `${target.slug}.json`), JSON.stringify(data, null, 2) + "\n", "utf-8");

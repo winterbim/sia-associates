@@ -12,6 +12,10 @@ export interface BlogArticle {
   publishedAt: string;
   author: string;
   category: string;
+  // Articles created by the weekly cron land with draft=true and stay
+  // invisible to the public until reviewed and flipped to false.
+  // Pre-existing articles without this field are treated as published.
+  draft?: boolean;
 }
 
 export const CATEGORY_ORDER: readonly string[] = [
@@ -25,7 +29,7 @@ export const CATEGORY_ORDER: readonly string[] = [
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
-export async function getAllArticles(): Promise<BlogArticle[]> {
+export async function getAllArticles(opts?: { includeDrafts?: boolean }): Promise<BlogArticle[]> {
   try {
     const files = await fs.readdir(BLOG_DIR);
     const jsonFiles = files.filter((f) => f.endsWith(".json"));
@@ -37,8 +41,14 @@ export async function getAllArticles(): Promise<BlogArticle[]> {
       })
     );
 
+    // Drafts are filtered out by default — they only show up in the
+    // admin where the caller passes includeDrafts:true.
+    const visible = opts?.includeDrafts
+      ? articles
+      : articles.filter((a) => !a.draft);
+
     // Sort by publishedAt descending
-    return articles.sort(
+    return visible.sort(
       (a, b) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     );
@@ -48,12 +58,17 @@ export async function getAllArticles(): Promise<BlogArticle[]> {
 }
 
 export async function getArticleBySlug(
-  slug: string
+  slug: string,
+  opts?: { includeDrafts?: boolean },
 ): Promise<BlogArticle | null> {
   try {
     const filePath = path.join(BLOG_DIR, `${slug}.json`);
     const content = await fs.readFile(filePath, "utf-8");
-    return JSON.parse(content) as BlogArticle;
+    const article = JSON.parse(content) as BlogArticle;
+    // Drafts return 404 to public callers — only the admin (passing
+    // includeDrafts:true) can read them.
+    if (article.draft && !opts?.includeDrafts) return null;
+    return article;
   } catch {
     return null;
   }
