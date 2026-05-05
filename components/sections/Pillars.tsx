@@ -21,7 +21,7 @@ const PILLARS = [
     icon: Route,
     description:
       "Du cadrage au Go-Live. Gouvernance, conduite du changement, coordination d'équipes on-shore / near-shore / off-shore.",
-    tags: ["SAP Activate", "PMO", "Change", "Gouvernance"],
+    tags: ["PMO", "Change", "Gouvernance"],
   },
   {
     num: "03",

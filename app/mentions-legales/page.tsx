@@ -22,7 +22,7 @@ export default function MentionsLegalesPage() {
                 <strong className="text-ink">SIA ASSOCIATES</strong> · Société par Actions Simplifiée (SAS)
               </p>
               <p>
-                Siège social : 11 avenue Maryse Bastié, 91220 Brétigny-sur-Orge
+                Siège social : 11 avenue Maryse Bastié, Paris
                 <br />
                 SIREN : 930 478 151
                 <br />

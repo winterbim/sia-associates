@@ -29,8 +29,8 @@ const PILLARS = [
     num: "02",
     icon: Route,
     title: "Pilotage de projet SAP",
-    lead: "Du cadrage au Go-Live. Gouvernance, conduite du changement, coordination d'équipes on-shore / near-shore / off-shore. Méthodologie SAP Activate éprouvée sur des projets Safran, GRDF et RTE.",
-    tags: ["SAP Activate", "PMO", "Change", "Gouvernance"],
+    lead: "Du cadrage au Go-Live. Gouvernance, conduite du changement, coordination d'équipes on-shore / near-shore / off-shore. Succès chez Safran, GRDF, RTE, VINCI Construction et EQUANS.",
+    tags: ["PMO", "Change", "Gouvernance"],
     details: [
       "Cadrage de projet et chiffrage ferme",
       "Mise en place de la gouvernance projet",

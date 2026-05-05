@@ -82,8 +82,7 @@ const jsonLd = {
       address: {
         "@type": "PostalAddress",
         streetAddress: "11 avenue Maryse Bastié",
-        addressLocality: "Brétigny-sur-Orge",
-        postalCode: "91220",
+        addressLocality: "Paris",
         addressCountry: "FR",
       },
       founder: {
