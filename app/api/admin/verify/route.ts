@@ -18,26 +18,27 @@ export async function POST(request: Request) {
 
   const valid = await consumeChallenge(challengeId, code);
   if (!valid) {
-    // TEMPORARY DEBUG — read raw KV state to surface exactly why this failed.
-    let debug: Record<string, unknown> = {};
+    // Diagnostic: tell the client whether the challengeId itself is
+    // unknown to KV (almost always means the modal is reusing a stale
+    // challenge from a previous login attempt) vs. challenge found but
+    // code didn't match. Never echo the stored code.
+    let reason: "unknown_challenge" | "wrong_code" | "kv_error" = "wrong_code";
     try {
       const { kv } = await import("@vercel/kv");
       const stored = await kv.get<string>(`admin:challenge:${challengeId}`);
-      debug = {
-        kvUrl: process.env.KV_REST_API_URL ? "set" : "empty",
-        kvTokenLen: (process.env.KV_REST_API_TOKEN ?? "").length,
-        challengeIdLen: challengeId.length,
-        challengeIdSample: challengeId.substring(0, 12),
-        stored: stored,
-        storedType: typeof stored,
-        submittedCode: code,
-        match: String(stored) === String(code),
-      };
-    } catch (err) {
-      debug = { kvErr: err instanceof Error ? err.message : String(err) };
+      reason = stored === null || stored === undefined ? "unknown_challenge" : "wrong_code";
+    } catch {
+      reason = "kv_error";
     }
     return NextResponse.json(
-      { error: "Code invalide ou expiré", debug },
+      {
+        error:
+          reason === "unknown_challenge"
+            ? "Challenge expiré ou inconnu — clique « Recommencer » et refais une demande de code."
+            : reason === "kv_error"
+              ? "Erreur stockage code — réessaie dans quelques secondes."
+              : "Code incorrect.",
+      },
       { status: 401 },
     );
   }
