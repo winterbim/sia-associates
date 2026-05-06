@@ -18,7 +18,28 @@ export async function POST(request: Request) {
 
   const valid = await consumeChallenge(challengeId, code);
   if (!valid) {
-    return NextResponse.json({ error: "Code invalide ou expiré" }, { status: 401 });
+    // TEMPORARY DEBUG — read raw KV state to surface exactly why this failed.
+    let debug: Record<string, unknown> = {};
+    try {
+      const { kv } = await import("@vercel/kv");
+      const stored = await kv.get<string>(`admin:challenge:${challengeId}`);
+      debug = {
+        kvUrl: process.env.KV_REST_API_URL ? "set" : "empty",
+        kvTokenLen: (process.env.KV_REST_API_TOKEN ?? "").length,
+        challengeIdLen: challengeId.length,
+        challengeIdSample: challengeId.substring(0, 12),
+        stored: stored,
+        storedType: typeof stored,
+        submittedCode: code,
+        match: String(stored) === String(code),
+      };
+    } catch (err) {
+      debug = { kvErr: err instanceof Error ? err.message : String(err) };
+    }
+    return NextResponse.json(
+      { error: "Code invalide ou expiré", debug },
+      { status: 401 },
+    );
   }
 
   const token = await mintSession();
