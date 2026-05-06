@@ -53,7 +53,21 @@ export async function PUT(request: Request) {
     return NextResponse.json({ error: "Valeur requise" }, { status: 400 });
   }
 
-  await updateSiteSection(section, value as SiteContent[typeof section]);
+  try {
+    await updateSiteSection(section, value as SiteContent[typeof section]);
+  } catch (err) {
+    console.error("[admin-content] save failed:", err);
+    const message = err instanceof Error ? err.message : "Échec de la sauvegarde";
+    const isKvIssue = message.toLowerCase().includes("kv");
+    return NextResponse.json(
+      {
+        error: isKvIssue
+          ? "Vercel KV n'est pas activé. Va sur Vercel → Storage → Create Database → KV → Connect ce projet, puis redéploie."
+          : message,
+      },
+      { status: 500 },
+    );
+  }
 
   // Force every page that reads site content to refresh on the next
   // request — this is what makes the admin feel instant. The list is
