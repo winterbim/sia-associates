@@ -72,13 +72,18 @@ function randomId(): string {
 // during its 10-min window.
 export async function createChallenge(): Promise<{ challengeId: string; code: string }> {
   const code = randomCode();
+  console.log(`[auth.createChallenge] kvConfigured=${isKvConfigured()} code=${code}`);
   if (isKvConfigured()) {
     const challengeId = randomId();
     try {
-      await kv.set(`admin:challenge:${challengeId}`, code, { ex: CODE_TTL_SECONDS });
+      const setResult = await kv.set(`admin:challenge:${challengeId}`, code, { ex: CODE_TTL_SECONDS });
+      console.log(`[auth.createChallenge] kv.set result=${setResult} challengeId=${challengeId}`);
+      // Read it back immediately to verify it was stored.
+      const verify = await kv.get<string>(`admin:challenge:${challengeId}`);
+      console.log(`[auth.createChallenge] kv.get verify stored=${verify} (expected ${code})`);
       return { challengeId, code };
     } catch (err) {
-      console.error("[auth] KV set failed, falling back to stateless:", err);
+      console.error("[auth.createChallenge] KV set failed, falling back to stateless:", err);
     }
   }
   // Stateless fallback — challengeId is itself a JWT carrying the code.
@@ -91,26 +96,34 @@ export async function createChallenge(): Promise<{ challengeId: string; code: st
 }
 
 export async function consumeChallenge(challengeId: string, submittedCode: string): Promise<boolean> {
+  console.log(`[auth.consumeChallenge] start kvConfigured=${isKvConfigured()} challengeId=${challengeId} submittedCode=${submittedCode}`);
   // Try KV first — it gives us single-use guarantees.
   if (isKvConfigured()) {
     try {
       const key = `admin:challenge:${challengeId}`;
       const stored = await kv.get<string>(key);
+      console.log(`[auth.consumeChallenge] kv.get key=${key} stored=${stored} (type=${typeof stored})`);
       if (stored !== null && stored !== undefined) {
-        if (stored !== submittedCode) return false;
+        const match = String(stored) === String(submittedCode);
+        console.log(`[auth.consumeChallenge] match=${match}`);
+        if (!match) return false;
         await kv.del(key);
         return true;
       }
       // No KV record found — fall through to JWT verification.
+      console.log(`[auth.consumeChallenge] KV returned no value, falling through to JWT verify`);
     } catch (err) {
-      console.error("[auth] KV get failed, falling back to JWT verify:", err);
+      console.error("[auth.consumeChallenge] KV get failed, falling back to JWT verify:", err);
     }
   }
   // Stateless verification of the JWT-encoded challenge.
   try {
     const { payload } = await jwtVerify(challengeId, getJwtSecret());
-    return payload.code === submittedCode;
-  } catch {
+    const match = payload.code === submittedCode;
+    console.log(`[auth.consumeChallenge] JWT verify match=${match} payload.code=${payload.code}`);
+    return match;
+  } catch (err) {
+    console.log(`[auth.consumeChallenge] JWT verify threw:`, err instanceof Error ? err.message : err);
     return false;
   }
 }
