@@ -5,17 +5,16 @@ import { UserPlus } from "lucide-react";
 
 export function ContactVCard() {
   // vCard 3.0: N is "Family;Given;Additional;Prefix;Suffix". Most readers
-  // display "Given Family" for personal contacts. Putting "Associates" as
-  // family name and "SIA" as given name makes the contact appear as
-  // "SIA Associates" once saved, instead of "Associates SIA".
+  // display "Given Family" for personal contacts.
+  // We use the client's actual name for the vCard.
   const vcard = `BEGIN:VCARD
 VERSION:3.0
-N:Associates;SIA;;;
-FN:SIA Associates
+N:Silemane;Amine;;;
+FN:Amine Silemane
 ORG:SIA Associates
 TITLE:Consultant SAP
 TEL;TYPE=CELL,VOICE:+33630156331
-EMAIL:siamanagement75@gmail.com
+EMAIL:business@sia-associates.com
 URL:https://sia-associates.com
 END:VCARD`;
 

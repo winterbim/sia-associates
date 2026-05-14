@@ -230,7 +230,7 @@ export const DEFAULT_CONTENT: SiteContent = {
   contact: {
     phone: "+33630156331",
     phoneDisplay: "+33 6 30 15 63 31",
-    email: "siamanagement75@gmail.com",
+    email: "business@sia-associates.com",
     location: "Paris & International",
     responseTime: "Réponse sous 72 h ouvrables",
   },

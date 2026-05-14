@@ -12,7 +12,7 @@ function getClient(): Resend | null {
 }
 
 function getAdminEmail(): string {
-  return process.env.ADMIN_EMAIL ?? "siamanagement75@gmail.com";
+  return process.env.ADMIN_EMAIL ?? "business@sia-associates.com";
 }
 
 function getFromEmail(): string {
